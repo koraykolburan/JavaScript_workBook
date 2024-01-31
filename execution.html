@@ -3,18 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Take a Fresh Look to JavaScript</title>
+    <title>JavaScript Documentation 1</title>
     <style>
-        .documentation {
+        body {
+            font-family: arial;
+        }
+        .data-types, .functions, .scopes {
             border: 1px solid black;
             border-radius: 12px;
             padding: 10px;
+            margin: 5px;
+        }
+        header h1 {
+            font-size: 50px;
+            text-align: center;
+            background: rgb(42, 43, 43);
+            color: aliceblue;
+            border-radius: 12px;
         }
     </style>
     
 </head>
 <body>
-    <section class="documentation">
+    <header>
+        <h1>JavaScript Documentation</h1>
+    </header>
+    <!-- DATA TYPES -->
+    <section class="data-types">
         <h1>JavaScript Data Types</h1>
     <p>
         JavaScript use this: = + - * / % ++ -- .
@@ -44,9 +59,46 @@
         <li><strong>Undefined.</strong></li>
         <li><strong>Symbol.</strong></li>
         <li><strong>Object.</strong></li>
-    </ol>    
+    </ol>
+    <hr>
+    <ul>
+        <li> You can learn which data type you are using with this: "typeof". </li>
+    </ul>    
     </section>
-    
+
+    <!-- FUNCTIONS -->
+    <section class="functions"> 
+        <h1>JavaScript Functions</h1>
+        <p>For machines: "Block of code designed to perform a particular task."</p>
+        <p>
+            Some data to <strong>input</strong>. <br>
+            Performs a <strong>task</strong>. <br>   
+            Returns a <strong>result</strong>.
+        </p>
+        <p>
+            Example: <br> 
+            <span style="color: red;">function</span> <span style="color: blue;">myFunction()</span> { <br>
+                &nbsp; &nbsp; &nbsp; <i>statements...</i> <br>
+                &nbsp; &nbsp; &nbsp; <i style="color: red;">return...</i> <br>
+
+            }
+        </p>
+        <p>All the code in the body of the function is <strong>NOT</strong> executed, until we "call" the function.</p>
+        <p>Variables = Noun</p>
+        <p>Functions = Verb</p>
+        <br>
+        <p>You can log this function on the console: <u>getPercentage(25,100)</u> = <span id="demo"></span></p>
+        <p>You can log this function on the console: <u>multiplyNumbers(2,100)</u> = <span id="demo1"></span></p>
+    </section>
+    <!-- SCOPES -->
+    <section class="scopes">
+        <h2>JavaScript Scopes</h2>
+        <p>
+            There only two scopes; <br>
+            1. Function Scope <br>
+            2. Global Scope
+        </p>
+    </section>
     <script src="execution.js"></script>
 </body>
 </html>
