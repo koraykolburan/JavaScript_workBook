@@ -1,20 +1,20 @@
 alert("Koray");
 
-var firstName;
-firstName = "Koray";
+// let firstName;
+// firstName = "Koray";
 
 // NUMBERS AND STRING --------------------------------------------------------------
 
-var lastName;
-lastName = 'Kolburan';
+// let lastName;
+// lastName = 'Kolburan';
 
-var age;
+let age;
 age = 28;
 
-var nameAndSurname;
+let nameAndSurname;
 nameAndSurname = 'Koray Kolburan "with" it\'s escape character';
 
-var backslash;
+let backslash;
 backslash = 'This is a backslash = \\'
 
 // firstName = "This is a tabbed \t text";
@@ -27,26 +27,26 @@ fullName = "Koray " + "Kolburan";
 
 // BOOLEAN ------------------------------------------------------------------------
 
-var newA = true && true; //true
-var newB = true && false; //false
+let newA = true && true; //true
+let newB = true && false; //false
 
-var newC = true || false; //true
-var newD = false || false; //false
+let newC = true || false; //true
+let newD = false || false; //false
 
-var newE = !true;
-var newF = !false;
+let newE = !true;
+let newF = !false;
 
-var isSunny = true;
-var isSunday = false;
+let isSunny = true;
+let isSunday = false;
 
-var isAGoodDay = isSunny && isSunday;
+let isAGoodDay = isSunny && isSunday;
 
 // FUNCTIONS ----------------------------------------------------------------------
 
 function getPercentage(percent, amount) {
     //
 
-    var result
+    let result
     result = amount * percent / 100;
 
     return result;
@@ -56,7 +56,7 @@ document.getElementById("demo").innerHTML = getPercentage(25,100);
 
 function multiplyNumbers(number1, number2){
 
-    var result
+    let result
     result = number1 * number2;
 
     return result
@@ -65,7 +65,7 @@ document.getElementById("demo1").innerHTML = multiplyNumbers(2,100);
 
 // SCOPES OF VARIABLES ----------------------------------------------------------------------
 
-var fName = 'Koray';
+let fName = 'Koray';
 
 function accessGlobalScope() {
     fName = 'The name has been changed!';
@@ -73,7 +73,7 @@ function accessGlobalScope() {
 
 
 function localVariableFunction() {
-    var lName = 'Kolburan';
+    let lName = 'Kolburan';
     lName = 'this variable is local';
 }
 
@@ -82,4 +82,17 @@ function leakingVariable() {
 }
 
 // OBJECTS ----------------------------------------------------------------------
+
+let user;
+user = {
+    login: "",
+    password: "",
+    firstName : "",
+    lastName : "",
+    "full name" : "",
+
+    getFullName : function() {
+        return this.firstName + " " + this.lastName;
+    }
+};
 

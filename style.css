@@ -3,16 +3,17 @@ body {
     background: #f4f0e8;
     color: #5A5042;
 }
-.data-types, .functions, .scopes {
-    border: 1px solid black;
+.data-types, .functions, .scopes, .variables, .objects {
+    border: 1px outset black;
     border-radius: 12px;
     padding: 10px;
     margin: 5px;
+    background: #f3dfc1;
 }
 header h1 {
     font-size: 50px;
     text-align: center;
-    background: rgb(42, 43, 43);
+    background: #767069;
     color: #fff;
     border-radius: 12px;
     font-style: italic;
@@ -26,4 +27,10 @@ header h1 {
 figure > img {
     width: 100%;
     border-radius: 12px;
+}
+.variables ol li span {
+    color: red;
+}
+.variables, .data-types {
+    width: 50%;
 }

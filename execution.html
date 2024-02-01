@@ -12,46 +12,61 @@
         <h1>JavaScript Documentation</h1>
     </header>
     <!-- DATA TYPES -->
-    <section class="data-types">
-        <h1>JavaScript Data Types</h1>
-    <p>
-        JavaScript use these: = + - * / % ++ -- .
-    </p>
-    <ol>
-        <li><strong>Number.</strong></li>
-        <li><strong>String:</strong> using double "" and single '' quotes delimiter. It's a escape character: \ .</li>
-        <hr>
-        <li><strong>Boolean:</strong> True or False. &&(and), ||(or), !(not). <br>
+    <section class="content">
+        <div class="data-types">
+            <h1>JavaScript Data Types</h1>
+        <p>
+            JavaScript use these operators: = + - * / % ++ -- .
+        </p>
+        <ol>
+            <li><strong>Number.</strong></li>
+            <li><strong>String:</strong> using double "" and single '' quotes delimiter. It's a escape character: \ .</li>
+            <hr>
+            <li><strong>Boolean:</strong> True or False. &&(and), ||(or), !(not). <br>
+                <br>
+            true && true = true <br> 
+            true && false = false <br> 
+            false && true = false <br> 
+            false && false = false <br>
             <br>
-        true && true = true <br> 
-        true && false = false <br> 
-        false && true = false <br> 
-        false && false = false <br>
-        <br>
-        true || true = true <br> 
-        true || false = true <br> 
-        false || true = true <br> 
-        false || false = false <br>
-        <br>
-        !false = true <br>
-        !true = true
+            true || true = true <br> 
+            true || false = true <br> 
+            false || true = true <br> 
+            false || false = false <br>
+            <br>
+            !false = true <br>
+            !true = true
+            <hr>
+            </li>
+            <li><strong>Null.</strong></li>
+            <li><strong>Bigint.</strong></li>
+            <li><strong>Undefined.</strong></li>
+            <li><strong>Symbol.</strong></li>
+            <li><strong>Object.</strong></li>
+        </ol>
         <hr>
-        </li>
-        <li><strong>Null.</strong></li>
-        <li><strong>Bigint.</strong></li>
-        <li><strong>Undefined.</strong></li>
-        <li><strong>Symbol.</strong></li>
-        <li><strong>Object.</strong></li>
-    </ol>
-    <hr>
-    <ul>
-        <li> You can learn which data type you are using with this: "typeof". </li>
-    </ul>    
+        <ul>
+            <li> You can learn which data type you are using with this: "typeof". </li>
+        </ul>    
+        </div>
+        <div class="variables">
+            <h1>JavaScript Variables: var, let, const.</h1>
+            <p>A Variable is a name or a tag of that references spacing a memory where to store information.</p>
+            <ol>
+                <li>Always declare variables.</li>
+                <li>Always use <span>const</span> if the <strong>value</strong> should not be change.</li>
+                <li>Always use <span>const</span> if the <strong>type</strong> should not be change.</li>
+                <li>Always use <span>let</span> if you can't use <span>const</span>.</li>
+                <li>Always use <span>var</span> if you MUST support old browsers.</li>
+            </ol>
+        </div>
     </section>
+    
     <div class="content">
     <!-- FUNCTIONS -->
     <article class="functions"> 
         <h1>JavaScript Functions</h1>
+        <p>A function is a name or a tag that references spacing a memory where we store code.</p>
         <p>For machines: "Block of code designed to perform a particular task."</p>
         <p>
             Some data to <strong>input</strong>. <br>
@@ -86,8 +101,15 @@
         </figure>
     </article>
     </div>
-    <article>
-        
+    <!-- OBJECTS -->
+    <article class="objects">
+        <h1>JavaScript Objects</h1>
+        <p>
+            An Object is a container of properties. <br>
+            An Objects can also contain Function. <br>
+            <h4>Using <code>"this."</code></h4>
+            If you are inside of a object and function within an object <code>"this."</code> always point where the function has been defined.
+        </p>
     </article>
     <script src="execution.js"></script>
 </body>
