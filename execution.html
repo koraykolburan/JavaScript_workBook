@@ -4,24 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Documentation 1</title>
-    <style>
-        body {
-            font-family: arial;
-        }
-        .data-types, .functions, .scopes {
-            border: 1px solid black;
-            border-radius: 12px;
-            padding: 10px;
-            margin: 5px;
-        }
-        header h1 {
-            font-size: 50px;
-            text-align: center;
-            background: rgb(42, 43, 43);
-            color: aliceblue;
-            border-radius: 12px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
     
 </head>
 <body>
@@ -32,7 +15,7 @@
     <section class="data-types">
         <h1>JavaScript Data Types</h1>
     <p>
-        JavaScript use this: = + - * / % ++ -- .
+        JavaScript use these: = + - * / % ++ -- .
     </p>
     <ol>
         <li><strong>Number.</strong></li>
@@ -65,9 +48,9 @@
         <li> You can learn which data type you are using with this: "typeof". </li>
     </ul>    
     </section>
-
+    <div class="content">
     <!-- FUNCTIONS -->
-    <section class="functions"> 
+    <article class="functions"> 
         <h1>JavaScript Functions</h1>
         <p>For machines: "Block of code designed to perform a particular task."</p>
         <p>
@@ -89,16 +72,23 @@
         <br>
         <p>You can log this function on the console: <u>getPercentage(25,100)</u> = <span id="demo"></span></p>
         <p>You can log this function on the console: <u>multiplyNumbers(2,100)</u> = <span id="demo1"></span></p>
-    </section>
+    </article>
     <!-- SCOPES -->
-    <section class="scopes">
+    <article class="scopes">
         <h2>JavaScript Scopes</h2>
-        <p>
-            There only two scopes; <br>
-            1. Function Scope <br>
-            2. Global Scope
-        </p>
-    </section>
+        <ol>
+            <li><strong>Function Scope:</strong> That variable exists inside of the function scope.</li>
+            <li><strong>Global Scope:</strong> The variable accessible within in our JavaScript code.</li>
+            <li><strong>Leaking Variable:</strong> If you create a variable without using a <strong>var</strong> statement or another words within the function, JavaScript runtime will take care of declaring the variable for you and then assignment will be executed.</li>
+        </ol>
+        <figure>
+            <img src="images/scopes.jpg" alt="scopes">
+        </figure>
+    </article>
+    </div>
+    <article>
+        
+    </article>
     <script src="execution.js"></script>
 </body>
 </html>

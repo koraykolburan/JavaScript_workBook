@@ -3,7 +3,7 @@ alert("Koray");
 var firstName;
 firstName = "Koray";
 
-// NUMBERS AND STRING ----------------------------------------
+// NUMBERS AND STRING --------------------------------------------------------------
 
 var lastName;
 lastName = 'Kolburan';
@@ -25,7 +25,7 @@ age++;
 
 fullName = "Koray " + "Kolburan";
 
-// BOOLEAN -------------------------------------------------------
+// BOOLEAN ------------------------------------------------------------------------
 
 var newA = true && true; //true
 var newB = true && false; //false
@@ -41,7 +41,7 @@ var isSunday = false;
 
 var isAGoodDay = isSunny && isSunday;
 
-// FUNCTIONS -------------------------------
+// FUNCTIONS ----------------------------------------------------------------------
 
 function getPercentage(percent, amount) {
     //
@@ -63,9 +63,23 @@ function multiplyNumbers(number1, number2){
 }
 document.getElementById("demo1").innerHTML = multiplyNumbers(2,100);
 
-// SCOPES OF VARIABLES
+// SCOPES OF VARIABLES ----------------------------------------------------------------------
+
 var fName = 'Koray';
 
 function accessGlobalScope() {
     fName = 'The name has been changed!';
 }
+
+
+function localVariableFunction() {
+    var lName = 'Kolburan';
+    lName = 'this variable is local';
+}
+
+function leakingVariable() {
+    notPreviouslyDefinedVar = 'this is my value';
+}
+
+// OBJECTS ----------------------------------------------------------------------
+
