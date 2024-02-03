@@ -96,3 +96,37 @@ user = {
     }
 };
 
+// THIS Is Variable content COPIED BY VALUE
+let middleName = 'John';
+let referenceToName = middleName;
+
+// Changing the value of a variable doesn't affect the other one
+middleName = "Tommy";
+
+
+//Variable content copied by reference
+let user1 = {
+    middleName: "John",
+    secondName: "Doe"
+} //This is Literal object
+let referenceToUser1 = user1;
+//Instead of coping everythin, this is a time consuming operation  and also operation that consumes memory, the Js engine instead of coping over everything, will just make the second tag(let referenceToUser1) point to the exact BOX. And two tags attach to the box.
+
+//changing the value of the object will reflect on both variables
+user1.middleName = 'Koray';
+referenceToUser1.secondName = 'Black';
+
+//Also, it can be use call the FUNCTION
+function getSecondName() {
+    return 'some return value';
+}
+let referenceToFunction = getSecondName;
+
+// OBJECT LITERAL NOTATION -- Constructor Function(Create an object)---------------------
+function Car() {
+    this.numberOfDoors = 5;
+    this.brand = "Toyota";
+}
+//How do we create an object with using the function, when you use this way is called the CONSTRUCTOR FUNCTION of the object
+let myNewCar = new Car();
+myNewCar = new Car();
