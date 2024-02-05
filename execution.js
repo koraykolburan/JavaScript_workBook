@@ -199,3 +199,14 @@ function calculate(firstNum, secondNum, operation) {
     result = operation(firstNum, secondNum);
     return result;
 }
+
+//----------------------------- ARRAYS -----------------------------------------------
+const mixedArray = [10, "I'm a string", true];
+const cars = ["Volvo", "BMW", "Volkswagen"]; // Create an Array
+cars.push("Audi"); // Add an element
+cars[0] = "Toyota"; // Change an element
+cars.toString(); // Returns an array as a comma separated string
+let size = cars.length;
+document.getElementById("cars").innerHTML = size;
+document.getElementById("cars1").innerHTML = cars[cars.length - 1]; // Accessing the LAST ARRAY Element
+let sort = cars.sort();
