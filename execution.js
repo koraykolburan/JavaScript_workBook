@@ -1,4 +1,4 @@
-alert("Koray");
+alert("Hello, you can use the console for JavaScript codes.");
 
 // let firstName;
 // firstName = "Koray";
@@ -122,11 +122,39 @@ function getSecondName() {
 }
 let referenceToFunction = getSecondName;
 
-// OBJECT LITERAL NOTATION -- Constructor Function(Create an object)---------------------
-function Car() {
-    this.numberOfDoors = 5;
-    this.brand = "Toyota";
+// OBJECT LITERAL NOTATION -- Constructor Function(Create an object)---------------------------------------------
+
+//Function used to build ("construct") an object
+//As a userable blueprint for creating more than one instance of the same object.
+function Car(numberOfDoors, brand) {
+    this.numberOfDoors = numberOfDoors;
+    this.brand = brand;
 }
-//How do we create an object with using the function, when you use this way is called the CONSTRUCTOR FUNCTION of the object
-let myNewCar = new Car();
-myNewCar = new Car();
+// How do we create an object with using the function, when you use this way is called the CONSTRUCTOR FUNCTION of the object
+//Object creation using the "new" operator on the function call - All of them to the below, they have been created same function constructor
+let myNewCar = new Car(4, "Toyota");
+let myOldCar = new Car(5, "Nissan");
+let luxuryCar = new Car(5, "Mercedes");
+let ludicrousCar = new Car(2, "Ferrari");
+let batmanCar = new Car(0, "Murcielago");
+
+// This is a literal object.
+let literalCar = {
+    numberOfDoors: 4,
+    brand: "Nissan"
+};
+
+// The Function Prototype------------------------------------------------------
+function Car2(){
+    this.doors = 5;
+    this.type = "SUV";
+
+    //this.start = function(){};
+    //this.stop = function(){};
+};
+Car2.prototype.start = function() {};
+Car2.prototype.stop = function() {};
+let jeep = new Car2();
+let cheapCar = new Car2();
+//Let's add a new property to the Car2 function prototype
+Car2.prototype.year=2024;
