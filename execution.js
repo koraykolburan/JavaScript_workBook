@@ -145,16 +145,57 @@ let literalCar = {
 };
 
 // The Function Prototype------------------------------------------------------
-function Car2(){
+function Car2(doors, type, engine){
     this.doors = 5;
     this.type = "SUV";
-
+    this.engine = "stopped";
     //this.start = function(){};
     //this.stop = function(){};
 };
-Car2.prototype.start = function() {};
-Car2.prototype.stop = function() {};
+Car2.prototype.start = function() {
+    this.engine = "started";
+};
+Car2.prototype.stop = function() {
+    this.engine = "stopped";
+};
+
 let jeep = new Car2();
 let cheapCar = new Car2();
 //Let's add a new property to the Car2 function prototype
 Car2.prototype.year=2024;
+
+// STRINGS  - Revisit
+let sentence = "This is a sentence";
+//sentence.charAt(0); this will show first character of the string.
+
+// FUNCTION CALLBACKS 
+//let's thinking about create a CALCULATOR
+function add(firstNum, secondNum) {
+    let result;
+    result = firstNum + secondNum; 
+    return result;
+}
+
+function subtraction(firstNum, secondNum) {
+    let result;
+    result = firstNum - secondNum; 
+    return result;
+}
+
+function multiply(firstNum, secondNum) {
+    let result;
+    result = firstNum * secondNum; 
+    return result;
+}
+
+function divide(firstNum, secondNum) {
+    let result;
+    result = firstNum / secondNum; 
+    return result;
+}
+
+function calculate(firstNum, secondNum, operation) {
+    let result;
+    result = operation(firstNum, secondNum);
+    return result;
+}

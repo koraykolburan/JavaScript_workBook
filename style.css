@@ -34,3 +34,6 @@ figure > img {
 .variables, .data-types {
     width: 50%;
 }
+code {
+    color: blue;
+}
