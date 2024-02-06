@@ -209,4 +209,11 @@ cars.toString(); // Returns an array as a comma separated string
 let size = cars.length;
 document.getElementById("cars").innerHTML = size;
 document.getElementById("cars1").innerHTML = cars[cars.length - 1]; // Accessing the LAST ARRAY Element
-let sort = cars.sort();
+let sort = cars.sort(); //The sort() method sorts an array alphabetically.
+document.getElementById("sort").innerHTML = sort;
+let reverse = cars.reverse();
+document.getElementById("reverse").innerHTML = reverse;
+let toSorted = cars.toSorted();
+document.getElementById("toSorted").innerHTML = toSorted;
+const toReserve = cars.toReserve();
+document.getElementById("toReserve").innerHTML = toReserve;
