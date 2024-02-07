@@ -206,14 +206,21 @@ const cars = ["Volvo", "BMW", "Volkswagen"]; // Create an Array
 cars.push("Audi"); // Add an element
 cars[0] = "Toyota"; // Change an element
 cars.toString(); // Returns an array as a comma separated string
-let size = cars.length;
+const size = cars.length;
 document.getElementById("cars").innerHTML = size;
 document.getElementById("cars1").innerHTML = cars[cars.length - 1]; // Accessing the LAST ARRAY Element
-let sort = cars.sort(); //The sort() method sorts an array alphabetically.
+
+const sort = cars.sort(); //The sort() method sorts an array alphabetically.
 document.getElementById("sort").innerHTML = sort;
-let reverse = cars.reverse();
+const numberArray = [2,20,1,14,52];
+const numberArray1 = numberArray.toSorted(function(a, b){
+    return a - b;
+});
+document.getElementById("numberArray1").innerHTML = numberArray1;
+
+const reverse = cars.reverse();
 document.getElementById("reverse").innerHTML = reverse;
-let toSorted = cars.toSorted();
+const toSorted = cars.toSorted();
 document.getElementById("toSorted").innerHTML = toSorted;
-const toReserve = cars.toReserve();
-document.getElementById("toReserve").innerHTML = toReserve;
+const toReversed = cars.toReversed();
+document.getElementById("toReversed").innerHTML = toReversed;

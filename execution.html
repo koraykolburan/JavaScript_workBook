@@ -156,16 +156,29 @@
                 <li><code>const myArray = [];</code></li>
                 <li><code>const mixedArray = [10, "I'm a string", true];</code></li>
                 <li><code>const cars = ["Volvo", "BMW", "Volkswagen"];</code></li>
+            </ul>
+            <h4>Using some methods in Array</h4>
+            <ol>
                 <li><code>.push(); </code> for add some element to your Array.(Audi)</li>
                 <li><code>.toString(); </code> returns an array as a comma separated string.</li>
                 <li><code>.length</code> returns the number of elements. <span style="color: red;" id="cars"> </span> - This is length of cars array.</li>
                 <li><code>.cars[cars.length - 1]</code> <span style="color: red;" id="cars1"> </span> - Accessing the LAST ARRAY Element</li>
+
                 <li><code>.sort();</code> <span style="color: red;" id="sort"> </span> sorts an array alphabetically. However this method <u>changes</u> original Array.</li>
+
+                <li>This is an original Numbers Array <code>const numberArray = [2,20,1,14,52];</code>.</li>
+                <li>This is for sort the NUMBERS in the Array <u>ascendingly</u>. <code> numberArray.toSorted(function(a, b) { return a - b};)</code>:<span style="color: red;" id="numberArray1"> </span>. <br>
+                If we use the same function as like this<code> numberArray.toSorted(function(a, b) { return b - a};)</code> we can sort the NUMBERS in the Array <u>descendingly</u>.
+                </li>
+
                 <li><code>.toSorted();</code> <span style="color: red;" id="toSorted"> </span> sorts an array alphabetically <u>without changing</u> the original Array.</li>
+
                 <li><code>.reverse();</code> <span style="color: red;" id="reverse"> </span> method reverses the elements in an array. However this method <u>changes</u> original Array.</li>
-                <li></li>
+
+                <li><code>.toReversed();</code> <span style="color: red;" id="toReversed"> </span> method reverses the elements in an array <u>without changing</u> the original Array.</li>
+
                 <li><span style="color: red;" id="cars1"> </span> </li>
-            </ul>
+            </ol>
         </article>
         </div>
    
