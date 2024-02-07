@@ -209,7 +209,15 @@ cars.toString(); // Returns an array as a comma separated string
 const size = cars.length;
 document.getElementById("cars").innerHTML = size;
 document.getElementById("cars1").innerHTML = cars[cars.length - 1]; // Accessing the LAST ARRAY Element
+let myObject = {
+    name: "Koray"
+};
+let numericValue = 10;
+let mixArray = [numericValue, "I'm a string", true, myObject];
+mixArray[3].name = "Elijahu"; //myObject has changed.
+mixArray[0] = 20; //numvercValue has changed only in the Array.
 
+// METHODS ------------
 const sort = cars.sort(); //The sort() method sorts an array alphabetically.
 document.getElementById("sort").innerHTML = sort;
 const numberArray = [2,20,1,14,52];
@@ -224,3 +232,26 @@ const toSorted = cars.toSorted();
 document.getElementById("toSorted").innerHTML = toSorted;
 const toReversed = cars.toReversed();
 document.getElementById("toReversed").innerHTML = toReversed;
+
+const concatenate = cars.concat( mixArray );
+document.getElementById("concatenate").innerHTML = concatenate;
+
+const indexOf = cars.indexOf("BMW");
+document.getElementById("indexOf").innerHTML = indexOf;
+
+const pop = cars.pop();
+document.getElementById("pop").innerHTML = pop;
+
+const shift = cars.shift();
+document.getElementById("shift").innerHTML = shift;
+
+// ITERATION ----------------------------------------------
+const iteration = ["sedan","coupe", "suv", "van", "hybrid"];
+const uppercasedCategories = [];
+
+function uppercaseElement(element, index, array) {
+    uppercasedCategories.push(element.toUpperCase() );
+};
+
+iteration.forEach(uppercaseElement);
+document.getElementById("uppercasedCategories").innerHTML = uppercasedCategories;

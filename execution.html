@@ -147,7 +147,7 @@
         <!-- ARRAYS -->
         <article class="arrays">
             <h2>JavaScript Arrays and Implicit Iteration</h2>
-            <h4>Arrays are containers for sequence of items.</h4>
+            <h3>Arrays are containers for sequence of items.</h3>
             <ul>
                 <li>An Array is an enumerated list of variables.</li>
                 <li>In an Array each values store is automatically assigned a numeric index.</li>
@@ -157,7 +157,7 @@
                 <li><code>const mixedArray = [10, "I'm a string", true];</code></li>
                 <li><code>const cars = ["Volvo", "BMW", "Volkswagen"];</code></li>
             </ul>
-            <h4>Using some methods in Array</h4>
+            <h3>Using some methods in Array</h3>
             <ol>
                 <li><code>.push(); </code> for add some element to your Array.(Audi)</li>
                 <li><code>.toString(); </code> returns an array as a comma separated string.</li>
@@ -177,7 +177,27 @@
 
                 <li><code>.toReversed();</code> <span style="color: red;" id="toReversed"> </span> method reverses the elements in an array <u>without changing</u> the original Array.</li>
 
-                <li><span style="color: red;" id="cars1"> </span> </li>
+                <li><code>.concat();</code>this method contenate the arrays. cars.concat( mixArray); = <span style="color: red;" id="concatenate"> </span> </li>
+                <li><code>.indexOf();</code> cars.indexOf(BMW); = <span style="color: red;" id="indexOf"> </span> (If the value is not found, method returns -1)</li>
+                <li><code>.pop()</code> this method <u>delete</u> the <u>last</u> element of the array. cars.pop(); = <span style="color: red;" id="pop"> </span> .</li>
+                <li><code>.shift()</code> this method <u>delete</u> the <u>first</u> element of the array. cars.shift(); = <span style="color: red;" id="shift"> </span> .</li>
+
+                <!------------------------------------ ITERATION - forEach() METHOD ------------------------- -->
+                <li><code>.forEach()</code> this method and function make the upper case the elements of the array as using <u>iteration</u>.<br>
+                    <details>
+                        <summary>Place of Use the forEach() Method</summary>
+                        <ul>
+                            <li>"Can you go through the list of our clients and give me  their numbers?"</li>
+                            <li>"I need to these checklist, but every data should be written in capitalization."</li>
+                        </ul>
+                    </details>
+                    <code>const iteration = ["sedan","coupe", "suv", "van", "hybrid"]; <br> 
+                    const uppercasedCategories = []; <br>
+                    <br>
+                    function uppercaseElement(element, index, array) { <br>
+                        uppercasedCategories.push(element.toUpperCase() ); <br>
+                    }; <br>
+                    iteration.forEach(); </code> = <span style="color: red;" id="uppercasedCategories"> </span> .</li>
             </ol>
         </article>
         </div>
