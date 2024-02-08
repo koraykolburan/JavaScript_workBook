@@ -270,3 +270,20 @@ document.getElementById("uppercasedCategories").innerHTML = uppercasedCategories
 
 // ------------------------------- CONDITIONAL STATEMENTS -------------------------------------
 
+//if today is a sunny day, then I'll go jogging otherwise I'll stay at home
+const isSunnyDay = true;
+
+// if(isSunnyDay === true) {
+//     console.log("let's get jog!")
+// } else {
+//     console.log("Better stay at home.")
+// };
+
+// We can put it on a function
+function checkIfSunny(isSunny ){
+    if(isSunny === true) {
+        console.log("let's get jog!");
+    } else {
+        console.log("Better stay at home.");
+    };
+}

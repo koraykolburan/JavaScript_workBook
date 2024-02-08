@@ -4,7 +4,7 @@ body {
     color: #5A5042;
 }
 
-.data-types, .functions, .scopes, .variables, .objects, .arrays {
+.data-types, .functions, .scopes, .variables, .objects, .arrays, .statements {
     border: 1px outset black;
     border-radius: 12px;
     padding: 10px;
@@ -86,10 +86,14 @@ details {
     100% {opacity: 0; margin-left: -20px}
   }
 
-.arrays h3 {
+.arrays h3, h4 {
     text-align: center;
 }
 
 .arrays ol {
     line-height: 2em;
+}
+
+.statements {
+    width: 100%;
 }

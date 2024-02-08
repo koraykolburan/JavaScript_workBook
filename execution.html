@@ -146,7 +146,7 @@
     </div>
 
     <!-- ARRAYS -->
-        <div class="content">
+    <div class="content">
         <article class="arrays">
             <h2>JavaScript Arrays and Implicit Iteration</h2>
             <h3>Arrays are containers for sequence of items.</h3>
@@ -196,6 +196,8 @@
 
                 <li><code>.splice()</code> this method <u>adds</u> and <u>removes</u> elements in an array. 
                     veganProtein.splice(); = "<span style="color: red;" id="veganProtein"></span>" .</li>    
+                    <hr>
+                <h4>Implicit ITERATION & forEach() METHOD</h4>
 
                 <!-------------------------------- Implicit ITERATION - forEach() METHOD ---------------------------->
                 <li><code>.forEach()</code> this method and function make the upper case the elements of the array as using <u>iteration</u>.<br>
@@ -215,7 +217,34 @@
                     iteration.forEach(); </code> = <span style="color: red;" id="uppercasedCategories"> </span> .</li>
             </ol>
         </article>
-        </div>
+    </div>
+
+    <!-- CONDITIONAL STATEMENTS & EXPLICIT ITERATION WITH FOR LOOP -->
+    <div class="content">
+        <article class="statements">
+            <h2>Conditional Statements</h2>
+            <code>
+                const isSunnyDay = true; <br>
+
+                if(isSunnyDay === true) { <br>
+                        console.log("let's get jog!") <br>
+                    } else { <br>
+                        console.log("Better stay at home.") <br>
+                    };
+            </code> <span>Please look at the console for the right answer.</span>
+            <span>Now, we can put it on a function;</span>
+            <hr> 
+            <code>
+                function checkIfSunny(isSunny ){ <br>
+                    if(isSunny === true) { <br>
+                        console.log("let's get jog!"); <br>
+                    } else { <br>
+                        console.log("Better stay at home.");<br>
+                    };
+                }
+            </code>
+        </article>
+    </div>
    
     <script src="execution.js"></script>
 </body>
