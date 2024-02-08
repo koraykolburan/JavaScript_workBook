@@ -34,6 +34,10 @@ header h1 {
     width: 50%;
 }
 
+code {
+    font-size: 1rem;
+}
+
 figure > img {
     width: 100%;
     border-radius: 12px;
@@ -47,8 +51,11 @@ figure > img {
     width: 50%;
 }
 
-.objects, .arrays {
+.objects {
     width: 50%;
+}
+.arrays {
+    width: 100%;
 }
 
 code {
@@ -81,4 +88,8 @@ details {
 
 .arrays h3 {
     text-align: center;
+}
+
+.arrays ol {
+    line-height: 2em;
 }

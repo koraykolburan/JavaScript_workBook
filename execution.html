@@ -13,7 +13,7 @@
         <h1>JavaScript Documentation</h1>
     </header>
 
-    <!-- DATA TYPES and JS VARIABLES -->
+    <!-- DATA TYPES & JS VARIABLES & SCOPES -->
     <section class="content">
         <div class="data-types">
             <h2>JavaScript Data Types</h1>
@@ -61,90 +61,92 @@
                 <li>Always use <span>let</span> if you can't use <span>const</span>.</li>
                 <li>Always use <span>var</span> if you MUST support old browsers.</li>
             </ol>
+            <hr>
+            <div class="functions1">
+                <h2>JavaScript Functions</h2>
+            <p>A function is a name or a tag that references spacing a memory where we store code.</p>
+            <p>For machines: "Block of code designed to perform a particular task."</p>
+            <p>
+                Some data to <strong>input</strong>. <br>
+                Performs a <strong>task</strong>. <br>   
+                Returns a <strong>result</strong>.
+            </p>
+            <p>
+                Example: <br> 
+                <span style="color: red;">function</span> <span style="color: blue;">myFunction()</span> { <br>
+                    &nbsp; &nbsp; &nbsp; <i>statements...</i> <br>
+                    &nbsp; &nbsp; &nbsp; <i style="color: red;">return...</i> <br>
+    
+                }
+            </p>
+            <p>All the code in the body of the function is <strong>NOT</strong> executed, until we "call" the function.</p>
+            <p>Variables = Noun</p>
+            <p>Functions = Verb</p>
+            <br>
+            <p>You can log this function on the console: <u>getPercentage(25,100)</u> = <span id="demo"></span></p>
+            <p>You can log this function on the console: <u>multiplyNumbers(2,100)</u> = <span id="demo1"></span></p>
+            </div>
         </div>
+        
     </section>
     
-    <!-- FUNCTIONS AND SCOPES -->
+    <!-- SCOPES & OBJECTS -->
     <div class="content">
-        <article class="functions"> 
-        <h2>JavaScript Functions</h2>
-        <p>A function is a name or a tag that references spacing a memory where we store code.</p>
-        <p>For machines: "Block of code designed to perform a particular task."</p>
-        <p>
-            Some data to <strong>input</strong>. <br>
-            Performs a <strong>task</strong>. <br>   
-            Returns a <strong>result</strong>.
-        </p>
-        <p>
-            Example: <br> 
-            <span style="color: red;">function</span> <span style="color: blue;">myFunction()</span> { <br>
-                &nbsp; &nbsp; &nbsp; <i>statements...</i> <br>
-                &nbsp; &nbsp; &nbsp; <i style="color: red;">return...</i> <br>
-
-            }
-        </p>
-        <p>All the code in the body of the function is <strong>NOT</strong> executed, until we "call" the function.</p>
-        <p>Variables = Noun</p>
-        <p>Functions = Verb</p>
-        <br>
-        <p>You can log this function on the console: <u>getPercentage(25,100)</u> = <span id="demo"></span></p>
-        <p>You can log this function on the console: <u>multiplyNumbers(2,100)</u> = <span id="demo1"></span></p>
-        </article>
-    <!-- SCOPES -->
-        <article class="scopes">
-        <h2>JavaScript Scopes</h2>
-        <ol>
-            <li><strong>Function Scope:</strong> That variable exists inside of the function scope.</li>
-            <li><strong>Global Scope:</strong> The variable accessible within in our JavaScript code.</li>
-            <li><strong>Leaking Variable:</strong> If you create a variable without using a <strong>var</strong> statement or another words within the function, JavaScript runtime will take care of declaring the variable for you and then assignment will be executed.</li>
-        </ol>
-        <figure>
-            <img src="images/scopes.jpg" alt="scopes">
-        </figure>
-        </article>
+        <!-- SCOPES -->
+            <article class="scopes">
+            <h2>JavaScript Scopes</h2>
+            <ol>
+                <li><strong>Function Scope:</strong> That variable exists inside of the function scope.</li>
+                <li><strong>Global Scope:</strong> The variable accessible within in our JavaScript code.</li>
+                <li><strong>Leaking Variable:</strong> If you create a variable without using a <strong>var</strong> statement or another words within the function, JavaScript runtime will take care of declaring the variable for you and then assignment will be executed.</li>
+            </ol>
+            <figure>
+                <img src="images/scopes.jpg" alt="scopes">
+            </figure>
+            </article>
+        <!-- OBJECTS -->
+            <article class="objects">
+                <h2>JavaScript Objects</h2>
+                <p>
+                    An Object is a container of properties. <br>
+                    An Objects can also contain Function. <br>
+                    <h4>Using <code>"this."</code></h4>
+                    If you are inside of a object and function within an object <code>"this."</code> always point where the function has been defined.
+                </p>
+                <h3>Function used to build ("construct") an object</h3>
+                <h4>As a userable blueprint for creating more than one instance of the same object.</h4>
+                <code>
+                    function Car(numberOfDoors, brand) { <br>
+                        &nbsp;&nbsp; this.numberOfDoors = numberOfDoors; <br>
+                        &nbsp;&nbsp; this.brand = brand; <br>
+                    }
+                </code>
+                <h4> How do we create an object with using the function, when you use this way is called the <u>CONSTRUCTOR FUNCTION</u> of the object.</h4>
+                <h4>Object creation using the "new" operator on the function call.</h4>
+                <h5>All the values of below, they have been created same function constructor.</h5>
+                <code>
+                    let myNewCar = new Car(4, "Toyota"); <br> 
+                    let myOldCar = new Car(5, "Nissan"); <br> 
+                    let luxuryCar = new Car(5, "Mercedes"); <br>
+                    let ludicrousCar = new Car(2, "Ferrari"); <br>
+                    let batmanCar = new Car(0, "Murcielago"); <br>
+                </code>
+                <p>
+                    In JavaScript, Functions are first class objects. They are not only running code, but also they are object, they contain properties. 
+                    <code>(Car.prototype)</code>
+                </p>
+                <h3>Function Callbacks - CALCULATOR</h3>
+                <p>
+                    You can use this function on the console: <br>
+                    <code>calculate(firstNum, secondNum, operation{}) </code> <br> 
+                    for the calculator. <br>
+                    Obviously with these functions: <span style="color: red;">"add", "subtraction", "divide", "multiply"</span> instead of 'operation(third parameter)'
+                </p>
+            </article>
     </div>
 
-    <!-- OBJECTS AND ARRAYS -->
+    <!-- ARRAYS -->
         <div class="content">
-        <article class="objects">
-            <h2>JavaScript Objects</h2>
-            <p>
-                An Object is a container of properties. <br>
-                An Objects can also contain Function. <br>
-                <h4>Using <code>"this."</code></h4>
-                If you are inside of a object and function within an object <code>"this."</code> always point where the function has been defined.
-            </p>
-            <h3>Function used to build ("construct") an object</h3>
-            <h4>As a userable blueprint for creating more than one instance of the same object.</h4>
-            <code>
-                function Car(numberOfDoors, brand) { <br>
-                    &nbsp;&nbsp; this.numberOfDoors = numberOfDoors; <br>
-                    &nbsp;&nbsp; this.brand = brand; <br>
-                }
-            </code>
-            <h4> How do we create an object with using the function, when you use this way is called the <u>CONSTRUCTOR FUNCTION</u> of the object.</h4>
-            <h4>Object creation using the "new" operator on the function call.</h4>
-            <h5>All the values of below, they have been created same function constructor.</h5>
-            <code>
-                let myNewCar = new Car(4, "Toyota"); <br> 
-                let myOldCar = new Car(5, "Nissan"); <br> 
-                let luxuryCar = new Car(5, "Mercedes"); <br>
-                let ludicrousCar = new Car(2, "Ferrari"); <br>
-                let batmanCar = new Car(0, "Murcielago"); <br>
-            </code>
-            <p>
-                In JavaScript, Functions are first class objects. They are not only running code, but also they are object, they contain properties. 
-                <code>(Car.prototype)</code>
-            </p>
-            <h3>Function Callbacks - CALCULATOR</h3>
-            <p>
-                You can use this function on the console: <br>
-                <code>calculate(firstNum, secondNum, operation{}) </code> <br> 
-                for the calculator. <br>
-                Obviously with these functions: <span style="color: red;">"add", "subtraction", "divide", "multiply"</span> instead of 'operation(third parameter)'
-            </p>
-        </article>
-        <!-- ARRAYS -->
         <article class="arrays">
             <h2>JavaScript Arrays and Implicit Iteration</h2>
             <h3>Arrays are containers for sequence of items.</h3>
@@ -157,6 +159,7 @@
                 <li><code>const mixedArray = [10, "I'm a string", true];</code></li>
                 <li><code>const cars = ["Volvo", "BMW", "Volkswagen"];</code></li>
             </ul>
+            <hr>
             <h3>Using some methods in Array</h3>
             <ol>
                 <li><code>.push(); </code> for add some element to your Array.(Audi)</li>
@@ -167,6 +170,7 @@
                 <li><code>.sort();</code> <span style="color: red;" id="sort"> </span> sorts an array alphabetically. However this method <u>changes</u> original Array.</li>
 
                 <li>This is an original Numbers Array <code>const numberArray = [2,20,1,14,52];</code>.</li>
+
                 <li>This is for sort the NUMBERS in the Array <u>ascendingly</u>. <code> numberArray.toSorted(function(a, b) { return a - b};)</code>:<span style="color: red;" id="numberArray1"> </span>. <br>
                 If we use the same function as like this<code> numberArray.toSorted(function(a, b) { return b - a};)</code> we can sort the NUMBERS in the Array <u>descendingly</u>.
                 </li>
@@ -178,11 +182,22 @@
                 <li><code>.toReversed();</code> <span style="color: red;" id="toReversed"> </span> method reverses the elements in an array <u>without changing</u> the original Array.</li>
 
                 <li><code>.concat();</code>this method contenate the arrays. cars.concat( mixArray); = <span style="color: red;" id="concatenate"> </span> </li>
+
                 <li><code>.indexOf();</code> cars.indexOf(BMW); = <span style="color: red;" id="indexOf"> </span> (If the value is not found, method returns -1)</li>
-                <li><code>.pop()</code> this method <u>delete</u> the <u>last</u> element of the array. cars.pop(); = <span style="color: red;" id="pop"> </span> .</li>
+
                 <li><code>.shift()</code> this method <u>delete</u> the <u>first</u> element of the array. cars.shift(); = <span style="color: red;" id="shift"> </span> .</li>
 
-                <!------------------------------------ ITERATION - forEach() METHOD ------------------------- -->
+                <li><code>.pop()</code> this method <u>delete</u> the <u>last</u> element of the array. cars.pop(); = <span style="color: red;" id="pop"> </span> .</li>
+
+                <li><code>.slice()</code> this method <u>returns</u> the <u>selected</u> elements in an array, as a new array. topic.slice(); = "<span style="color: red;" id="newTopic"></span>" .</li>
+
+                <li><code>.replace()</code> this method <u>replace</u> the <u>selected</u> elements in an array, as a new array. <br>
+                    <span id="pcBrands">The brand of John's computer is <strong>Microsoft</strong>.</span> (Replacing "Apple" to "Microsoft".) <br>
+
+                <li><code>.splice()</code> this method <u>adds</u> and <u>removes</u> elements in an array. 
+                    veganProtein.splice(); = "<span style="color: red;" id="veganProtein"></span>" .</li>    
+
+                <!-------------------------------- Implicit ITERATION - forEach() METHOD ---------------------------->
                 <li><code>.forEach()</code> this method and function make the upper case the elements of the array as using <u>iteration</u>.<br>
                     <details>
                         <summary>Place of Use the forEach() Method</summary>

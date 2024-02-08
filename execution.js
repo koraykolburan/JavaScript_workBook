@@ -245,7 +245,19 @@ document.getElementById("pop").innerHTML = pop;
 const shift = cars.shift();
 document.getElementById("shift").innerHTML = shift;
 
-// ITERATION ----------------------------------------------
+const topic = "I can eat avocado all day";
+const newTopic = topic.slice(10,17);
+document.getElementById("newTopic").innerHTML = newTopic;
+
+const microsoft = document.getElementById("pcBrands").innerHTML;
+const apple = microsoft.replace(/Microsoft/g, "Apple");
+document.getElementById("pcBrands").innerHTML = apple;
+
+const veganProtein = ["Tofu", "Soy Bean", "Pea Protein", "Bean Proteins"];
+veganProtein.splice(2, 4);
+document.getElementById("veganProtein").innerHTML = veganProtein;
+
+// IMPLICIT ITERATION ----------------------------------------------
 const iteration = ["sedan","coupe", "suv", "van", "hybrid"];
 const uppercasedCategories = [];
 
@@ -255,3 +267,6 @@ function uppercaseElement(element, index, array) {
 
 iteration.forEach(uppercaseElement);
 document.getElementById("uppercasedCategories").innerHTML = uppercasedCategories;
+
+// ------------------------------- CONDITIONAL STATEMENTS -------------------------------------
+
