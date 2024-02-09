@@ -106,7 +106,8 @@
             </article>
         <!-- OBJECTS -->
             <article class="objects">
-                <h2>JavaScript Objects</h2>
+                <div class="objects1">
+                    <h2>JavaScript Objects</h2>
                 <p>
                     An Object is a container of properties. <br>
                     An Objects can also contain Function. <br>
@@ -142,6 +143,8 @@
                     for the calculator. <br>
                     Obviously with these functions: <span style="color: red;">"add", "subtraction", "divide", "multiply"</span> instead of 'operation(third parameter)'
                 </p>
+                </div>
+                
             </article>
     </div>
 
@@ -219,10 +222,11 @@
         </article>
     </div>
 
-    <!-- CONDITIONAL STATEMENTS & EXPLICIT ITERATION WITH FOR LOOP -->
+    <!-- CONDITIONAL STATEMENTS & EXPLICIT ITERATION -->
     <div class="content">
         <article class="statements">
-            <h2>Conditional Statements</h2>
+            <div class="part1">
+                <h2>Conditional Statements</h2>
             <code>
                 const isSunnyDay = true; <br>
 
@@ -243,6 +247,78 @@
                     };
                 }
             </code>
+            </div>
+            <hr>
+            <div class="part2">
+                <h2>JavaScript Comparison Operators</h2>
+                <table>
+                    <tr>
+                        <th>Operator</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>==</td>
+                        <td>equal to</td>
+                    </tr>
+                    <tr>
+                        <td>===</td>
+                        <td>equal value and equal type</td>
+                    </tr>
+                    <tr>
+                        <td>!=</td>
+                        <td>not equal</td>
+                    </tr>
+                    <tr>
+                        <td>!==</td>
+                        <td>not equal or not equal type</td>
+                    </tr>
+                    <tr>
+                        <td>></td>
+                        <td>greater than</td>
+                    </tr>
+                    <tr>
+                        <td><</td>
+                        <td>less than</td>
+                    </tr>
+                    <tr>
+                        <td>>=</td>
+                        <td>greater than or equal to</td>
+                    </tr>
+                    <tr>
+                        <td><=</td>
+                        <td>less than or equal to</td>
+                    </tr>
+                    <tr>
+                        <td>?</td>
+                        <td>ternary operator</td>
+                    </tr>
+                    <tr>
+                        <td>??</td>
+                        <td>the nullish(null or undefined) coalescing operator(returns the first argument if it is not nullish)</td>
+                    </tr>
+                    <tr>
+                        <td>?.</td>
+                        <td>the optional chaining operator(returns undefined if an object is undefined or null instead throwing an error)</td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <hr>
+            <div class="part3">
+                <h2>Explicit Iteration</h2>
+                <h3>This is the syntax: For Loop</h3>
+                <code>
+                    for ( statement1;conditional statement2;statement3) { <br>
+                        code block(executed if statement2 is TRUE) <br>
+                    } 
+                </code>
+                <p></p>
+                <ul>
+                    <li>You can search <span style="color: red;">upperCased</span> on the console. This is made with for loop.</li>
+                    <li>In Explicit Iteration(for loop) you can break out of the loop if you want. However, while using forEach() you cannot.</li>
+                    <li>Explicit Iteration gives you more control but it also much more work. So it can be usefull or not depending your situation.</li>
+                </ul>
+            </div>
         </article>
     </div>
    

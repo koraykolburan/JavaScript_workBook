@@ -1,13 +1,16 @@
 alert("Hello, you can use the console for JavaScript codes.");
 
-// let firstName;
-// firstName = "Koray";
+/*
+ let firstName;
+ firstName = "Koray";
+*/
 
 // NUMBERS AND STRING --------------------------------------------------------------
 
-// let lastName;
-// lastName = 'Kolburan';
-
+/* 
+let lastName;
+lastName = 'Kolburan';
+*/
 let age;
 age = 28;
 
@@ -110,7 +113,7 @@ let user1 = {
     secondName: "Doe"
 } //This is Literal object
 let referenceToUser1 = user1;
-//Instead of coping everythin, this is a time consuming operation  and also operation that consumes memory, the Js engine instead of coping over everything, will just make the second tag(let referenceToUser1) point to the exact BOX. And two tags attach to the box.
+//Instead of coping everything, this is a time consuming operation  and also operation that consumes memory, the Js engine instead of coping over everything, will just make the second tag(let referenceToUser1) point to the exact BOX. And two tags attach to the box.
 
 //changing the value of the object will reflect on both variables
 user1.middleName = 'Koray';
@@ -273,11 +276,13 @@ document.getElementById("uppercasedCategories").innerHTML = uppercasedCategories
 //if today is a sunny day, then I'll go jogging otherwise I'll stay at home
 const isSunnyDay = true;
 
-// if(isSunnyDay === true) {
-//     console.log("let's get jog!")
-// } else {
-//     console.log("Better stay at home.")
-// };
+/*
+if(isSunnyDay === true) {
+    console.log("let's get jog!")
+} else {
+    console.log("Better stay at home.")
+};
+*/
 
 // We can put it on a function
 function checkIfSunny(isSunny ){
@@ -287,3 +292,36 @@ function checkIfSunny(isSunny ){
         console.log("Better stay at home.");
     };
 }
+
+// -------------------------------------------- EXPLICIT ITERATION -----------------------------------------------------
+
+const webCategories = ["Front end Developer", "Backend Developer", "Fullstack Developer"];
+const upperCased = [];
+
+
+/* ---------------------- THE PROBLEM --------------------
+webCategories [4] = "last element"; 
+It can cause an error message, if we add this. Index 3 will be created automatically because it was not exist before but it's value will be "UNDEFINED". 
+"UNDEFINED" IS NOT AN OBJECT. 
+*/
+
+/*  --------------------- THE ANSWER ---------------------
+That's why we need to check our loop manually:
+(The value of the property we are iterating through is not undefined and only if it's not undefined we can do our job)
+if(webCategories[i] !== undefined ){
+        upperCased.push(webCategories[i].toUpperCase());
+}
+*/
+webCategories [4] = "last element";
+
+//we want to end the loop when we find a cell with a value that starts with "last"; 
+for (let i=0; i < webCategories.length; i=i+1) {
+    let value = webCategories[i];
+    if( value !== undefined) {
+        if(value.indexOf("last") === 0) {
+            break; // BREAKING OUT OF LOOP
+        }
+        upperCased.push(webCategories[i].toUpperCase()); // this code line won't work, if break works
+    }
+}
+// break works like return

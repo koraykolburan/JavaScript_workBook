@@ -93,7 +93,42 @@ details {
 .arrays ol {
     line-height: 2em;
 }
+.objects .objects1 {
+    padding: 20px;
+}
 
 .statements {
     width: 100%;
+}
+.statements .part1 {
+    padding: 20px;
+}
+.statements .part3 {
+    padding: 20px;
+}
+.statements h2 ul li {
+    list-style-type: none;
+}
+
+.statements table {
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid grey;
+    background-color: #4b4740;
+    color:white;
+}
+
+.statements table {
+    border: 1px solid grey;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.statements table th, td {
+    text-align: center;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #F3F0E8;
+    color: #000;
 }
