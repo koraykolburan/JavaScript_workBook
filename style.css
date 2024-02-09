@@ -4,9 +4,9 @@ body {
     color: #5A5042;
 }
 
-.data-types, .functions, .scopes, .variables, .objects, .arrays, .statements {
+.data-types, .functions, .scopes, .variables, .objects, .arrays, .statements, .htmlDom {
     border: 1px outset black;
-    border-radius: 12px;
+    border-radius: 12px;    
     padding: 10px;
     margin: 5px;
     background: #f3dfc1;
@@ -56,6 +56,11 @@ figure > img {
 }
 .arrays {
     width: 100%;
+}
+
+.htmlDom {
+    width: 100%;
+    padding: 20px;
 }
 
 code {
@@ -131,4 +136,19 @@ details {
 tr:nth-child(even) {
     background-color: #F3F0E8;
     color: #000;
+}
+
+.htmlDom a {
+    font-style: italic; 
+    color: brown; 
+    border: 2px solid black; 
+    border-radius: 12px;
+    background-color: antiquewhite;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.htmlDom a:hover {
+    background-color: #2196F3;
+    color: white;
 }

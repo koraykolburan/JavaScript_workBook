@@ -322,6 +322,28 @@
         </article>
     </div>
    
+    <!-- HTML DOM -->
+    <!-- I can separate this section ***************************** -->
+    <div class="content">
+        <article class="htmlDom">
+            <p>
+                You can click on the "inspect" attributes on your page(chrome) and you can reach these below:
+            </p>
+            <code>document.head <br>
+                document.body <br>
+                document.querySelector("figure.(class or id name) > img");</code> <span>this is the "HTMLImageElement"</span> >>>>>>>> <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement" target="_blank">Click for the Documentation</a> <br>
+                <p>We can assign our object variable(on console), so we can work with it:</p>
+                <code>
+                    let heroImage = ocument.querySelector("figure.(class or id name) > img"); <br>
+                    heroImage.getAttribute("src");
+                </code>
+                <p>We can even change this value:</p>
+                <code>
+                    heroImage.setAttribute("src", "https://picsum.photos/id/1/200/500")
+                </code>
+                <p>You are driving your markup using JavaScript. This is the <strong>principal reason</strong> that we are using JavaScript</p>
+        </article>
+    </div>
     <script src="execution.js"></script>
 </body>
 </html>
