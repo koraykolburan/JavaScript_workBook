@@ -4,8 +4,94 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>JavaScript Advanced</title>
+     <link rel="stylesheet" href="style2.css">
 </head>
 <body>
      <h1>JavaScript Advanced</h1>
+     <div class="wrapper">
+          <div class="content">
+               <h2>General Syntax</h2>
+                    <ul>
+                         <li>Primitive Data</li>
+                         <li>Variables</li>
+                         <li>Functions</li>
+                         <li>IF Statements</li>
+                         <li>For Loop...</li>
+                    </ul>
+               <h2>Advanced Topics</h2>
+                    <ul>
+                         <li>Prototype</li>
+                         <li>Scoping</li>
+                         <li>Window Object</li>
+                         <li>Document Object</li>
+                    </ul>
+          </div>
+          <div class="main-content1">
+               <h2>Objects</h2>
+               <p>Complexity is based on simplicity which is objects.</p>
+               <p>Your program can only contain <strong>Nouns</strong>, <strong>Adjectives</strong> and  <strong>Verbs.</strong></p>
+               <ul>
+                    <li><b>Nouns</b> are descriptive.(-properties)</li>
+                    <li><b>Adjectives</b> are descriptive.</li>
+                    <li><b>Verbs</b> are descriptive.</li>
+               </ul>
+               <hr>
+               <h3>Nouns</h3>
+               <p>
+                    - We have the <b>nouns</b>such as the width, height, color and weight. <br>
+                    <h4>Properties</h4>
+                    <code>
+                         { <br>
+                              &nbsp;    width: 25, <br>
+                              &nbsp;    height: 27, <br>
+                              &nbsp;    color: red, <br>
+                              &nbsp;    weight:5, <br>
+                              &nbsp;    eat: function(){ "Eat the apple."; }, <br>
+                              &nbsp;    throw: function(){ "Throw the apple away."; }, <br>
+                              &nbsp;    } 
+                         <br>
+                    </code> <br>
+                    ! These are <b>nouns</b>, but they are <u>not good enough</u>  to describe the entire object. 
+               </p>
+               <hr>
+               <h3>Adjectives</h3>
+               <p>
+                    That's why we also need the <b>adjectives</b> as well. <br> 
+                    Such as the string: <i>red</i>. <br>
+               </p>
+               <hr>
+               <h3>Verbs</h3>
+               <p>
+                    Next, we need <strong>verbs</strong> all performing action which is a <strong>function</strong>. <br> 
+                    <code>
+                         &nbsp;    eat: function(){ "Eat the apple."; }, <br>
+                         &nbsp;    throw: function(){ "Throw the apple away."; }, <br>
+                    </code> <br>
+
+               </p>
+                    
+          </div>
+          <div class="main-content2">
+               <h2>Method</h2>
+               <p>
+                    - When a function is <u>within</u> an object it's still function. <br>
+                    But we give it a different name: we call it a <b>Method</b>. <br>
+                    <code>
+                         { <br>
+                              &nbsp;    width: 25, <br>
+                              &nbsp;    height: 27, <br>
+                              &nbsp;    color: red, <br>
+                              &nbsp;    weight:5, <br>
+                              <span id="separate">eat: function(){ "Eat the apple."; },</span> <br>
+                              <span id="separate">throw: function(){ "Throw the apple away."; },</span> <br>
+               &nbsp;    } 
+                         <br>
+                    </code> <br>
+                    When we say a method, it simply means a function that is contained within an object. 
+               </p>
+          </div>
+     </div>
+     
+     
 </body>
 </html>

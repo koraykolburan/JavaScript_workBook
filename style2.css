@@ -1,0 +1,27 @@
+*{
+     margin: 10px 10px;
+}
+
+h1 {
+     font-family: monospace;
+     text-align: center;
+}
+
+p {
+     font-family: serif;
+}
+
+.wrapper {
+     display: flex;
+     flex-direction: row;
+}
+     .content, .main-content1, .main-content2 {
+          border: 1px solid black;
+          border-radius: 12px;
+          padding: 10px;
+     }
+
+#separate {
+     border: 1px red solid;
+     border-radius: 12px;
+}
