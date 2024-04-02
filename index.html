@@ -3,33 +3,41 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>JavaScript Advanced</title>
+     <title>JavaScript from Essentials to Advanced</title>
      <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-     <h1>JavaScript Advanced</h1>
-     <div class="wrapper">
-          <div class="content">
+     <header>
+          <h1>JavaScript from Essentials to Advanced</h1>
+     </header>
+     <nav>
+          <div class="first-nav">
                <h2>General Syntax</h2>
-                    <ul>
-                         <li>Primitive Data</li>
-                         <li>Variables</li>
-                         <li>Functions</li>
-                         <li>IF Statements</li>
-                         <li>For Loop...</li>
-                    </ul>
-               <h2>Advanced Topics</h2>
-                    <ul>
-                         <li>Prototype</li>
-                         <li>Scoping</li>
-                         <li>Window Object</li>
-                         <li>Document Object</li>
-                    </ul>
+               <ul>
+                    <li><a href="#primitive-data">Primitive Data</a></li>
+                    <li><a href="#">Variables</a></li>
+                    <li><a href="#">Functions</a></li>
+                    <li><a href="#">IF Statements</a></li>
+                    <li><a href="#">For Loop...</a></li>
+               </ul>
           </div>
-          <div class="main-content1">
+          <div class="second-nav">
+               <h2>Advanced Topics</h2>
+               <ul>
+                    <li><a href="#">Prototype</a></li>
+                    <li><a href="#">Scoping</a></li>
+                    <li><a href="#">Window Object</a></li>
+                    <li><a href="#">Document Object</a></li>
+               </ul>
+          </div>
+       
+     </nav>
+     <main>
+          <div class="wrapper">
+               <section class="main-content1">
                <h2>Objects</h2>
                <p>Complexity is based on simplicity which is objects.</p>
-               <p>Your program can only contain <strong>Nouns</strong>, <strong>Adjectives</strong> and  <strong>Verbs.</strong></p>
+               <p>Your program can only contain <strong>Nouns,</strong> <strong>Adjectives</strong> and  <strong>Verbs.</strong></p>
                <ul>
                     <li><b>Nouns</b> are descriptive.(-properties)</li>
                     <li><b>Adjectives</b> are descriptive.</li>
@@ -51,13 +59,13 @@
                               &nbsp;    } 
                          <br>
                     </code> <br>
-                    ! These are <b>nouns</b>, but they are <u>not good enough</u>  to describe the entire object. 
+                    ! These are <b>nouns,</b> but they are <u>not good enough</u> to describe the entire object. 
                </p>
                <hr>
                <h3>Adjectives</h3>
                <p>
                     That's why we also need the <b>adjectives</b> as well. <br> 
-                    Such as the string: <i>red</i>. <br>
+                    Such as the string: <i>red.</i> <br>
                </p>
                <hr>
                <h3>Verbs</h3>
@@ -69,13 +77,11 @@
                     </code> <br>
 
                </p>
-                    
-          </div>
-          <div class="main-content2">
-               <h2>Method</h2>
+               <hr>
+               <h3>Method</h3>
                <p>
                     - When a function is <u>within</u> an object it's still function. <br>
-                    But we give it a different name: we call it a <b>Method</b>. <br>
+                    But we give it a different name: we call it a <b>Method.</b> <br>
                     <code>
                          { <br>
                               &nbsp;    width: 25, <br>
@@ -87,10 +93,130 @@
                &nbsp;    } 
                          <br>
                     </code> <br>
-                    When we say a method, it simply means a function that is contained within an object. 
+                    When we say a method, it simply means a function that is contained within an object.
+                    <hr>
+                    <b>Objects</b> are so important because they allow you to group information together that relate to certain aspects of your program. { ... }  
                </p>
+               <hr>
+               <h3>Object Oriented Programming</h3>
+               <h4>Example:</h4>
+               <p>
+                    Take at your computer, take a look <br> 
+                    <span id="code-block">{ the width, the height, the color, the KeyboardSize, the trackPadType }</span> so on and so forth.. <br>
+                    And then, look at what you can do with the computer(functions-verbs). <br>
+                    <span id="code-block">
+                         { <br>
+                              typeText: function(){ ... }, <br>
+                              watchVideos: function(){ ... }, <br>
+                         } <br>
+                    </span>
+               </p>
+               <hr>
+               <h3>Embedded Objects</h3>
+               <h4>Example:</h4>
+               <p>
+                    Objects do contain objects. <br>
+                    For example: your PC has camera, a screen, a keyboard, a trackpad.. <br>
+                    Each of which their own nouns and verbs associated with each component in your PC. <br>
+                    Objects nests hierarchially. For instance: The sub objects and The main parent objects. <br>
+                    <span id="code-block">{ the width, the height, the color, the KeyboardSize, the trackPadType, typeText: function(){ ... }, watchVideos: function(){ ... }, keyboard: { language: "en-US", functional: true}, }</span>
+
+               </p> 
+               </section>
+               <section class="main-content2">
+               <section>
+                    <h3>API - Application Programming Interface</h3>
+                    <p>
+                         An API is simply a collection of functions and also properties as well. <br>
+                         There is a <b>Window {}</b> object in JavaScript that has many functions which are <b>Methods.</b> <br>
+                         These were set up by Just In Time JavaScript Compiler. <br>
+                    </p>
+               </section>
+               <section>
+                    <h4>API's inside of API's</h4> 
+                    <p>
+                         for example: <b>jQuery.</b> <br>
+                         jQuery attaches on to the Window object, that's why jQuery is an API. <br>
+                         It has its own collection of functions and properties. <br>
+                         That means jQuery needs the JavaScript API to define its own API. <br>
+                         So jQuery is using those native API that come with JavaScript. <br>
+                         The Native predefined functions and then its using those its own functions and creating its own style. <br>
+                         You can call it an <b>Embedded API</b> that's what <b>libraries</b> are.
+                    </p>
+               </section>
+               <hr>
+               <section>
+                    <h2 id="primitive-data">Primitive Data</h2>
+                    <h3>JavaScript String</h3>
+                         <p>
+                              Strings are for storing text and they are written with quotes. <br>
+                              <span id="code-block">
+                                   let carName1 = "BMW X1"; <br>
+                         &nbsp;    let carName2 = 'WV Tiguan';
+                              </span> <br>
+                              ! If there are no <span id="separate">QUOTATION MARKS,</span> these are not a <span id="separate">STRING.</span>
+                         </p>
+                    <h4>Template Strings</h4>
+                         <p>
+                              With back-ticks, you can use both single and double quotes inside a string like: <br>
+                              <span id="code-block">
+                                   let text = `That's the "real" answer for everything in life!`;
+                              </span>
+                         </p>
+                         <hr>
+                    <h4>Two Types of Numbers</h4>
+                    <p>
+                         <b>Integers:</b> 100, 200, 1, 2... <br>
+                         <b>Floating Point Numbers:</b> 100.256, 1.1...
+                    </p>
+                    <hr>
+                    <h4>Boolean</h4>
+                    <p>
+                         If something is not Boolean it sinks. <br>
+                         Floating or sinking.. <br>
+                         Negative or positive.. <br>
+                         True or False..  <br>
+                         It is like light switch.. On / Off <br>
+                         Yes or No.. <br>
+                         - When you have just the word <i>true</i> or <i>false</i> without the quoation marks, you are defining a Boolean. <br>
+                    </p>
+                    <hr>
+                    <h4>Null & Undefined</h4>
+                    <p>
+                         <b>Null</b> = EMPTY. It does not have anything. <br>
+                         <b>Undefined</b> = EMPTY. It does not have anything. <br>
+                    </p>
+                    <hr>
+                    <h4>NaN</h4>
+                    <p>
+                         NaN = Not A Number. <br>
+                         - If you wanted to check to see if a variable or a part of program has a number stored within it and that say <b>NaN:</b> Not A Number. <br>
+                         Thus, you know not to use this variable all this value in Mathematical Expression for example.
+                    </p>
+               </section>
+               </section>
           </div>
-     </div>
+          <div class="wrapper">
+               <section class="main-content3">
+                    <h2>Variables, Constants & Assignment</h2>
+                    <p>
+                         Let's creating a variable. <br>
+                         <span id="code-block">let</span> when you do that, you're creating a <b>BOX</b>. <br>
+                         And a box needs a name. And this is not a string. It's actually defined as a symbol. <br>
+                         It's a memory address. <br>
+                         "=" equal sign is the assignment operator. <br>
+                         let name = "John"; <br> 
+                         <br>
+                         Also we can create a box waiting for a value to be STORED. <br>
+                         let blank; (it will return 'Undefined') <br>
+                         
+
+                    </p>
+               </section>
+          </div>
+          
+     </main>
+
      
      
 </body>
