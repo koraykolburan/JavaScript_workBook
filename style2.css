@@ -53,7 +53,7 @@ nav {
      display: flex;
      flex-direction: row;
 }
-     .main-content1, .main-content2,.main-content3, .main-content4 {
+     .main-content1, .main-content2,.main-content3, .main-content4, .main-content5 {
           border-left: 1px solid;
           border-bottom: 1px solid;
           border-top: 1px solid;
@@ -62,13 +62,16 @@ nav {
      }
 
 #separate {
-     border: 1px red solid;
-     border-radius: 12px;
+     font-family: 'Courier New', Courier, monospace;
+     color:rgb(188, 19, 19);
+     font-weight: 600;
      padding: 5px;
-     line-height: 3em;
+     line-height: 2em;
 }
 
 #code-block {
-     color:red;
-     font-style: oblique;
+     color:purple;
+     font-weight: 600;
+     font-family: 'Courier New', Courier, monospace;
+
 }

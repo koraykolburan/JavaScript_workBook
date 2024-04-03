@@ -212,11 +212,11 @@
                     </p>
                     <h3>Constant</h3>
                     <p>
-                         Const is constant throughout the lifetime of the execution of the program. <br>
+                         <span id="code-block">Const</span> is constant throughout the lifetime of the execution of the program. <br>
                          Which you've defined a constant in your program is executing the constant always stays the same.
                     </p>
-               </section>
-               <section class="main-content4">
+                    <hr>
+
                     <h2>Arithmetic Operator's & BODMAS</h2>
                     <p>
                          An Operator is a defined function function for the language. It's a function defined in the JIT Compiler. <br>
@@ -226,34 +226,129 @@
                     <p>
                          - There is a Operator Precedence. (execution first and later..)
                          <span id="code-block">
-                              5 + 2 * 3; <br>
-                         &nbsp;     =11 <br>
+                              5 + 2 * 3; &nbsp;     =11 <br>
                          </span>
-                         <b>B()</b> is Parantheses / Brackets. <br>
-                         <b>pOwers()</b> is FUNCTION calls. <br>
-                         <b>DM</b> is Division and Multiplication.( / and * ) <br>
-                         <b>AS</b> is Addition and Subtraction. ( + and - ) <br>
+                         <span id="separate">
+                              <b>B()</b> is Parantheses / Brackets. <br>
+                              <b>pOwers()</b> is FUNCTION calls. <br>
+                              <b>DM</b> is Division and Multiplication.( / and * ) <br>
+                              <b>AS</b> is Addition and Subtraction. ( + and - ) <br>
+                         </span>
+                         <br>
                          <span id="code-block">
                               Math.pow(2,4) / 2 + 1 - 5 + ( 2 * 12 ); <br>
-                         &nbsp;     = 28 <br>
+                              &nbsp;     = 28 <br>
                               <br>
                               Math.pow(12,2); <br>
-                         &nbsp;     = 144 <br>
+                              &nbsp;     = 144 <br>
                          </span>
-                         <b>% is Remainder of the Divison.</b> It's also called Modulus Divison. <br>
-                         <span id="code-block">
+                         <br>
+                              <b>% is Remainder of the Divison.</b> It's also called Modulus Divison. <br>
+                              <span id="code-block">
                               9 % 5; <br>
-                         &nbsp; = 4
+                              &nbsp; = 4
                          </span>
                     </p>
-                    <hr>
+               </section>
+               <section class="main-content4">
                     <h2>Assignment Operators</h2>
+                    <p>
+                         <span id="code-block">
+                                   let number = 20; <br>
+                              &nbsp; number += 30; > 50<br>
+                              &nbsp; number -= 30; > 20<br>
+                              &nbsp; number *= 2; > 40 <br>
+                              &nbsp; number /= 4; > 10<br>
+                              &nbsp; number %= 4; > 2<br>
+                         </span>
+                         <br>
+                         <span id="separate">
+                              Double Asterisk:
+                              &nbsp; number **= 4; > 16<br>
+                              &nbsp; like Math.pow(2,4); > 16 <br>
+                         </span>
+                         <strong>! '**' is the exponentiation operator and is the equivalent of Math.pow(x,y).</strong>
+                    </p>
+                    <hr>
+                    <h2>Polymorphism</h2>
+                    <p>
+                         When we write on the console this: <span id="code-block">"John " + 12;</span> <br>
+                         The output is gonna be like this: <span id="code-block">"John 12"</span>. <br>
+                         Becase it's like playdough. It changes and adapts itself into different shapes that you push it into. <br>
+                         It just changes and adapts to the environment that you throw at it. <br>
+                         If there is a Boolean on the one side like: <span id="separate">true + "John"</span> <br>
+                         It will convert the Boolean type into a string data type and combine them like: <span id="separate"> "trueJohn"</span>. <br>
+                         <span id="code-block"> 
+                              let name = "John "; <br>
+                              &nbsp; name += "Johnny"; <br>
+                              &nbsp; "Johny Johnny" <br>
+                         </span>
+                         It will convert the Null and Undefined into a string too like:
+                         <span id="code-block">
+                              null + "John"; <br>
+                              "nullJohn" <br>
+                              undefined + "John"; <br>
+                              "undefinedJohn" <br>
+                         </span>
+                         It always convert it into a string. It changes to suit its environment.
+                    </p>
+               </section>
+          </div>
+          <div class="wrapper">
+               <section class="main-content5">
+                    <h2>Functions or subroutines</h2>
+                    <p>
+                         <span id="separate">
+                              function name ( parameter1, parameter2, ... ) { <br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; instructions...      <br>
+                              &nbsp; }                 <br>
+                         </span>
+                         <br>
+                         ☉ Parameters are just variables. <br>
+                         ☉ The variables that can have values assigned to them when we execute our instructions. <br>
+                         ☉ And you have curly brackets. In between those brackets you have your set of instructions.
+                         ☉ And then you can return instructions something.
+                         <br>
+                         <br>
+                         <span id="code-block">
+                              function makeBlackTea ( blackTea, water, lemon ) { <br>
+                                   &nbsp;&nbsp;&nbsp;&nbsp; let instructions = "Boil water,";  <br>
+                                   
+                                   &nbsp;&nbsp;&nbsp;&nbsp; instructions += " pour into tea pot,"; <br>
+
+                                   &nbsp;&nbsp;&nbsp;&nbsp; instructions += " add black tea leaves,"; <br>
+
+                                   &nbsp;&nbsp;&nbsp;&nbsp; instructions += " wait 13 Mins."; <br>
+                                   
+                                   &nbsp;&nbsp;&nbsp;&nbsp; instructions += " After that, pour " + blackTea + "% blackTea into a tea cup "; <br>
+                                   
+                                   &nbsp;&nbsp;&nbsp;&nbsp; instructions += "and add " + water + " % water."; <br>
+                                   
+                                   &nbsp;&nbsp;&nbsp;&nbsp; instructions += " Finally, put " + lemon + " slices lemons."; <br>
+
+                                   &nbsp;&nbsp;&nbsp;&nbsp; return instructions; <br>
+                              &nbsp; } <br>
+                         </span>
+                         ! It's not actually being executed untill you want to make a cup of coffee. <br>
+                         So for example: <span id="code-block">makeBlackTea ( 30, 70 , 2 );</span> <br>
+                         <br>
+                         Executing or Calling the Function: <br>
+                         <span id="separate">
+                              name of function ( argument1, arguement2, ); <br>
+                         </span>
+                         The arguments of values and parameters are the empty boxes of variables waiting to store the data. <br>
+                         And then we can use this data in the execution.
+                    </p>
+               </section>
+          </div>
+          <div class="wrapper">
+               <section class="main-content6">
+                    <h2>Object & Arrays</h2>
                     <p>
                          
                     </p>
                </section>
           </div>
-          
      </main>
 
      
