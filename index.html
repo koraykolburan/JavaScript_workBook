@@ -344,9 +344,68 @@
           <div class="wrapper">
                <section class="main-content6">
                     <h2>Object & Arrays</h2>
+                    <h3>Objects</h3>
                     <p>
-                         
+                         Objects are obvious for what they are. You can identify directly: car, pc, phone... <br>
+                         <i>'Curly Brackets {}'</i> <br>
+                              <span id="code-block">
+                                   {    <br>
+                                        &nbsp;<u>key:</u> <u>"value"</u> >>> key and value pair is called <b>PROPERTY.</b><br>
+                                        &nbsp; color: "grey", <br>
+                                        &nbsp; speed: "220", <br>
+                                        &nbsp; maker: "WV" <br>
+                                        <br>
+                                        &nbsp;<u>Methods:</u> <u>"instructions</u> <br>
+                                        &nbsp; startEngine: function() { ... }" <br>
+                                        &nbsp; stopEngine: function() { ... }" <br>
+                              &nbsp;} <br>
+                              </span>
                     </p>
+                    <h3>Arrays</h3>
+                    <p>
+                         <b>Arrays</b> are list objects. For instance: a shopping list, a list of car names.. <br>
+                         It's a list, it's iterable. <br>
+                         <i>'Square Brackets []'</i> <br>
+                         <b>Array</b> is an OBJECT. BUT it's a TYPE of OBJECT. <br>
+                         It has elements that make up the complete object. <br>
+                         For instance: A Shopping List; <br>
+                         <span id="code-block">
+                              [ <br>
+                              &nbsp; "Banana", <br>
+                              &nbsp; "Broccoli", <br>
+                              &nbsp; "Avocado", <br>
+                         &nbsp;] <br>
+                         </span>
+                         It's not necessary to define <u>key.</u> We need to define only <u>values.</u> <br>
+
+                    </p>
+                    <h2>Embedded Objects & Arrays</h2>
+                    <span id="code-block">
+                         let car = { <br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;make: "WV", <br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;speed: 200, <br>
+                              <span id="separate">
+                                   &nbsp;&nbsp;&nbsp;engine: {   <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size: 1.0, <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;make: "Mercedes", <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fuel: "TSI" <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cylinders: [ { maker: "Mercedes" }, { maker: "Mercedes" }, { maker: "Mercedes2" } ] <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                              </span>
+                         };
+                    </span> <br>
+
+                    There is a hierarchy. <br>
+                    <b>To sum up:</b> Objects can contain Objects or Arrays or both at the same time. <br>
+                    And, Arrays can contain Array or Objects or both at the same time. <br>
+                    <br>
+                    Also, Objects and Arrays can contain FUNCTIONS except one thing; <br>
+                    If Objects have function(methods) inside of itself, it needs to be take an <u>keyName:</u> <br>
+                    On the other hand, if there is a function inside of the Array, it needs to be written without a function name which is a <u>keyName.</u>
+
+
+               </section>
+               <section class="main-content7">
                </section>
           </div>
      </main>

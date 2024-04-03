@@ -53,7 +53,7 @@ nav {
      display: flex;
      flex-direction: row;
 }
-     .main-content1, .main-content2,.main-content3, .main-content4, .main-content5 {
+     .main-content1, .main-content2,.main-content3, .main-content4, .main-content5,.main-content6 {
           border-left: 1px solid;
           border-bottom: 1px solid;
           border-top: 1px solid;
