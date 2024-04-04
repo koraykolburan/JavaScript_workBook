@@ -379,20 +379,22 @@
                          It's not necessary to define <u>key.</u> We need to define only <u>values.</u> <br>
 
                     </p>
+                    <hr>
                     <h2>Embedded Objects & Arrays</h2>
                     <span id="code-block">
                          let car = { <br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;make: "WV", <br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;speed: 200, <br>
-                              <span id="separate">
-                                   &nbsp;&nbsp;&nbsp;engine: {   <br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size: 1.0, <br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;make: "Mercedes", <br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fuel: "TSI" <br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cylinders: [ { maker: "Mercedes" }, { maker: "Mercedes" }, { maker: "Mercedes2" } ] <br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
-                              </span>
-                         };
+                              make: "WV", <br>
+                              speed: 200, <br>
+                                   engine: {   <br>
+                                        size: 1.0, <br>
+                                        make: "Mercedes", <br>
+                                        fuel: "TSI", <br>
+                                        Cylinders: [ { maker: "Mercedes" }, { maker: "Mercedes" }, { maker: "Mercedes2" } ] <br>
+                                        } <br>
+                              drive: function () { <br>
+                                   return "drive"; <br>
+                         }; <br>
+                    };
                     </span> <br>
 
                     There is a hierarchy. <br>
@@ -402,10 +404,113 @@
                     Also, Objects and Arrays can contain FUNCTIONS except one thing; <br>
                     If Objects have function(methods) inside of itself, it needs to be take an <u>keyName:</u> <br>
                     On the other hand, if there is a function inside of the Array, it needs to be written without a function name which is a <u>keyName.</u>
-
-
                </section>
                <section class="main-content7">
+                    <h2>Property Accessors - Member Access</h2>
+                    <h3>-Dot Notation ' . '</h3>
+                    <p>  
+                         We need to use "DOT Notation" to access properties. <br>
+                         We defined before this subject that; <br>
+                         <span id="separate"> let car ={...}</span> <br> 
+                         So we can access its properties in Console like these:<br>
+
+                              <span id="separate">
+                                   > car.make; <br>
+                              </span>
+                              <span id="code-block">
+                                   &nbsp;< 'WV' (result)<br>
+                              </span>
+                              <hr>
+                              <span id="separate">
+                                   > car.engine.Cylinders; <br>
+                              </span>
+                              <span id="code-block">
+                                   &nbsp;< (3) [{…}, {…}, {…}]  <br>
+                                   &nbsp;&nbsp;0: {maker: 'Mercedes'} <br>
+                                   &nbsp;&nbsp;1: {maker: 'Mercedes'} <br>
+                                   &nbsp;&nbsp;2: {maker: 'Mercedes2'} <br>
+                              </span>
+                              <hr>
+                              <span id="separate">
+                                   > car.engine.make; <br>
+                              </span>
+                              <span id="code-block">
+                                   &nbsp;< 'Mercedes'  <br>
+                              </span>
+                              <hr>
+                              A method(function): <br>
+                              <span id="separate">
+                                   > car.startEngine(); <br>
+                              </span>
+                              <span id="code-block">
+                                   &nbsp;< 'drive'  <br>
+                              </span>
+                    </p>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <h3>-Computed Member Access & Bracket Notation '[ ... ]'</h3>
+                    <p>
+                         Whatever is in between the brackets and whatever is returned is treated as a memory pointer whether that be a number it could be a mathematical expression it could be a statement in JavaScript. <br>
+                         <span id="separate">
+                              > car.engine.Cylinders[2]; <br>
+                         </span>
+                         <span id="code-block">
+                              &nbsp;< {maker: 'Mercedes2'}  <br>
+                         </span>
+                         <hr>
+                         <span id="separate">
+                              > car.engine.Cylinders[2].maker; <br>
+                         </span>
+                         <span id="code-block">
+                              &nbsp;< 'Mercedes2'  <br>
+                         </span>
+                    </p>
+                    <hr>
+                    <h4>In Arrays:</h4>
+                    <p>
+                         <span id="code-block">
+                              var Array = [ <br>
+                                   "string", <br>
+                                   100, <br>
+                                   ["embed", 200], <br>
+                                   { car: "ford" }, <br>
+                                   function(){ return "drive"; } <br>
+                                   ]; <br>
+                         </span>
+                         <br>
+                         We need to write like this: <br> 
+                         <span id="separate">Array[3]</span> the result is gonna be <span id="code-block">{car: 'ford'}</span> <br>
+                         And If we write like this: <br>
+                          <span id="separate">Array[3].car;</span> the result is gonna be <span id="code-block">'ford'</span> <br>
+                          <br>
+                         What about the <b>Function</b> inside of the Array? <br>
+                         We need to add Parantheses in the end of accessing, like this: <br>
+                         <span id="separate">Array[4]();</span> the result is gonna be <span id="code-block">'drive'</span>. <br>
+
+                         Also, If we defined a item which is <span id="separate"> a = 10;</span>  <br>
+                         And we can write this <span id="code-block">Array[ a - 2 - 5 ];</span> this is gonna be equals this <span id="separate">Array[3]</span> <br>
+                         And the result of the two statement is gonna be the same like: <span id="code-block">{car: 'ford'}</span> <br>
+                         ! It's computing the statement whatever is inside of those brackets. ! <br>
+                         Don't forget! <span id="separate">car[ a ]</span> >>> inside these brackets is a <b>statement.</b> <br>
+                         <br>
+                         If we write like this: <span id="separate">car [ "make" ];</span> <br>
+                         It's gonna be <span id="code-block">"WV"</span> (from our let = car {...} object). <br>
+                         <br>
+                         Also we can write like this: <span id="separate">car["engine"]["Cylinders"][2];</span> <br>
+                         It's gonna be <span id="code-block">{maker: 'Mercedes2'}</span> (from our let = car {...} object). <br>
+                         And <span id="separate">car["drive"]();</span> <br>
+                         It's gonna be <span id="code-block">"drive"</span> (from our let = car {...} object). <br>
+                         <hr>
+                         Another things is: <br>
+                         Let's create a variable has name "pointer" and define it to our "make" property which is inside of the "car" object: <br> 
+                         <span id="separate"> let pointer = "make";</span> <br>
+                         And then we can access like this: <br>
+                         <span id="separate">car[ pointer ];</span> result is gonne be <span id="code-block">"WV"</span>. <br>
+                         After that, Also it can be changed the value of the pointer variable. <br>
+                         Like this: <span id="separate">pointer = "speed";</span>
+
+                    </p>
                </section>
           </div>
      </main>
