@@ -78,7 +78,7 @@ array.unshift( 'string', 20, function(){}, {}, [] ); >> it is gonna inserted all
 array.push( 'string', 200, 300 ); >> it is gonna inserted all of these values right at ENDING of the array.
 
 -- How do I go in the MIDDLE OF SOMEWHERE in the Array and DELETE ELEMENTS? --   -->> splice()
-splice( index, how many elements to be DELETE)
+******   splice( index, how many elements to be DELETE) ******   
 array.splice( 2, 2 ); ---->> it will return what was deleted like this: (2) [Array(2), {…}]
 after that, array --->> it will return like these: (3) ['string', 100, ƒ]
 
