@@ -538,8 +538,74 @@
                               It allows us to change and modify data in our Array. <br>
 
                          </p>
-                    <h2>Callable Objects</h2>
-                    
+                    <h2>Callable Objects - Functions</h2>
+                    <p>Or First-Class Citizen. This means that functions are simply a value and are just another type of object.</p>
+                    <ol>
+                         <li>{ instructions... }</li>
+                         <li>Functions are callable objects they are objects that contain a list of instructions that are to be executed when they are invoked.
+                         </li>
+                         <li>Callable objects can be contained inside of objects so callable Objects can be contained inside of callable objects and you can keep nesting your callable objects inside of one another.
+                         </li>
+                         <li>And wherever you can pass in, so you can assign an object to a variable or a constant or you could assign a object to a parameter.</li>
+                         <li>You could in fact change that object for in fact a function.</li>
+                    </ol>
+                    <br>
+                    <h2>Memory Hoisting</h2>
+                    <p>
+                         <b>Hoist?</b> It means lift up like a crane. <br> 
+                         Or, if you wanted to change the engine in your car then you need a hoist to hoist the engine out of the car, so you can put the new one in. <br>
+                         <b>Memory?</b> Potentially symbol names that refer to values that are stored in the memory. <br>
+                         And these symbol names reference some point to certain values that are in memory. <br>
+                         <br>
+                         JS takes the symbol name and it hoists then lifts them up. <br>
+                    </p>
+                    <ol>
+                         <li>When a variable or a constant is defined before initialization, JS doesn't access it.</li>
+                         <li>In Function it's different. As it is a Function of Callable Object its execution context will be hoisted(will be lifted up). </li>
+                         <li>Also, in every execution context, { console.log(),let var = "variable"; .... } we can think of this script as an execution context.</li>
+                         <li>We also have execution context as well Callable Object have the execution context. { return ".." }, these also have hoisting. If we try to call a symbol that doesn't exist we get an error.</li>
+                    </ol>
+                    <h3>To sum up;</h3>
+                    <p>
+                         So for variables and constants it hoist only the memory pointer and it's just pointing to a black piece of memory. <br>
+                         And also when it comes to functions, if symbol name points to a callable object: it hoists that to the top. <br>
+                         Lastly, each execution context has memory hoisting within it, when you execute it.
+                    </p>
+                    <br>
+                    <h2>Scope</h2>
+                    <h3>SCOPE of Objects</h3>
+                    <ol>
+                         <li>When we think about SCOPE we need to think about ACCESS. <b>SCOPE = ACCESS</b></li>
+                         <li>There is ways in which you can access objects nested inside of other objects.</li>
+                         <li>That is exactly what scopes are whether it be a Standard Object or a Callable Object, these are scopes they have their own access level. They have their own defined parameter if we will. <b>{ SCOPE = ACCESS }</b></li>
+                         <li>And some <u>have greater access</u> and some have <u>more limited access</u> depending on where that callable object is and where that object resides.</li>
+                         <li>We need to know how to access our objects individually one by one and then we can pull the data out. That is called <b>SCOPE. It has an access level.</b></li>
+                    </ol>
+                    <h3>Execution Stack(SCOPE of Functions or Callable Objects)</h3>
+                    <ol> JS - Line 239:
+                         <li>playThis() >>>> x = 25;</li>
+                         <li>add() >>>> first) y = 75; second) x + y;</li>
+                         <li>After all the execution is finished we have '100' returned.</li>
+                         <li><b>GC - Garbage Collection:</b> Can any of the part of our application access those symbols after we have finished executing. NO, it can't. So now that we're finished with our execution it simply deletes those symbols out of memory.</li>
+                    </ol>
+                    <h3>Outer Execution Environment</h3>
+                    <p>
+                    And when we encapsulate this main thread with this temporary symbol table this temporary database that stores symbols it is called the outer execution environment that is this environment. <br>
+                    It's a temporary environment in which our functions and those symbols which those functions have created just for the process of those functions. <br>
+                    And that is this environment in which we're executing these lists of instructions here. <br>
+                    And then it's clear it it's only a temporary space for execution to happen in our javascript program. <br>
+                    </p>
+                    <h3>To sum up:</h3>
+                    <p>
+                         So functions are callable objects callable objects have scope just like regular objects and you can have objects embedded in objects. <br> 
+                         But callable objects are special in the fact that we have these temporary symbols table and the language feature is called a closure where any sort of symbol that is created inside of our execution stack as long as there is another callable object in there still in the execution stack. <br>
+                         It keeps the symbol it and closes everything together and it keeps those symbols whilst we are executing all those instructions on the execution stack or the main thread. <br> 
+                         Then once all of it's been executed it returns the final values and it does all of its operations. <br>
+                         It then clears out the symbols that we can no longer reference in our program was we've executed these instructions we've done what we need to do with these instructions these instructions get thrown in bin. <br> 
+                         Our instructions are in the bin and now we get garbage collection as well that deletes out these symbols so we're not wasting memory. <br> 
+                         And that is also garbage collection and garbage collection is a big part of memory management so that we don't end up filling up all of the user's RAM and crushing the browser and being very very inefficient in storage. <br>
+                         And javascript manages that automatically for you.
+                    </p>
                </section>
           </div>
      </main>

@@ -1,3 +1,6 @@
+
+/* ---------------------------- Objects ---------------------------- */
+
 let car = {
      make: "WV",
      speed: 200,
@@ -16,8 +19,8 @@ let car = {
      }
 };
 
-console.log(car.make);
-/*  ---------------------------- USAGE on Objects and Methods ----------------------------
+console.log("1) " + car.make);
+/*  ---------------------------- USAGE of Objects and Methods ----------------------------
 We can try these on the Console:
 car.make = "bmw";
 car.make += 200; or car.make += "T-Cross";
@@ -39,6 +42,8 @@ delete car.stop; or delete car.drive;
 */
 
 
+/* ---------------------------- Arrays ---------------------------- */
+
 let array = [
      "string",
      100,
@@ -47,7 +52,7 @@ let array = [
      function(){ return "drive"; }
 ];
 
-/*  ---------------------------- USAGE on Arrays ----------------------------
+/*  ---------------------------- USAGE of Arrays ----------------------------
 We can try these on the Console:
 array[0] = 'new string';
 array[0] += ' concat';
@@ -93,6 +98,8 @@ array.splice( 2, 2, "world200"); --> it will delete in 2 elements have 2 index a
 
 
 
+/* ---------------------------- Callable Objects ---------------------------- */
+
 function makeBlackTea ( blackTea, water, lemon ) {
      let instructions = "Boil water,";
      instructions += " pour into tea pot,";
@@ -104,9 +111,132 @@ function makeBlackTea ( blackTea, water, lemon ) {
      return instructions;
 };
 
-console.log(makeBlackTea( 30, 70, 2 ));
+console.log("2) ", makeBlackTea( 30, 70, 2 ));
 
-/* ---------------------------- Callable Objects ----------------------------
+function userName() {
+     let fullName = "John John"; // 1) Create a variable called fullname, it stores the value "J.M."(string).
+
+     function concat( userName ){ // 2) Create another subroutine that an object inside of an object.(concat()).
+
+          return "MR. " + userName; // 3) And then we return this SUBROUTINE when it's invoked the string.
+
+     }
+
+     return concat(fullName);
+}
+
+console.log("3) ", "This is the full name of: " + userName());
 
 
+/* ---------------------------- USAGE of Callable Objects ----------------------------
+Like creating embedded objects, we can do this with functions or subroutines or callable objects.
+Embedded functions or subroutines or callable objects:
+
+function userName() { let fullName = "John John"; function concat( userName ){ return "MR. " + userName;} return concat(fullName); }
+---- Explanation ----
+1) Create a variable called fullname, it stores the value "J.M."(string).
+2) Then we create another subroutine that an object inside of an object. 
+     - Concat is now the symbol name which I can reference this subroutine. "concat(){}"
+     - And it receives an argument which is 'userName'. "concat( userName ){}"
+     - An argument is a value is going to receive this value is string "John John" and it needs a place to store it.
+     - So we create in essence a variable a parameter that will stall that string while we're executing. 
+     - And then it will delete that out of memory.
+     - So that 'concat( userName )' userName parameter contains that string: 'let fullName = "John John";'
+3) And then we return this SUBROUTINE when it's invoked the string: 'return "MR. " + userName;'
+
+Objects inside of objects, we can have a standard OBJECT LITERAL. 
+And methods are in fact subroutines or callable objects nested inside of an object. 
+Like this:
+let obj = { 
+     method: function(){}
+};
+
+We have the same thing for Arrays. They don't have a method name. They're just an element inside of the array. 
+let Arr = [
+     function(){}
+];
 */
+
+
+/* ------------- Defining an OBJECT as an ARGUMENT ------------- */
+
+function userName2 ( fullName ) {
+     
+     return fullName.firstName + fullName.lastName;
+};
+
+console.log(userName2( { firstName: "John", lastName: " Johny" } ));
+
+/* -- Explanation --
+1) We invoke the userName2(); And we're going to pass it an object and it's going to have the firstName and lastName.
+2) So there is our object firstName and lastName that will then be passed to this parameter 'fullName'.
+3) And we can start to use it within our subroutine. We can 'return fullName.firstName + fullName.lastName;
+
+ The Cycle is like that: 
+function userName2 ( fullName ={ firstName: "John", lastName: " Johny" } ) {
+     
+     return fullName.firstName("John") + fullName.lastName( Johny);
+};
+*/
+
+
+/* ------------- Defining a Function as an ARGUMENT ------------- */
+
+function userName3 ( fullName ) {
+     
+     return fullName();
+};
+
+console.log(userName3( function(){ return "embed"; } ));
+/* -- Explanation --
+Let's pass in a Callable Object to a parameter just like creating a variable. So we can call it like that:
+let obj = function(){};
+1) It printed out the FUNCTION - 'ƒ (){ return "embed"; }' that we defined as an ARGUMENT.
+2) This funct. does not need the name placing in here, because it's going to be given a symbol name when it's assigned to the parameter.
+3) We invoked this callable object 'userName3'. This 'userName3' received the ARGUMENT this callable object 'fullName = function(){ return "embed";}'
+4) How we actually execute this 'ƒ (){ return "embed"; }', we need to add paratheses like: 'return fullName();'
+*/
+
+
+/* -------------------------- Memory Hoisting -------------------------- */
+console.log( printName()) ;
+
+let myName = "Newton";
+
+function printName() 
+{
+     /* console.log( a ); It created the 'let a'; And it created that symbol first.
+
+     let a = 100; */
+
+     return "Usain Bolt";
+}
+
+/* -------------------------- SCOPE -------------------------- */
+let engine = {
+     maker: 'BMW',
+     headGasket: {
+          pots: [
+               "piston1",
+               "piston2"
+          ]
+     }
+}
+
+console.log(engine.headGasket.pots[1]);
+
+/* -- SCOPE on Callable Objects -- */
+
+function playThis() {
+     let x = 25;
+
+     function add() {
+          let y = 75;
+
+          return x + y;
+     }
+
+     return add();
+}
+
+console.log( playThis() );
