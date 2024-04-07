@@ -113,12 +113,13 @@ function makeBlackTea ( blackTea, water, lemon ) {
 
 console.log("2) ", makeBlackTea( 30, 70, 2 ));
 
+// Embedded functions
 function userName() {
-     let fullName = "John John"; // 1) Create a variable called fullname, it stores the value "J.M."(string).
+     let fullName = "John Tom"; // 1) Create a variable called fullname, it stores the value "John Tom"(string).
 
-     function concat( userName ){ // 2) Create another subroutine that an object inside of an object.(concat()).
-
-          return "MR. " + userName; // 3) And then we return this SUBROUTINE when it's invoked the string.
+     function concat( fName2 ){ // 2) Create another subroutine that an object inside of an object.(concat()).
+                              // We created a parameter is 'fName2' to STORE that string "John Tom".
+          return "MR. " + fName2; // 3) And then we return this SUBROUTINE when it's invoked the string.
 
      }
 
@@ -158,7 +159,7 @@ let Arr = [
 */
 
 
-/* ------------- Defining an OBJECT as an ARGUMENT ------------- */
+/* ------------- Defining(invoking) an OBJECT as an ARGUMENT ------------- */
 
 function userName2 ( fullName ) {
      
@@ -180,11 +181,11 @@ function userName2 ( fullName ={ firstName: "John", lastName: " Johny" } ) {
 */
 
 
-/* ------------- Defining a Function as an ARGUMENT ------------- */
+/* ------------- Defining(invoking) a Function as an ARGUMENT ------------- */
 
 function userName3 ( fullName ) {
      
-     return fullName();
+     return fullName(); //Don't forget the parantheses in here, because we invoke the function!
 };
 
 console.log(userName3( function(){ return "embed"; } ));
@@ -211,6 +212,7 @@ function printName()
 
      return "Usain Bolt";
 }
+
 
 /* -------------------------- SCOPE -------------------------- */
 let engine = {
@@ -240,3 +242,32 @@ function playThis() {
 }
 
 console.log( playThis() );
+
+
+/* -- GLOBAL SCOPE -- */
+
+let engine2 = {    // this is the highest = global scope
+     maker: 'Mercedes',
+     headGasket: {
+          pots: [
+               "piston1",
+               "piston2"
+          ]
+     }
+}
+
+function access() {
+
+     let x = 10; // this is the highest = global scope for in function.
+
+     function add() {
+
+          let engine2 = 'Engine2 String.';
+          
+          console.log( engine2 );
+     }
+     
+     add();
+}
+
+console.log(access());

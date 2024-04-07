@@ -548,6 +548,8 @@
                          </li>
                          <li>And wherever you can pass in, so you can assign an object to a variable or a constant or you could assign a object to a parameter.</li>
                          <li>You could in fact change that object for in fact a function.</li>
+                         <li>In Embedded Functions: We give it a variable, a parameter that will STORE 'the string' to the nested function. Then it will DELETE that out of memory.</li>
+                         <li><b>Defining(invoking) a Function as an ARGUMENT:</b> A) Create a Callable Object and we give it a SYMBOL NAME and a parameter. B) Then we return the parameter inside of the Callable object. C) After that, we invoke this Callable Object with its SYMBOL NAME + parantheses but with THE NEW ARGUMENTS in the parantheses. D) Then the Callable Object receives THE NEW ARGUMENTS and ASSIGN it to ITS PARAMETER which we give it before. E) And then it returned it.(Look for Line:184 on JS for this.) </li>
                     </ol>
                     <br>
                     <h2>Memory Hoisting</h2>
@@ -560,16 +562,16 @@
                          JS takes the symbol name and it hoists then lifts them up. <br>
                     </p>
                     <ol>
-                         <li>When a variable or a constant is defined before initialization, JS doesn't access it.</li>
-                         <li>In Function it's different. As it is a Function of Callable Object its execution context will be hoisted(will be lifted up). </li>
+                         <li>When a <b>variable</b> or a <b>constant</b> is defined before initialization, JS doesn't access it.</li>
+                         <li>In <b>Function</b> it's different. As it is a Function of Callable Object its execution context will be hoisted(will be lifted up). </li>
                          <li>Also, in every execution context, { console.log(),let var = "variable"; .... } we can think of this script as an execution context.</li>
                          <li>We also have execution context as well Callable Object have the execution context. { return ".." }, these also have hoisting. If we try to call a symbol that doesn't exist we get an error.</li>
                     </ol>
                     <h3>To sum up;</h3>
                     <p>
-                         So for variables and constants it hoist only the memory pointer and it's just pointing to a black piece of memory. <br>
-                         And also when it comes to functions, if symbol name points to a callable object: it hoists that to the top. <br>
-                         Lastly, each execution context has memory hoisting within it, when you execute it.
+                         So for <b>variables and constants</b> it hoist only the memory pointer and it's just pointing to a black piece of memory. <br>
+                         And also when it comes to <b>functions,</b> if symbol name points to a callable object: it hoists that to the top. <br>
+                         Lastly, each execution context has memory hoisting <b>within it,</b> when you execute it.
                     </p>
                     <br>
                     <h2>Scope</h2>
@@ -590,10 +592,10 @@
                     </ol>
                     <h3>Outer Execution Environment</h3>
                     <p>
-                    And when we encapsulate this main thread with this temporary symbol table this temporary database that stores symbols it is called the outer execution environment that is this environment. <br>
-                    It's a temporary environment in which our functions and those symbols which those functions have created just for the process of those functions. <br>
-                    And that is this environment in which we're executing these lists of instructions here. <br>
-                    And then it's clear it it's only a temporary space for execution to happen in our javascript program. <br>
+                         And when we encapsulate this main thread with this temporary symbol table this temporary database that stores symbols it is called the outer execution environment that is this environment. <br>
+                         It's a temporary environment in which our functions and those symbols which those functions have created just for the process of those functions. <br>
+                         And that is this environment in which we're executing these lists of instructions here. <br>
+                         And then it's clear it it's only a temporary space for execution to happen in our javascript program. <br>
                     </p>
                     <h3>To sum up:</h3>
                     <p>
@@ -606,6 +608,13 @@
                          And that is also garbage collection and garbage collection is a big part of memory management so that we don't end up filling up all of the user's RAM and crushing the browser and being very very inefficient in storage. <br>
                          And javascript manages that automatically for you.
                     </p>
+                    <h2>GLOBAL SCOPE</h2>
+                    <li>The highest scope = global scope</li>
+                    <li>Within a function, scope is different because functions have their on scopes nested within. If a function finds a variable (that it looking for) inside of itself, it returns it and stops the finding. </li>
+                    <li>Each one of their braces has its own <b>SCOPE.</b></li>
+                    <li>We have to be careful that using GLOBAL OBJECT. Because it can be changed inside of another functions as defining. If we want to change a GLOBAL CONSTANT or GLOBAL VARIABLE,  then that's perfectly fine or even a global subroutine. </li>
+                    <li>If we want to create something within in the scope, we need to say <b>let engine = 'New String'. or const</b></li>
+                    <li><b>Clobbering the Global Scope:</b>If we just type a SYMBOL NAME <b>without the declaration like: let or const</b> then we will INFER the GLOBAL!!! What we are doing create variable without the declaration names, it just creating a larger window object. And it's going to make it harder for the browser to really search through.</li>
                </section>
           </div>
      </main>
