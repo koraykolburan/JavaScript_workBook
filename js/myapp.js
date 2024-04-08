@@ -271,3 +271,66 @@ function access() {
 }
 
 console.log(access());
+
+
+/* ---------- 'this' CONTEXT ---------- */
+
+// console.log( this );
+
+let object1 = { //Only functions allow us to change the 'this' context!
+     prop: this, 
+     method: function(){ return this; } //'this' pointer is now going OUTSIDE of the SCOPE of the function by one.
+}; //it's jumping outside of the function and it's going to the object that contains the method which is this object right above.
+
+let array1 = [ //And we also have the same for arrays. Because arrays are a type of object.
+     this,
+     function(){ return this; } // we can log: array1[1]; output is: (2) [Window, ƒ]
+];
+
+function global() { //This is just pointing to the window object.
+     return this; //Just like our method has stepped out one into outer scoper.
+} 
+
+/* -- Different ways to INVOKE the Functions -- */
+
+global(); // 1) This is for the STANDARD FUNCTION!
+
+global.call( array1 ); // 2) This is for the Object Invoke!
+global.call ( object1 ); //We invoke like we work with objects and we used the 'call()' method.
+
+new global(); // 3) 
+// It adds a new this context so this by default with the global context is going to be window.
+
+/* -------------------------- Constructors -------------------------- */
+
+/* 
+ 1) Begin with a capital letter. It's just a naming convention.
+ 2) Then we can pass in some parameters.(We're creating a template here for our Bananas). But our bananas can be placed at different positions, color..
+ !) Even though we're constructing a single banana object from this constructor, the values are going to different.
+ 3) Execution context = context of 'this'.
+ 4) So with constructor functions we use the 'new' keyword. And then you invoke our construct to function.
+ Why? Because we don't want 'this' by default. If we invoke just like this: Bananas(); the 'this' = 'window' object.
+ 5) That's why we invoke like this: new Bananas(); the 'this' = {}.
+ 6) And then we start adding properties, values and methods... it's just like referring to an object.
+ 7) Once we create this object here like that it returns that object perfect, how can we program later on reference? It can't, because there's no way to reference this, there's no symbol name to target that object to memory.
+ !) That's why we need to do is when we invoke it we assign it a SYMBOL NAME.
+ let bananas1 = new Bananas( 5, 10, "yellow", 250 ); (line 317).
+ 8) And then we invoke the function it's going to return an object and we can point to that object later on our program.
+ 9) So we can start creating more instances meaning more copies of this object. And they can all have different values.
+ 10) Each instance is independent one another.
+ 11) We created from these instances(copies) from one (this)function but each instance, each object is unique. (One constructor House.)
+ --- We're just creating in essence a manufacturing line. ---
+
+*/
+
+function Bananas( x, y, color, score ) { //these are parameter pointer.
+     
+     this.x = x; //this is the symbol contained within the object. This is just an object now.
+     this.y = y; //we can manipulate and play with.
+     this.color = color;
+     this.score = score;
+}
+
+let bananas1 = new Bananas( 5, 10, "yellow", 250 );
+let bananas2 = new Bananas( -1, 3, "green", 10 );
+let bananas3 = new Bananas( 52, 58, "brown", 700 );

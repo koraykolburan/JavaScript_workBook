@@ -538,6 +538,7 @@
                               It allows us to change and modify data in our Array. <br>
 
                          </p>
+                         <hr>
                     <h2>Callable Objects - Functions</h2>
                     <p>Or First-Class Citizen. This means that functions are simply a value and are just another type of object.</p>
                     <ol>
@@ -551,7 +552,7 @@
                          <li>In Embedded Functions: We give it a variable, a parameter that will STORE 'the string' to the nested function. Then it will DELETE that out of memory.</li>
                          <li><b>Defining(invoking) a Function as an ARGUMENT:</b> A) Create a Callable Object and we give it a SYMBOL NAME and a parameter. B) Then we return the parameter inside of the Callable object. C) After that, we invoke this Callable Object with its SYMBOL NAME + parantheses but with THE NEW ARGUMENTS in the parantheses. D) Then the Callable Object receives THE NEW ARGUMENTS and ASSIGN it to ITS PARAMETER which we give it before. E) And then it returned it.(Look for Line:184 on JS for this.) </li>
                     </ol>
-                    <br>
+                    <hr>
                     <h2>Memory Hoisting</h2>
                     <p>
                          <b>Hoist?</b> It means lift up like a crane. <br> 
@@ -573,7 +574,7 @@
                          And also when it comes to <b>functions,</b> if symbol name points to a callable object: it hoists that to the top. <br>
                          Lastly, each execution context has memory hoisting <b>within it,</b> when you execute it.
                     </p>
-                    <br>
+                    <hr>
                     <h2>Scope</h2>
                     <h3>SCOPE of Objects</h3>
                     <ol>
@@ -608,13 +609,49 @@
                          And that is also garbage collection and garbage collection is a big part of memory management so that we don't end up filling up all of the user's RAM and crushing the browser and being very very inefficient in storage. <br>
                          And javascript manages that automatically for you.
                     </p>
+                    <hr>
                     <h2>GLOBAL SCOPE</h2>
-                    <li>The highest scope = global scope</li>
+                    <ol>
+                         <li>The highest scope = global scope</li>
                     <li>Within a function, scope is different because functions have their on scopes nested within. If a function finds a variable (that it looking for) inside of itself, it returns it and stops the finding. </li>
                     <li>Each one of their braces has its own <b>SCOPE.</b></li>
                     <li>We have to be careful that using GLOBAL OBJECT. Because it can be changed inside of another functions as defining. If we want to change a GLOBAL CONSTANT or GLOBAL VARIABLE,  then that's perfectly fine or even a global subroutine. </li>
                     <li>If we want to create something within in the scope, we need to say <b>let engine = 'New String'. or const</b></li>
                     <li><b>Clobbering the Global Scope:</b>If we just type a SYMBOL NAME <b>without the declaration like: let or const</b> then we will INFER the GLOBAL!!! What we are doing create variable without the declaration names, it just creating a larger window object. And it's going to make it harder for the browser to really search through.</li>
+                    </ol>
+                    <hr>
+                    <h2>'This' Context</h2>
+                    <ul> Introduction;
+                         <li>'this' word is a context based word, in other words it has context, it has reference.</li>
+                         <li>If we were to say "look at this!" without the context while you simply wouldn't know what I was looking at. We need a context when we work with this!</li>
+                         <li>When we open the our browser window, there is an environment that is established and that is the 'window' object. We create the windows object that contains all of the default properties and methods that make up the JavaScript API.</li>
+                         <li>However we also have the 'this' keyword that is set up in memory and depending on where we use this keyword it will change and it will have different pointer.</li>
+                    </ul>
+                    <ol>
+                         <li>First of all <b>'this'</b> by default points to the window object and then it can be changed.</li>
+                         <li>If <b>'this'</b> keyword is found inside of <b>a property in an object</b> it just points to the <b>'window object'</b> to game, it doesn't changes context.(like let object1).</li>
+                         <li>If we have an array and <b>array is an object</b> and the first key is zero: <b>'this' keyword.</b> Then we target this first element and we pull out the zero indexed item: <b>array1[0];</b> we get the <b>'window object'</b> again! </li>
+                         <li><b>Callable Objects</b> allow us <b>to change</b> the <b>'this'</b> context! For example: We have a method within an object and this method returns whatever this is pointing to.</li>
+                         <li>When we look at this on console: object1.method(); We can see that is no longer the 'window object'. <b>'this'</b> pointer is now going outside of the scope of the function by one.</li>
+                         <li>And we also have the same for arrays. Because arrays are a type of object. We can log: array1[1]; output is gonna be this: (2) [Window, ƒ].</li>
+                         <li>function global(){ return this; } this is pointing to <b>'window object'.</b> It is stepping out one into the <b>'window object'.</b> because this is a GLOBALLY SCOPED function right here.</li>
+                    </ol>
+                    <h3>Different ways to INVOKE the Functions</h3>
+                    <ol>
+                         <li><b>The Standard Function:</b> <span id="code-block">name();</span></li>
+                         <li><b>The Object Invoke:</b> <span id="code-block">global.call( object1 );</span> We use the DOT SYNTAX to access members, properties and methods. It's just like we work with OBJECTS. So we can use the <b>call()</b> method. So this is proof that functions are treated as objects in JS. Then we can actually assign a value to this like: we are using object1 or array1, <b>global.call( object1 ); or global.call( array1 );</b> When we do that, it just like this: <span id="code-block">function global(){ return this = object1 or array1; }</span> So now, we've changed the context of 'this' which we can do with callable objects. </li>
+                         <li> <span id="code-block">new global();</span> It adds a new this context. So this by default with the global context is going to be window, but <span id="separate">new</span> says 'no I want a new context, I literally want a blank object' like this: <span id="code-block">function global(){ return this = {} ; }</span> </li>
+                    </ol>
+                    <h2>Constructors</h2>
+                    <p>
+                         Constructors in programming are in fact like construction workers. <br>
+                         In JavaScript, we have constructors, this is the typical way that we create OBJECTS. <br>
+                         Why do we need a construct to function? 
+                    </p>
+                    <ol>
+                         <li>Create a Constructor Function with name and add in a capital letter to begin. The reason why we do this is because it helps us identify that this is a construct to function</li>
+                         <li></li>
+                    </ol>
                </section>
           </div>
      </main>
