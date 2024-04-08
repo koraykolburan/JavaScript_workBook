@@ -334,3 +334,39 @@ function Bananas( x, y, color, score ) { //these are parameter pointer.
 let bananas1 = new Bananas( 5, 10, "yellow", 250 );
 let bananas2 = new Bananas( -1, 3, "green", 10 );
 let bananas3 = new Bananas( 52, 58, "brown", 700 );
+
+
+/* -------------------------- Prototypes -------------------------- */
+
+// This is a Chain of Objects - Attaching a Prototype Object to our Constructor - (We're in fact defining a shared object). And every one of those pears objects is linked to that prototype object!
+
+function Pears( x, y, color, score ) { //these are parameter pointer.
+     
+     this.x = x; //this is the symbol contained within the object. This is just an object now.
+     this.y = y; //we can manipulate and play with.
+     this.color = color;
+     this.score = score;
+}
+
+Pears.prototype = { // Attaching a Prototype Object to our Constructor - (Defining A Shared Object)
+     eat(){ return this }, //means: whatever 'this' is pointing to!!!
+     peelOff(){ return this } 
+}
+
+let pears1 = new Pears( 5, 10, "yellow", 250, 'slice it!' );
+let pears2 = new Pears( -1, 3, "green", 10 );
+let pears3 = new Pears( 52, 58, "brown", 700 );
+
+/* To sum up: So prototypes or objects and they're shareable objects they share their properties and their methods. So that you can access those members via the instances that were created. That's all is this. 
+
+! It's all about how it is invoked! 
+So we now know that when we use the 'this' keyword in a prototype object it's not just going to point to the prototype object. 
+It's actually going to point to the object in which the call was made which is pears1. 
+So you can think about 'this' keyword going back up the chain.
+It points to the very first object that invoked that particular function call.
+So if we were to use 'this' keyword in the prototype object it points back to the initial instance that invoked it. 
+And that is why we use Prototype and that's why it's so unique and special in javascript. 
+*/
+
+/* -------------------------- Constructors with Prototypes -------------------------- */
+

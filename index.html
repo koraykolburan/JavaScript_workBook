@@ -642,6 +642,7 @@
                          <li><b>The Object Invoke:</b> <span id="code-block">global.call( object1 );</span> We use the DOT SYNTAX to access members, properties and methods. It's just like we work with OBJECTS. So we can use the <b>call()</b> method. So this is proof that functions are treated as objects in JS. Then we can actually assign a value to this like: we are using object1 or array1, <b>global.call( object1 ); or global.call( array1 );</b> When we do that, it just like this: <span id="code-block">function global(){ return this = object1 or array1; }</span> So now, we've changed the context of 'this' which we can do with callable objects. </li>
                          <li> <span id="code-block">new global();</span> It adds a new this context. So this by default with the global context is going to be window, but <span id="separate">new</span> says 'no I want a new context, I literally want a blank object' like this: <span id="code-block">function global(){ return this = {} ; }</span> </li>
                     </ol>
+                    <hr>
                     <h2>Constructors</h2>
                     <p>
                          Constructors in programming are in fact like construction workers. <br>
@@ -650,7 +651,25 @@
                     </p>
                     <ol>
                          <li>Create a Constructor Function with name and add in a capital letter to begin. The reason why we do this is because it helps us identify that this is a construct to function</li>
-                         <li></li>
+                         <li>Look at Line 304 JS.</li>
+                    </ol>
+                    <hr>
+                    <h2>Prototypes</h2>
+                    <p>They are just shared objects and allow us to share properties and methods across a range of objects.</p>
+                    <ul>Look at the Line 339 JS.
+                         <li>Prototypes are actually unique to javascript.</li>
+                         <li>Prototypes are just shared objects. </li>
+                         <li>There are objects that have properties and methods that can be accessed via a range of different objects and it's all down to how that object is constructed.</li>
+                         <li>eat() and peelOff() methods are not unique to each of those pears objects. There's no point having a copy of the eat() and peelOff() methods for each object which is wasting memory. We're adding additional copies when we don't really need to do that. We don't need to <b>it on the instance level.</b></li>
+                         <li><b>What is the instance level?</b> When you have a instance of something such as the constructor is the blueprint for an object and an instance is a copy of that object. So when we run that function, it returns an object that is an instance, it's a copy. And <b>on the instance level</b> it needs to be unique.</li>
+                         <li><b>A Chain of Objects</b>Attaching a Prototype Object to our Constructor: we're actually defining a shared object. Everything that doesn't need to be duplicated so just eat() and peelOff(). They just stay in one place and we just have one copy.</li>
+                         
+                    </ul>
+                    <hr>
+                    <h2>Constructors with Prototypes</h2>
+                    <ol>
+                         <li>If you want to know what in this context is you have to look at how that function was INVOKED!!!</li>
+                         <li>The prototype object is attached to the 'callable object' that callable object that is the constructor. And when you construct an object from that constructor it is automatically linked to that callable object prototype object and that's it.</li>
                     </ol>
                </section>
           </div>
