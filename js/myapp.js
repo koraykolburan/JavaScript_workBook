@@ -377,5 +377,16 @@ IMPORTANT------
 this is all based of context.
 pears2.eat() -->>>> it's gonna be pointing to pears2 object.
 Because, that's the object with the initial invocation.
-If you know what in this context, you have to look at how that function WAS INVOKED.! 
+-----If you know what in this context, you have to look at how that function WAS INVOKED.! ----
+
+The prototype object and that 'this' context allows you to go back up chain.
+
+--! We should only be modifying prototype objects on the constructor functions themselves. !--
+--! We shouldn't be doing it through the instance level and we will probably find that 'this' name may change in different browsers. !--
+We have got links of objects. We have got our prototype object that we attach to the Pears constructor that's being dynamically linked.
+
+We need to be careful about symbol name collision.
+We just have one copy and then we can use this context to go back out to the instance level to go to either pears1, pears2 and pears3 and we can change those particular objects uniqueness.
 */
+
+/* -------------------------- Comparison & Conditional Execution -------------------------- */
