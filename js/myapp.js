@@ -277,6 +277,8 @@ console.log(access());
 
 // console.log( this );
 
+// !!************************** What am I pointing to ?? 'This' is contextual word!!**************************
+
 let object1 = { //Only functions allow us to change the 'this' context!
      prop: this, 
      method: function(){ return this; } //'this' pointer is now going OUTSIDE of the SCOPE of the function by one.
@@ -370,3 +372,10 @@ And that is why we use Prototype and that's why it's so unique and special in ja
 
 /* -------------------------- Constructors with Prototypes -------------------------- */
 
+/*
+IMPORTANT------
+this is all based of context.
+pears2.eat() -->>>> it's gonna be pointing to pears2 object.
+Because, that's the object with the initial invocation.
+If you know what in this context, you have to look at how that function WAS INVOKED.! 
+*/

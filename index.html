@@ -663,7 +663,8 @@
                          <li>eat() and peelOff() methods are not unique to each of those pears objects. There's no point having a copy of the eat() and peelOff() methods for each object which is wasting memory. We're adding additional copies when we don't really need to do that. We don't need to <b>it on the instance level.</b></li>
                          <li><b>What is the instance level?</b> When you have a instance of something such as the constructor is the blueprint for an object and an instance is a copy of that object. So when we run that function, it returns an object that is an instance, it's a copy. And <b>on the instance level</b> it needs to be unique.</li>
                          <li><b>A Chain of Objects</b>Attaching a Prototype Object to our Constructor: we're actually defining a shared object. Everything that doesn't need to be duplicated so just eat() and peelOff(). They just stay in one place and we just have one copy.</li>
-                         
+                         <li>So we have one copy of the eat() and peelOff() methods but when I access one of those objects such as Pears 1, 2 or 3 and I ask it for the eat() method, it will look at those objects, so what JS does is it automatically searches the <b>prototype chain.</b> And every one of those Pears objects is linked to that prototype object.</li>
+                         <li><span id="separate">this</span> keyword in the prototype object it points back to the initial instance that invoked it.</li>
                     </ul>
                     <hr>
                     <h2>Constructors with Prototypes</h2>
