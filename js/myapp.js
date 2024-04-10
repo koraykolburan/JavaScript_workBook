@@ -390,3 +390,21 @@ We just have one copy and then we can use this context to go back out to the ins
 */
 
 /* -------------------------- Comparison & Conditional Execution -------------------------- */
+/*
+'Double Equals' -- '=='  -- It checks the Value
+undefined == Null; true,
+NaN == NaN; false,
+10 == '10'; true,
+
+'Triple Equals' -- '===' -- It will also checks DATA TYPES as well.
+(it's leaving the value alone. There's no polymorphism with a triple equals they are not equal to one another.)
+undefined === null; false,
+10 === '10'; false,
+
+'Not Equals' -- '!=' -- that means 'IS NOT EQUALS'!!
+If the results return as 'false' that means they are EQUALS. 
+If the results return as 'true' that means they are NOT EQUALS. 
+
+
+
+*/
