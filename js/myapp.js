@@ -404,7 +404,25 @@ undefined === null; false,
 'Not Equals' -- '!=' -- that means 'IS NOT EQUALS'!!
 If the results return as 'false' that means they are EQUALS. 
 If the results return as 'true' that means they are NOT EQUALS. 
+null != null: false,
+null != undefined: false,
+10 != 100: true,
+10 != '10': false,  so polymorphism is happenning here because the string 10 equals the number ten.
 
+'Not Extra Equals' -- '!==' -- is not EXTRA Equals!!
+10 !== '10': true; not polymorphism in here.
+null !== undefined: true,
 
-
+10 > 100; false,
+10 > 1; true,
+"hello" > "hello"; false,
+"helloooo" > "hello"; true, that's because of the LENGTH. It's not actually good on strings.
+10 > 10; false,
+10 >= 10; true,
+10 < 100; true,
+10 < 1; false,
+10 < 10; false,
+10 <= 10; true,
 */
+
+/* -------------------------- IF Statements -------------------------- */
