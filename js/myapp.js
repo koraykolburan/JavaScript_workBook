@@ -448,3 +448,122 @@ function crossTheRoad() {
      }
 }
 console.log(crossTheRoad());
+
+/* -------------------------- For & For In Loop's -------------------------- */
+
+/*
+1) Firstly, we need an INDEX.  (that actually a statement)(we can define a variable within the parentheses) (first part of statement) 
+
+We have to find an INDEX COUNTER so we've got sth to STORE where we're at in this register.
+
+'let i = 0;'
+
+2) Secondly, we need the ACTUAL CONDITION itself, if this condition remains TRUE then we continue to execute.     This is a conditional statement! (second part of statement)
+
+!!!! THE 'length': property tells us to HOW MANY ELEMENTS or VALUES are within the ARRAY. !!!!
+
+Also, we've got the CONDITION in which if 'i' IS LESS THAN ieltsRegister.length we're not done, we need to KEEP ITERATING OVER UNTIL we REACHED the END.
+
+'i < ieltsRegister.length;'
+
+3) Thirdly, we need to make sure that at some point this condition right here fails. So if 'i' always remains zero then this condition is always going to be TRUE and it's always going to EXECUTE. And like this, we're going to get ERROR in our program. That's why we need to last the LIFETIME of the CONDITION and then it does need to fail. 
+!!! Keep adding one, one, one, one... until it be great equals to the LENGTH of the ARRAY. !!! 
+And that point it will be FALSE.
+
+Finally we just want to KEEP INCREMENTING EACH TIME just like a teacher going through the register, incrementing through the NAMES one by one ...
+
+'i++;'
+
+4) Also, we want to use 'i' to access each one of the ELEMENTS in the ARRAY. 
+
+5) Finally, we want to do is console.log and then say ieltsRegister.
+
+!!! AND We want to use the COMPUTED MEMBER ACCESS [] . 
+     We can write a STATEMENT inside of  '[ statement ]',
+     We can pull out VALUES,
+     And we can even use VARIABLES: '[ i ]'
+     And yes we can use this variable 'i' in our EXECUTION CONTEXT for the LOOP.
+
+console.log( ieltsRegister[ i ] )
+
+ -- Template --
+
+for( INDEX COUNTER as a VARIABLE ; the ACTUAL CONDITION VARIABLE is LESS than LENGTH of the ITSELF/name of the array; KEEP INCREMENT to be GREAT EQUALS to the LENGTH of the ARRAY ) {
+     
+               EXECUTION CONTEXT
+}
+
+
+*/
+
+let ieltsRegister = [ "1) John", "2) Marry", "3) Julia" ]; //increment
+let ieltsRegister2 = [ "1) Tom", "2) Eric", "3) Kelly" ]; //decrement
+let ieltsRegister3 = [ "1) Alicia", "2) Ellen", "3) Albert" ]; //for in loop increment
+
+for( let i = 0; i < ieltsRegister.length; i++ ) {
+     console.log( ieltsRegister[ i ] )
+};
+
+/* -- EXECUTION CYCLE OF THIS -- 
+
+     A)
+          for( let i = 0; 0 < 3 = TRUE; i++ ) {
+               console.log( ieltsRegister[ 0 ] )
+          };
+     
+     The result of this: John
+
+     B)
+          for( let i = 1; 1 < 3 = TRUE; i++ ) {
+               console.log( ieltsRegister[ 1 ] )
+          };
+
+     The result of this: Marry
+     
+
+     C)
+          for( let i = 2; 2 < 3 = TRUE; i++ ) {
+               console.log( ieltsRegister[ 2 ] )
+          };
+     
+     The result of this: Julia
+
+
+     D) STOP!
+          for( let i = 3; 3 < 3 = FALSE; i++ ) {
+               !!! WE NO LONGER EXECUTE !!!
+          };
+*/
+
+/* -- Decrement --
+for( let i = ieltsRegister.length -1;  i >= 0; i-- ) {
+     console.log( ieltsRegister[ i ] )
+};
+
+We defined as like this: let i = ieltsRegister.length -1;
+Because, ieltsRegister.length = 3. 
+We subtract '1' because, INDEX starts 0, 1, 2.
+This equals to be 3-1=2 means [2], 
+This equals to be 3-1=2 means [1],
+This equals to be 3-1=2 means [0].
+*/
+
+for( let i = ieltsRegister2.length -1;  i >= 0; i-- ) {
+     console.log( ieltsRegister2[ i ] )
+};
+
+
+/* -- For in Loops --
+
+For in loops is INCREMENTATION.
+
+for ( let index 'in' at CURRENT index at the ARRAY) {
+     EXECUTION CONTEXT
+}
+
+index automatically be assigned to 0.   
+*/
+
+for ( let index in ieltsRegister3) {
+     console.log( ieltsRegister3[ index ] )
+}
