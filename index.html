@@ -680,17 +680,39 @@
                <section class="main-content9">
                     <h2>Comparison & Conditional Execution</h2>
                     <ol>
-                         <li><b>Double Equals</b> <span id="separate">"=="</span> Case Sensitive, Floating point Numbers, Primitive Values, Integers, <span id="code-block">'Undefined == Null': true;</span>is Polymorphism! One to be very careful of is NaN. <span id="separate">NaN == NaN; false.</span> So be very careful and never use NaN with Comparison!!! <span id="separate">10 == '10';</span> A string always takes precedence!!! Because strings can contain numbers and letters so you can turn an integer into a string. But you can't turn a string into an integer or a number!!! So to prevent this from happenning what we can do is use the TRIPLE EQUALS SIGN.</li>
-                         <li><b>Triple Equals</b> <span id="separate">"==="</span> It will also checks the DATA TYPES as well.</li>
-                         <li><b>Not Equals</b> <span id="separate">"!="</span> that means 'IS NOT EQUALS'!! <br>
+                         <li>
+                              <b>Equality:</b> <span id="separate">"=="</span> Case Sensitive, Floating point Numbers, Primitive Values, Integers, <span id="code-block">'Undefined == Null': true;</span>is Polymorphism! One to be very careful of is NaN. <span id="separate">NaN == NaN; false.</span> So be very careful and never use NaN with Comparison!!! <span id="separate">10 == '10';</span> A string always takes precedence!!! Because strings can contain numbers and letters so you can turn an integer into a string. But you can't turn a string into an integer or a number!!! So to prevent this from happenning what we can do is use the TRIPLE EQUALS SIGN.</li>
+                         <li><b>Strict Equality</b> <span id="separate">"==="</span> It will also checks the DATA TYPES as well. This is Case Sensitive!!!
+                         </li>
+                         <li>
+                              <b>Inequality</b> <span id="separate">"!="</span> that means 'IS NOT EQUALS'!! <br>
                               If the results return as 'false' that means they are EQUALS. 
-                              If the results return as 'true' that means they are NOT EQUALS.</li>
-                         <li><b>Not Extra Equals</b> <span id="separate">"!=="</span></li>
-                         <li>And..<span id="separate">"> >= < <="</span></li>
+                              If the results return as 'true' that means they are NOT EQUALS.
+                         </li>
+                         <li>
+                              <b>Strict Inequality:</b> <span id="separate">"!=="</span>
+                         </li>
+                         <li>
+                              And..<span id="separate">"> >= < <="</span>
+                         </li>
+                         <li>
+                              <b>Logical AND:</b><span id="separate">'.. && ..'</span> <br>
+                              <b>Logical OR:</b><span id="separate">'.. || ..'</span> - On the Logical OR operator: if there any TRUE, either side is going to return TRUE!!!
+
+                         </li>
                     </ol>
                     <hr>
                     <h2>If Statements</h2>
-                    
+                    <ol>
+                         <li>
+                               <span id="separate">if ( condition ) { the verb, the thing we actually want to execute } else if ( condition ) { alternative ways to execute } else { the final thing to execute if all conditions fail! }</span> <br>
+                               We can add 'else if' and 'else' more.
+                              </li>
+                         <li>
+                              We can chain multiple comparison operators like this: <span id="separate">( x === 'yes' || y === 'yes' ){ execute the event };</span> <br>
+                              or like this: <span id="separate">( x === 'yes' && y === 'yes' && z === 'yes' ){ execute the event };</span>
+                         </li>
+                    </ol>
                </section>
           </div>
      </main>

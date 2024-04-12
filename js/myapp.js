@@ -397,8 +397,9 @@ NaN == NaN; false,
 10 == '10'; true,
 
 'Triple Equals' -- '===' -- It will also checks DATA TYPES as well.
+This is Case Sensitive!!!
 (it's leaving the value alone. There's no polymorphism with a triple equals they are not equal to one another.)
-undefined === null; false,
+undefined === null; false, 
 10 === '10'; false,
 
 'Not Equals' -- '!=' -- that means 'IS NOT EQUALS'!!
@@ -426,3 +427,24 @@ null !== undefined: true,
 */
 
 /* -------------------------- IF Statements -------------------------- */
+
+/* 
+if ( condition ) { the verb, the thing we actually want to execute } else if ( condition ) { alternative ways to execute } else { the final thing to execute if all conditions fail! }
+
+- We can chain multiple comparison operators like this: ( x === 'yes' || x === 'yes' ){ execute the event }; or like this: ( x === 'yes' && x === 'yes' ){ execute the event };
+- On the Logical OR operator: if there any TRUE, either side is going to return TRUE.!!!
+*/
+let carsLeft   = 1,
+carsRight = 0,
+greenLight = "no";
+
+function crossTheRoad() {
+     if ( greenLight === "yes" ) {
+          console.log( 'cross the road.' )
+     } else if ( greenLight === "yes" && (carsLeft === 0 || carsRight === 0) ) {
+          console.log( 'All Clear! Cross the road.' )
+     } else {
+          console.log( 'Stay where you are!' )
+     }
+}
+console.log(crossTheRoad());
