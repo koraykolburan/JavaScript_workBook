@@ -567,3 +567,12 @@ index automatically be assigned to 0.
 for ( let index in ieltsRegister3) {
      console.log( ieltsRegister3[ index ] )
 }
+
+
+/* -------------------------- ECMAScript 6 -------------------------- */
+
+let symbolName = ' this is a symbol name with let!';
+const symbolName2 = ' this is not changeable!';
+
+console.log( symbolName );
+console.log( symbolName2 );
