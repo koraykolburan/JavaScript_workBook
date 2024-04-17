@@ -4,6 +4,15 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>New Features on JS</title>
+     <style>
+          body {
+               line-height: 2.5rem;
+               background-color: darkolivegreen;
+               color: white;
+               font-family: monospace;
+               font-size: 18px;
+          }
+     </style>
 </head>
 <body>
      <header>
@@ -15,14 +24,14 @@
           <h2>ES6</h2>
           <ol>
                <li>
-                    let: declares a block variable <br>
+                    <b>let:</b> declares a block variable <br>
                     it have block scope! <br>
                     it must be declared before USE! <br>
                     it cannot be redeclared in the same SCOPE! <br>
                     it doesn't bind to 'this'!
                </li>
                <li>
-                    const: declares a block constant <br>
+                    <b>const:</b> declares a block constant <br>
                     Use with these: a new ARRAY, OBJECT, FUNCTION, Reg Exp. <br>
                     it cannot be Redeclared! <br>
                     it cannot be Reassigned! <br>
@@ -34,8 +43,29 @@
                     Block Scope: means { here... }
                </li>
                <li>
-                    repeat() method returns a string with a number of copies of string like this: <br>
+                    <b>repeat()</b> method returns a string with a number of copies of string like this: <br>
                     text.repeat(3);
+               </li>
+               <li>
+                    <b>includes()</b> method returns TRUE if a string contains a specified value. <br>
+                    (it can be taken second param. as a start position) <br>
+                    let text = "Hi is this a new bike? Or is this a second-hand bike?"; <br>
+                    text.includes("bike", 49); <br>
+                    <b>false</b>
+               </li>
+               <li>
+                    <b>startsWith()</b> method: if a string BEGINS with a specified value, it returns TRUE. <br>
+                    (it is case-sensitive & Start position for the search can be specified with second param. like:2) <br>
+                    let text = "Running, swimming and cycling? Or just both running and swimming?" <br>
+                    text.startsWith("Running", 0); <br>
+                    <b>TRUE</b>
+               </li>
+               <li>
+                    <b>endsWith()</b> method: if a string ENDS with a specified value, it returns TRUE. <br>
+                    (it is case-sensitive & End position for the search can be specified with second param. like:2) <br>
+                    let text = "Running, swimming and cycling? Or just both running and swimming?" <br>
+                    text.endsWith("?"); <br>
+                    <b>TRUE</b>
                </li>
           </ol>
           <h3>Template Strings(`backticks`)</h3>
@@ -48,7 +78,14 @@
                     Templates allow multiline strings.
                </li>
                <li>
-
+                    Variable Substitutions like this: <br>
+                    let firstStep = "Swimming"; <br>
+                    let secondStep = "Running"; <br>
+                    let text = `Start with ${firstStep} and after that keep with ${secondStep}!`; <br>
+                    Start with Swimming and after that keep with Running!
+               </li>
+               <li>
+                    Template Strings allow expressions in strings.
                </li>
           </ol>
           <hr>
@@ -81,6 +118,28 @@
                </li>
           </ol>
           <h3>BigInt: big numbers</h3>
+          <h3>matchAll()</h3>
+          <ol>
+               <li>
+                    method returns an ITERATOR containing the results of matching a string against a string or a REG. EXP.
+               </li>
+               <li>
+                    For global search we can use: /run/g
+               </li>
+               <li>
+                    For global search and also case-sensitive we can use: /run/gi
+               </li>
+               <li>
+                    You can look for the real JS code in this html page.
+               </li>
+          </ol>
+          <p>
+               let text = "Did you go to the <b>run</b> today? No? Let's <b>run</b> then. I love <b>run</b>ning everyday! <b>RUN</b>NING and CYCLING!!!" <br>
+               const iterator = text.matchAll(/run/gi); <br>
+               document.getElementById("demo").innerText = Array.from(iterator); <br>
+               The result is shown below:
+          </p>
+          <p id="demo"></p>
           <hr>
           <h2>ES2021</h2>
           <ol>
@@ -98,5 +157,11 @@
                </li>
           </ol>
      </section>
+
+     <script>
+          let text = "Did you go to the run today? No? Let's run then. I love running everyday! RUNNING and CYCLING!!!"
+          const iterator = text.matchAll(/run/gi);
+          document.getElementById("demo").innerText = Array.from(iterator);
+     </script>
 </body>
 </html>
