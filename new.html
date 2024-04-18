@@ -99,9 +99,17 @@
           <h2>ES2019</h2>
           <ol>
                <li>
-                    trimStart() method: it works like trim() but removes whitespace only from the START of a string. <br>
+                    <b>trimStart()</b> method: it works like trim() but removes whitespace only from the START of a string. <br>
                     trimEnd() method: it works like trim() but removes whitespace only from the END of a string.
                </li>
+               <li>
+                    <b>flat()</b> method creates a new array with sub-array elements concatenated to a specified depth. <br>
+                    const cars = [ "cars0", "cars1", [ "e-cars0", "e-cars1", [ "h-cars0", "h-cars1"], "cars2", "cars3"]; <br>
+                    const newArr = cars.flat();
+               </li>
+               <p id="demo2">
+
+               </p>
           </ol>
           <hr>
           <h2>ES2020</h2>
@@ -155,6 +163,22 @@
                     at() method returns the character at a specified index(position) in a STRING. <br>
                     It allows the use of negative indexes like: myString.at(-2)
                </li>
+               <li>
+                    at() method returns an indexed element from an Array. <br>
+                    const cars = [ "cars0", "cars1", "cars2", "cars3",]; <br>
+                    let car = cars.at(2); or let car = cars.at(2); are return: <br>
+                    <b>cars2</b>
+               </li>
+          </ol>
+          <h2>ES2023</h2>
+          <ol>
+               <li>
+                    <b>toSpliced()</b> method splices an array without altering the original array. <br>
+                    It creates a new array and keeps the original array unchanged. <br>
+                    const nums = ["Zero", "One", "Two", "Three"]; <br>
+                    const spliced = nums.toSpliced(0, 1); <br>
+                    <b>One,Two,Three</b>
+               </li>
           </ol>
      </section>
 
@@ -162,6 +186,11 @@
           let text = "Did you go to the run today? No? Let's run then. I love running everyday! RUNNING and CYCLING!!!"
           const iterator = text.matchAll(/run/gi);
           document.getElementById("demo").innerText = Array.from(iterator);
+
+          //flat() method
+          const cars = [ "cars0", "cars1", [ "e-cars0", "e-cars1", [ "h-cars0", "h-cars1"], "cars2", "cars3"]];
+          const newArr = cars.flat();
+          document.getElementById("demo2").innerText = newArr;
      </script>
 </body>
 </html>
