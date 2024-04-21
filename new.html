@@ -229,30 +229,6 @@
           </ol>
      </section>
 
-     <script>
-          /* Array Methods */
-
-          //matchAll() method - Basic Methods
-          let text = "Did you go to the run today? No? Let's run then. I love running everyday! RUNNING and CYCLING!!!"
-          const iterator = text.matchAll(/run/gi);
-          document.getElementById("demo").innerText = Array.from(iterator);
-
-          //flat() method - Basic Mathods
-          const cars = [ "cars0", "cars1", [ "e-cars0", "e-cars1", [ "h-cars0", "h-cars1"], "cars2", "cars3"]];
-          const newArr = cars.flat();
-          document.getElementById("demo2").innerText = newArr;
-
-          //find() method - Search Methods
-          const nums = [2, 3, 4, 6, 7, 9, 12, 13, 15, 17];
-          let first = nums.find(myFunction); 
-
-          document.getElementById("demo3").innerText = "First number over 10 is " + first + ".";
-
-          function myFunction(value, index, array){
-               return value > 10;
-          }
-
-
-     </script>
+     <script src="/js/new.js"></script>
 </body>
 </html>
