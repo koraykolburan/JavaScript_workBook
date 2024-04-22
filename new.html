@@ -86,6 +86,37 @@
                     <b>findIndex()</b> method returns <b>the index</b> of the first array element that passes a test function. <br>
                     It's exactly like <b>find()</b> method. But it returns index only.
                </li>
+               <li>
+                    <b>from()</b> method returns an Array object from any object with a length property or any iterable object. <br>
+                    const arr1 = Array.from("UKULELE");
+               </li>
+               <p id="demo4"></p>
+               <li>
+                    <b>keys()</b> method returns an Array Iterator object with the KEYS of an Array.<br>
+                    <b>const</b> summer = ["U", "K", "U", "L", "E", "L", "E"]; <br>
+                    <b>const</b> keys = summer.keys(); <br>
+
+                    <b>let</b> text1 = ""; <br>
+                    <b>for</b> (let x of keys) { <br>
+                         text1 += x + "< br>"; <br>
+                    }
+               </li>
+               <p id="demo5"></p>
+               <li>
+                    <b>entries()</b> method returns an Array ITERATOR object wiht KEY / VALUE pairs. <br>
+                    - This method does not change the original array. <br>
+                    const instruments = ["Ukulele","Bas Guitar","Saxophone","Electric Guitar","Drum"]; <br>
+                    const i = instruments.entries();
+               </li>
+               <p id="demo6"></p>
+               <li>
+                    The <b>"Spread '...' "</b> Operator SPREADS elements of iterable objects: <br>
+                    const s1 = ["Ich", "Du"]; <br>
+                    const s2 = ["Er", "Sie", "Es"]; <br>
+                    const s3 = ["Wir", "Ihr", "Sie"]; <br>
+                    const pronomen = [...s1, ...s2, ...s3];
+               </li>
+               <p id="demo8"></p>
           </ol>
           <h3>Template Strings(`backticks`)</h3>
           <ol>
@@ -194,6 +225,7 @@
                     <b>cars2</b>
                </li>
           </ol>
+          <hr>
           <h2>ES2023</h2>
           <ol>
                <li>
@@ -226,6 +258,12 @@
                <li>
                     <b>toReversed()</b> method as a safe way to REVERSE an array without altering the original array. <br>
                </li>
+               <li>
+                    <b>with()</b> method is a safe way to UPDATE elements in an array without altering the original array. <br>
+                    const instruments1 = ["Ukulele","Bas Guitar","Saxop","Electric Guitar","Drum"]; <br>
+                    const myInstruments = instruments.with(2, "Saxophone");
+               </li>
+               <p id="demo7"></p>
           </ol>
      </section>
 
