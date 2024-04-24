@@ -103,3 +103,27 @@
           const s3 = ["Wir", "Ihr", "Sie"];
           const pronomen = [...s1, ...s2, ...s3];
           document.getElementById("demo8").innerHTML = pronomen;
+
+          //Nullish Coalescing Operator and Nullish Coal. Assignment Op.
+          let x = 12;
+          let y = null;
+          let z = 13;
+          x ??= z;
+          y ??= z;
+          document.getElementById("demo9").innerHTML = 
+          "x ??= z;  console.log(x); " + x + "<br>"  + "y ??= z;  console.log(y); " + y ;
+
+          let nameObj = { name: "Eric" };
+          nameObj.name ??= "Micheal";
+          nameObj.age ??= 19;
+          document.getElementById("demo10").innerHTML = 
+          "* When we do this 'nameObj.name ??= 'Micheal';' the " + "<b>" + nameObj.name + "</b>"  + " won't change. Because the 'nameObj.name' is not NULLISH." + "<br>" + " However, when we write this: 'nameObj.age ??= 19;' the output is gonna be like this: " + "<b>" + nameObj.age + "</b>" + " . Because there is no any property named age in object 'nameObj'. So the value of 'nameObj.age' will be undefined(means nullish). That's why the value of age will be assigned. ";
+
+          const array2 = [ 4,5, "ukulele", "guitar", null, undefined, [] ];
+               // replace each nullish values with "this value was nullish"
+          array2.forEach((value, index, arr) => {
+               arr[index] ??= "(this value was nullish before)";
+          })
+          document.getElementById("demo11").innerHTML = 
+          "* We created this array: const array2 = [ 4,5, 'ukulele', 'guitar', null, undefined, [] ];" + "<br>"  +  "  and we replaced the every nullish item with '(this value was nullish before)' " + "<br>"  + "The output is: " + array2.toString();
+          console.log(array2);
