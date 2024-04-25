@@ -127,3 +127,18 @@
           document.getElementById("demo11").innerHTML = 
           "* We created this array: const array2 = [ 4,5, 'ukulele', 'guitar', null, undefined, [] ];" + "<br>"  +  "  and we replaced the every nullish item with '(this value was nullish before)' " + "<br>"  + "The output is: " + array2.toString();
           console.log(array2);
+
+          // For of -- ES6 Method
+          //1) On an Array
+          let text2 = "";
+          for (let x of instruments) {
+               text2 += x + "<br>";
+          };
+          document.getElementById("demo12").innerHTML = text2;
+          //2) On a String
+          let miniInstrument = "Ukulele";
+          let text3 = "";
+          for(let x of miniInstrument) {
+               text3 += x + "<br>";
+          };
+          document.getElementById("demo13").innerHTML = text3;
