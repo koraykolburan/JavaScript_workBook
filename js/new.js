@@ -142,3 +142,61 @@
                text3 += x + "<br>";
           };
           document.getElementById("demo13").innerHTML = text3;
+
+          //JS Sets --
+          const instruments2 = new Set(["Ukulele ","Bass Guitar ","Saxophone ","Electric Guitar ","Drum"]);
+          /* we also can do like this: const instruments2 = new Set(); instruments2.add("ukulele"); instruments2.add("Bass Guitar"); .. */
+          let text4 = "";
+          for(let x of instruments2.values()){
+               text4 += x;
+          };
+          console.log(text4);
+
+          //JS Maps --
+          const fruitsPrices = new Map([
+               ["oranges", 0.59],
+               ["apples", 0.32],
+               ["mangos", 2.79],
+               ["berries", 3.19]
+          ]);
+          fruitsPrices.set("cherries", 2.99);
+          fruitsPrices.delete("mangos");
+          console.log(fruitsPrices.has("cherries"));
+          console.log(fruitsPrices.has("mangos"));
+          console.log(fruitsPrices.get("apples"));
+
+          let text5 = "";
+
+          fruitsPrices.forEach(function(value,key){
+               text5 += key + ' = ﹩' + value + "<br>";
+          });
+          document.getElementById("demo14").innerHTML = text5;
+
+          //We also can use this:
+          let text6 = "";
+          for(let x of fruitsPrices.entries()){
+               text6 += x + "<br>";
+          };
+          document.getElementById("demo15").innerHTML = text6;
+
+          // Some Data Types --
+          document.getElementById("demo16").innerHTML = 
+          "<b>Constructor property returns the Constructor function for a Variable or an Object:</b>" + "<br>" +
+          "name".constructor + "<br>" +
+          true.constructor + "<br>" +
+          (123).constructor + "<br>" +
+          {name: "firstName", otherName: "lastName"}.constructor + "<br>" +
+          new Date().constructor + "<br>" +
+          ["a",5,"c",8].constructor + "<br>" +
+          function(){}.constructor;
+
+          let tool = {string:6, color:"red", eTech:"plugged"}
+          tool = null;
+          document.getElementById("demo17").innerHTML = 
+          "<b>typeof Null and Undefined:</b>" + "<br>" +
+          'let tool = {string:6, color:"red", eTech:"plugged"}' + "<br>" + 
+          'tool = null;' + "<br>" +
+          'typeof tool : ' + typeof tool + "<br>" +
+          'typeof null : ' + typeof null + "<br>" +
+          'typeof undefined : ' + typeof undefined; 
+          
