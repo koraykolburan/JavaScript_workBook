@@ -143,16 +143,68 @@
           };
           document.getElementById("demo13").innerHTML = text3;
 
-          //JS Sets --
+          //JS Sets --------------------------------------------------------------------
           const instruments2 = new Set(["Ukulele ","Bass Guitar ","Saxophone ","Electric Guitar ","Drum"]);
-          /* we also can do like this: const instruments2 = new Set(); instruments2.add("ukulele"); instruments2.add("Bass Guitar"); .. */
+          /* 
+          we also can do like this: 
+          const instruments2 = new Set(); 
+          instruments2.add("ukulele"); 
+          instruments2.add("Bass Guitar"); 
+          ... 
+          */
           let text4 = "";
-          for(let x of instruments2.values()){
-               text4 += x;
-          };
-          console.log(text4);
+          for(let x of instruments2){
+               text4 += x + "<br>";
+          }
+          //with values() method
+          const triathlon = new Set(["Swimming ","Cycling ","Running"]);
+          let text7 = "";
+          const myIterator = triathlon.values();
+          for(let x of myIterator){
+               text7 += x + "<br>";
+          }
 
-          //JS Maps --
+          document.getElementById("demo18").innerHTML = 
+          "We can create new set like this: <br>" +
+          "<b>Firstly)</b> const instruments2 = new Set(['Ukulele ', 'Bass Guitar ', 'Saxophone ', 'Electric Guitar ', 'Drum'])<br>" +
+          "Or with the add() method like this: <br>" +
+          "<b>Secondly)</b> const instruments2 = new Set(); <br>" +
+          "instruments2.add('Ukulele '); <br> " + 
+          "instruments2.add('Bass Guitar '); <br> " + 
+          "instruments2.add('Saxophone '); <br> " + 
+          " . . . <br>" + 
+          "And we can Listing Sets with <b>for..of loop</b> or with <b>values()</b> property like this: <br>" +
+          "let text4 = '' <br>" +
+          "for(let x of instruments2){ text4 += x + < br>};  or <br>" +
+          "instruments2.forEach(function(value){ text4 += value + < br> }) <br>" +
+          text4 + "<br>" + 
+          "Or we can do this with <b>values()</b> method it returns an Iterator: <br> " +
+          "const triathlon = new Set(['Swimming', 'Cycling', 'Running']); <br>" +
+          "const myIterator =  triathlon.values(); <br>" +
+          "for(let x of myIterator){ text += x + < br> } <br>" +
+          "alternatively we can use like this too: for(let x of triathlon<b>.values()</b>){ text += x + < br>} <br> " + 
+          text7;
+
+          /*entries() method can be used also for SET like this:
+          entries() method is supposed to return a [key,value] pair from object.
+          However, a Set has no keys, that's why entries() returns [value, value].
+          This makes Sets compatible with Maps.
+          Here it is:
+          */
+         const someInfo = new Set(["first", "second", "third", 987, 123]);
+         let text8 = "";
+         const myIterator3 = someInfo.entries();
+         for(const entry of myIterator3){
+          text8 += entry + "<br>";
+         }
+         document.getElementById("demo19").innerHTML = 
+         " <h4>Iterating a new Set with <b>entries()</b> method:</h4>" +
+         "<ul><li> entries() method is supposed to return a [key,value] pair from object. </li>" +
+         "<li> However, a Set has no keys, that's why entries() returns [value, value]. </li> " +
+         "<li> This makes Sets compatible with Maps. </li></ul> " +
+         text8;
+
+          //JS Maps --------------------------------------------------------------------
           const fruitsPrices = new Map([
                ["oranges", 0.59],
                ["apples", 0.32],
@@ -164,7 +216,7 @@
           console.log(fruitsPrices.has("cherries"));
           console.log(fruitsPrices.has("mangos"));
           console.log(fruitsPrices.get("apples"));
-
+          //clear() method removes all the elements(values) from a Map
           let text5 = "";
 
           fruitsPrices.forEach(function(value,key){
@@ -172,14 +224,37 @@
           });
           document.getElementById("demo14").innerHTML = text5;
 
-          //We also can use this:
+          //With entries() method:
           let text6 = "";
           for(let x of fruitsPrices.entries()){
                text6 += x + "<br>";
           };
-          document.getElementById("demo15").innerHTML = text6;
+          document.getElementById("demo15").innerHTML =
+          "With <b>entries()</b> method: <br>" +
+          "It creates [key, value] pairs easily. <br>" +
+          text6;
 
-          // Some Data Types --
+          //With keys() method: 
+          let text9 = "";
+          for(let x of fruitsPrices.keys()){
+               text9 += x + "<br>";
+          }
+          document.getElementById("demo20").innerHTML = 
+          "With <b>keys()</b> method: <br>" +
+          "It returns only keys from a Map: <br>" +
+          text9;
+
+          //With values() method:
+          let text10 = "";
+          for(let x of fruitsPrices.values()){
+               text10 += x + "<br>";
+          }
+          document.getElementById("demo21").innerHTML = 
+          "With <b>values()</b> method: <br>" +
+          "It returns only values from a Map: <br>" +
+          text10;
+
+          // Some Data Types ------------------------------------------------------------------
           document.getElementById("demo16").innerHTML = 
           "<b>Constructor property returns the Constructor function for a Variable or an Object:</b>" + "<br>" +
           "name".constructor + "<br>" +
@@ -199,4 +274,13 @@
           'typeof tool : ' + typeof tool + "<br>" +
           'typeof null : ' + typeof null + "<br>" +
           'typeof undefined : ' + typeof undefined; 
+
+          //converting Decimal to Binary
+          document.getElementById("demo22").innerHTML = 
+          "<h4>Converting Decimal to Binary</h4>" +
+          "dec2bin(-5)  " +
+          dec2bin(-5);
+          function dec2bin(dec){
+               return (dec>>> 0).toString(2);
+          }
           
