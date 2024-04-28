@@ -284,3 +284,82 @@
                return (dec>>> 0).toString(2);
           }
           
+          // RegExp
+          let text11 = "Visit This Page!";
+          let n = text11.search(/Page/i);
+          document.getElementById("demo23").innerHTML = 
+          "RegExp with <b>search()</b> Method: <br>" + 
+          "let text11 = 'Visit This Page!'; <br>" + 
+          "let n = text11.search(/Page/i); <br>" +
+          n;
+          function myFunction6(){
+               let text = document.getElementById("demo24").innerHTML;
+               document.getElementById("demo24").innerHTML = 
+               "let text = 'Visit This Page!'; <br>" + 
+               "let n = text.replace(/This/i, 'Our'); <br>" +
+               text.replace(/This/i, "Our");
+          }
+          //RegExp - Modifiers
+          let text12 = "Visit This Page!";
+          let text13 = "\nIs th\nis it?";
+          let text14 = "aaaaaaabbbbbbb";
+          let result = text12.match(/this/i); // i modifier performs Case-INsensitive matching
+          let result2 = text12.match(/is/g); // g modifier performs a global-match(FIND ALL,finds all 'this')
+          let result3 = text13.match(/^is/m); //m modifier performs a multiline matching
+          let result4 = text14.match(/(aa)(bb)/d); // d modifier specifies start & end matching( ES2022 ) case-sensitive
+          console.log("RegExp Global Modifier. Output is here (from this: 'Visit is This Page!') : " + result2);
+          document.getElementById("demo25").innerHTML =
+          "RegExp 'd' modifiers ES2022: <br>" +
+          "let text = 'aaaaaaabbbbbbb'; <br>" +
+          "let result4 = text14.match(/(aa)(bb)/d); <br>" + 
+          result4;
+          /* 
+          (/[abc]/g); find the characters between the square brackets
+          (/[0-9]/g); find the digits between the square brackets
+          (x|y); find any alternatives separated with |  
+          text.match(/\d/g); find the digits
+          text.match(/\s/g); find the whitespace characters
+          text.search(/\bLO/); find at the beginning of a word from this: let text = "HELLO"; <<<<<< LO
+          text.match(/o+/g); Do a global search for AT LEAST ONE 'o' in a string. 
+          */
+
+          // test() method
+          let text15 = "Swimming, Cycling and Running";
+          const pattern = /e/;
+          const pattern2 = /w/;
+          console.log(pattern2.test(text15));
+          //We also can like this: pattern2.test('The best things in life are free!');
+          document.getElementById("demo26").innerHTML =
+          "RegExp <b>test()</b> Method: <br>" +
+          "let text15 = 'Swimming, Cycling and Running'; <br>" +
+          "const pattern = /e/; <br>" + 
+          pattern.test(text15);
+
+          // Throw, try{} & catch{} -- Js ERRORS -------------------------------------------------------
+          function myFunction7(){
+               const warning = document.getElementById("p01");
+               warning.innerHTML = "";
+               let x = document.getElementById("demo27").value;
+               try {
+                    if( x.trim() == "") throw "empty!";
+                    if( isNaN(x) ) throw "not a number!";
+                    x = Number(x);
+                    if( x < 20 ) throw "too low for driver licence registration. <br>" + 
+                    "Sorry, maybe next few years later!";
+                    if( x >= 20 && x <= 75 ) throw "Appropriate. You can call us for driver licence registration."
+                    if( x > 75 ) throw "too high for driver licence registration.";
+               }
+               catch(err){
+                    warning.innerHTML = "Your age is " + err;
+               }
+               finally {
+                    document.getElementById("demo27").value = "";
+               }
+          }
+          // Modern browser use this: <input id="demo" type="number" min="5" max="10" step="1">
+          /* Error types in Js: 
+          RangeError(about range), 
+          Reference Error, Syntax Error, 
+          Type Error, 
+          URI Error(uniform resource identifier - illegal characters like %%%),
+          */

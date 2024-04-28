@@ -13,13 +13,30 @@
                font-size: 18px;
                padding: 20px;
           }
+          button {
+               width: 150px;
+               height: 50px;
+               border-radius: 12px;
+               font-size: 18px;
+          }
+          button:hover {
+               cursor: pointer;
+               background: rgb(212, 212, 230);
+          }
+          input {
+               border-radius: 12px;
+               height: 20px;
+          }
      </style>
 </head>
 <body>
      <header>
           <h1>
-               New Features on JS(ES6,ES2020..)
+               New Features on JS
           </h1>
+          <h2>
+               (ES6,ES2016, ES2017, ES2018, ES2019, ES2020, ES2021, ES2022, ES2023..)
+          </h2>
      </header>
      <section>
           <h2>ES6</h2>
@@ -311,7 +328,7 @@
                <p id="demo7"></p>
           </ol>
           <h2>NOTES</h2>
-          <h3>Some Data Types:</h3>
+          <h3>Some Data Types & Notes</h3>
           <ol>
                <li id="demo16"></li>
                <li id="demo17"></li>
@@ -323,6 +340,34 @@
                     <a href="javascript:void(document.body.style.backgroundColor='grey')">Click and Change the background!</a>
                </li>
                <li id="demo22"></li>
+               <li id="demo23"></li>
+               <li id="demo24">
+                    RegExp with <b>replace()</b> Method: <br>
+                    <button onclick="myFunction6()">Get 'Our' here:</button>
+                    Please visit This Page!
+               </li>
+               <li id="demo25"></li>
+               <li id="demo26"></li>
+               <li> Js Errors - <b>Throw, try{} and catch(){} -</b> <br>
+                    <span>Registration for Driver Licence!</span> <br>
+                    <span>Please input your age below!</span> <br>
+                    <input id="demo27" type="text"> <br>
+                    <button type="button" onclick="myFunction7()">Submit!</button> <br>
+                    <span id="p01"></span>
+               </li>
+               <li>
+                    Some Notes about Scope: <br>
+                    If we assign a value to a variable that has not been declared, it will automatically become a <b>GLOBAL VARIABLE.</b> <br>
+                    <b>AUTOMATICALLY GLOBAL</b> <br>
+                    myFunction(); <br>
+                    // fruitName can used be here, because we assigned a value to a variable >>>>> myFunction() above!!! <br>
+                    console.log(fruitName); <br>
+                    function myFunction(){ <br>
+                         fruitName = "apple"; <br>
+                    } <br>
+                    This code example will declare a <b>GLOBAL VARIABLE fruitName,</b> even if the value is assigned INSIDE a FUNCTION. <br>
+                    However, in "Strict Mode", UNDECLARED variables are not AUTOMATICALLY GLOBAL. <br>
+               </li>
           </ol>
      </section>
 
