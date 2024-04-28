@@ -363,3 +363,4 @@
           Type Error, 
           URI Error(uniform resource identifier - illegal characters like %%%),
           */
+          // If we create global variable with let, we cannot access with window.object.
