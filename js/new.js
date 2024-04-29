@@ -357,10 +357,138 @@
                }
           }
           // Modern browser use this: <input id="demo" type="number" min="5" max="10" step="1">
-          /* Error types in Js: 
+          /* 
+          Error types in Js: ----------------------------------------------------------------------
           RangeError(about range), 
           Reference Error, Syntax Error, 
           Type Error, 
           URI Error(uniform resource identifier - illegal characters like %%%),
           */
           // If we create global variable with let, we cannot access with window.object.
+
+          //Some Notes about Js Hoisting ----------------------------------------------------------
+          try{
+               fruitName = "Mango";
+               const fruitName = "Banana";
+          }
+          catch(err){
+               console.log("This is for a reference error message: " + err);
+          }
+          //If we change let with const, this code will simply not run.
+          /*
+          let a = 5;
+          let b;
+          console.log( typeof a + " " + typeof b );
+          b = 12;
+          output is: ReferenceError: Cannot access 'b' before initialization
+
+          To Sum up: We need DECLARE our Variables At The TOP!
+          */
+
+          //JS Strict Mode ----------------------------------------------------------
+          function strictFunction(){
+               "use strict";
+               let x;
+               x = { p1:20, p2:30 };
+               // delete x; object cannot be called on in an strict mode.
+               function x2(p1, p2){};
+               //delete x2; function cannot be called on in an strict mode.
+               //function x2(p1, p1){}; duplicating a parameter in strict mode, not allowed!
+          }
+          console.log("This for 'use strict':  " + strictFunction()); // undefined because we used object without declaring.
+          /*
+          1) octal literals are not allowed!
+          2) read-only property is not allowed!
+          3) with Math.pow() OR let arguments = 2 is not allowed!(arguments and with)
+          4) let eval=3.14 OR eval(x = 3.14) OR eval(x = 2) Or eval(var x = 2) or eval(let x = 2) is not allowed!
+          5) 'this' keyword in functions behaves differently in strict mode. 'this' keyword refers to the object that called the function.
+          If the object is NOT specified, functions in Strict Mode will return UNDEFINED.
+          6)
+          */
+          
+         function strictThis(){
+          "use strict";
+          function strictThis2(){
+               console.log(this);
+          }
+          strictThis2();
+         }
+         strictThis();
+
+         //'this' keyword ----------------------------------------------------------
+         //In Js 'this' keyword refers to an object. Which object depends on how 'this' is being invoked.
+         let color = "Diamond Grey";
+         const bike = {
+          brand: "Two's Day",
+          wholeName: "The Tandem Two'sDay",
+          mainSpeciality: "Folded Tandem",
+          color: "Sugar Grape Purple",
+          fullProperties: function(){
+               return "The whole name of bike is " + this.wholeName + ". Its main speciality is " + this.mainSpeciality + ", and its color is " + this.color + ".";
+          } 
+          //If we don't specified with 'this' keyword to color, it will be take the property outside of the function that is 'Diamond Grey'.
+         };
+         console.log(bike.fullProperties());
+         //When 'this' used alone, it refers to the GLOBAL OBJECT - WINDOW OBJECT. Because 'this' is runnning in the global scope like this:
+         let x3 = this;
+         console.log(x3);
+         //If we use 'this' with "use strict" it refers to global object AGAIN - window object.
+
+         function myThis(){
+          "use strict";
+          let x4 = this;
+          console.log(x4); //it will returns UNDEFINED. Because of the "use strict" mode.
+         };
+         myThis();
+         //'this' in a function refers to refers to global object AGAIN - window object.
+         //If we use 'this' with "use strict" in a Function, it refers to UNDEFINED, like above.
+
+         // 'this' keyword in HTML event handlers, it refers to the HTML element that received the event:
+         function myFunction8() {
+          this.document.getElementById("demo28").style.backgroundColor='red';
+          this.document.getElementById("demo28").style.color='white';
+         }
+         const bike2 = {
+          brand: "Two's Day",
+          wholeName: "The Tandem Two'sDay",
+          mainSpeciality: "Folded Tandem",
+          color: "Sugar Grape Purple",
+          fullProperties: function(){
+               return this;
+          }
+         };
+         console.log("This is Object Method Binding: " + bike2.fullProperties()) 
+
+         //Explicit Function Binding
+         const bike3 = {
+          fullBrand: function(){
+              return this.type + " - " + this.brand;
+          }
+         }
+         const bike4 = {
+          type: "The Road bike",
+          brand: "Cannondale"
+         }
+         let merge = bike3.fullBrand.call(bike4);
+         console.log(merge);
+
+         //Function Borrowing - Function bind()
+         const shoes = {
+          type: "This is for the road running",
+          brand: "Brooks.",
+          fullShoes: function() {
+               return this.type + ", its brand is " + this.brand;
+          }
+         }
+         
+         const otherShoes = {
+          type: "This is for the trail running",
+          brand: "Asics.",
+         }
+
+         let fullShoes = shoes.fullShoes.bind(otherShoes);
+         document.getElementById("demo29").innerHTML = 
+         "This is <b>Function Borrowing</b> - Js Function bind() method : <br>" + 
+         "With the bind() method, an Object can borrow a Method from another object. <br>" + 
+         "This examples create two different brand shoes, the otherShoes object borrows the fullShoes() method from the shoes object <br>" + 
+         fullShoes();
