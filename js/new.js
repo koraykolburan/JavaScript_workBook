@@ -543,3 +543,24 @@
          "tvSeries = a => ''My favourite tv series is Brooklyn ' <br> " +
          "tvSeries(' 99.'); <br>" +
          tvSeries("99.");
+
+         //'this' keyword with Arrow Functions
+         let ex1 = "";
+         let ex2 = "";
+         
+         ex1 = function() {
+          document.getElementById("demo35").innerHTML += this;
+         }
+
+         ex2 = () => {
+          document.getElementById("demo36").innerHTML += "this" + this;
+         }
+
+
+         //the window object calls the function
+         window.addEventListener("load", ex1);
+         window.addEventListener("load", ex2);
+         
+         //a button object calls the function
+         document.getElementById("btn1").addEventListener("click", ex1);
+         document.getElementById("btn2").addEventListener("click", ex2);
