@@ -492,3 +492,54 @@
          "With the bind() method, an Object can borrow a Method from another object. <br>" + 
          "This examples create two different brand shoes, the otherShoes object borrows the fullShoes() method from the shoes object <br>" + 
          fullShoes();
+
+         //Arrow Function ES6 --------------------------------------------------------------------------------
+         //Without Arrow Function
+         let greeting = "";
+         greeting = function(){
+          return "Hallo!";
+         }
+         document.getElementById("demo30").innerHTML = 
+         "This is Js function <b>Without Arrow Function</b> : <br>" +
+         "let greeting = ''; <br>" + 
+         "greeting = function(){ return 'Hallo!'}  <br> " +
+         "greeting(); <br>" +
+         greeting();
+
+         //With Arrow Function
+         let greeting2 = () => {
+          return "Hola!";
+         }
+         document.getElementById("demo31").innerHTML = 
+         "This is Js function <b>With Arrow Function</b> : <br>" +
+         "let greeting2 = ''; <br>" + 
+         "greeting2 = () => { return 'Hola!'}  <br> " +
+         "greeting2(); <br>" + 
+         greeting2();
+
+         //If there is only ONE Statement, We can REMOVE the RETURN keyword and the Brackets!!!(shortest)
+         let greeting3 = () => "Kalimera!";
+         document.getElementById("demo32").innerHTML =
+         "If we have <b>ONE Statement</b>(we can remove return keyword and brackets too) We can use this: <br> " +
+         "let greeting3 = () => 'Kalimera'; <br> " +
+         "greeting3(); <br>" +
+         greeting3();
+
+         //If we have parameters, we can pass them inside the parentheses:
+         let ironMan = "";
+         ironMan = ( a ) => "This Iron Man: " + a;
+         document.getElementById("demo33").innerHTML = 
+         "If we have <b>parameters</b>, we cann pass them inside the parentheses like this: <br>" + 
+         "let ironMan = ''; <br> " +
+         "ironMan = ( a ) => 'This is Iron Man: ' <br> " +
+         "ironMan('Swimming, ' + 'Cycling and ' + 'Running.') <br> " +
+         ironMan("Swimming, " + "Cycling and " + "Running.");
+         //If we can have ONE PARAMETER, we can skip the Parentheses as well:
+         let tvSeries = "";
+         tvSeries = a => "My favourite tv series is Brooklyn " + a;
+         document.getElementById("demo34").innerHTML = 
+         "If we can have <b>ONE Parameter</b>, then we can <b>Delete the Parentheses</b> too: <br>" +
+         "let tvSeries = ''; <br> " +
+         "tvSeries = a => ''My favourite tv series is Brooklyn ' <br> " +
+         "tvSeries(' 99.'); <br>" +
+         tvSeries("99.");
