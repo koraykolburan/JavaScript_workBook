@@ -553,7 +553,7 @@
          }
 
          ex2 = () => {
-          document.getElementById("demo36").innerHTML += "this" + this;
+          document.getElementById("demo36").innerHTML += "" + this;
          }
 
 
