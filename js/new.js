@@ -500,7 +500,7 @@
           return "Hallo!";
          }
          document.getElementById("demo30").innerHTML = 
-         "This is Js function <b>Without Arrow Function</b> : <br>" +
+         "This is Js function <b>Without Arrow Function</b> <b>(Regular Function)</b> : <br>" +
          "let greeting = ''; <br>" + 
          "greeting = function(){ return 'Hallo!'}  <br> " +
          "greeting(); <br>" +
@@ -531,31 +531,40 @@
          document.getElementById("demo33").innerHTML = 
          "If we have <b>parameters</b>, we cann pass them inside the parentheses like this: <br>" + 
          "let ironMan = ''; <br> " +
-         "ironMan = ( a ) => 'This is Iron Man: ' <br> " +
+         "<b>ironMan = ( a ) => 'This is Iron Man: ' + a;</b> <br> " +
          "ironMan('Swimming, ' + 'Cycling and ' + 'Running.') <br> " +
-         ironMan("Swimming, " + "Cycling and " + "Running.");
+         ironMan("Swimming, " + "Cycling and " + "Running." + "<br>");
+
          //If we can have ONE PARAMETER, we can skip the Parentheses as well:
          let tvSeries = "";
          tvSeries = a => "My favourite tv series is Brooklyn " + a;
          document.getElementById("demo34").innerHTML = 
          "If we can have <b>ONE Parameter</b>, then we can <b>Delete the Parentheses</b> too: <br>" +
          "let tvSeries = ''; <br> " +
-         "tvSeries = a => ''My favourite tv series is Brooklyn ' <br> " +
+         "<b>tvSeries = a => 'My favourite tv series is Brooklyn ' + a;</b> <br> " +
          "tvSeries(' 99.'); <br>" +
-         tvSeries("99.");
+         tvSeries("99." + "<hr>");
 
          //'this' keyword with Arrow Functions
          let ex1 = "";
          let ex2 = "";
          
          ex1 = function() {
-          document.getElementById("demo35").innerHTML += this;
+          document.getElementById("demo35").innerHTML += 
+          "This example returns two different <b>objects</b> that are (Window and Button) <br>" +
+          this + 
+          "<br>" +
+          "Because, in the <b>regular functions,</b> 'this' keyword represents whatever invoke itself. ";
          }
 
          ex2 = () => {
-          document.getElementById("demo36").innerHTML += "" + this;
+          document.getElementById("demo36").innerHTML +=
+          "This example returns the <b>Window Object TWICE</b>, because the <b>Window Object</b> is the <b>owner</b> of the function <br>" +
+          this + 
+          "<br>" + 
+          "When we click the Arrow Function button, we will see the 'this' keyword still represents the <b>Window Object</b> again and again. <br>" + 
+          " Because <b>Window Object</b> is the real owner of the arrow function.<br>";
          }
-
 
          //the window object calls the function
          window.addEventListener("load", ex1);
@@ -564,3 +573,4 @@
          //a button object calls the function
          document.getElementById("btn1").addEventListener("click", ex1);
          document.getElementById("btn2").addEventListener("click", ex2);
+
