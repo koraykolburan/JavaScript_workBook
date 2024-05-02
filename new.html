@@ -405,10 +405,46 @@
                     <button id="demo28" onclick="myFunction8()">Click to Change the Color!</button> <br>
                     <span id="demo29"></span>
                </li>
+               <br>
+               <li>
+                    <b style="font-size: 28px;">Js Modules</b> <br>
+                    Modules with variable or functions can be stored in any external file. <br>
+                    <b style="font-size: 24px;">Exports</b> <br>
+                    There are two types of Exports: <b>Named Exports</b> and <b>Default Exports</b> <br>
+                    <b style="font-size: 22px;">Named Exports</b> <br>
+                    We can create the Modules two types of ways
+                    <span id="demo40"></span> <br>
+                    <b>Default Exports</b> <br>
+                    <span id="demo41"></span>
+                    <br>
+                    <b style="font-size: 22px;">Imports</b> <br>
+                    We can import modules into a file in two ways: based on if they are <b>Named Exports</b> or <b>Default Exports:</b> <br>
+                    1) Import from <b>Named Exports</b> <br>
+                    <span id="demo42"></span> <br>
+                    2) Import from <b>Default Exports</b> <br>
+                    <span id="demo43"></span>
+               </li>
           </ol>
      </section>
 
      <script src="/js/new.js"></script>
      <script src="/js/classes.js"></script>
+
+     <!-- Modules -->
+     <!-- Named Imports -->
+     <script type="module">
+          import { name, age } from "/js/person.js";
+          import { name2, age2 } from "/js/person.js";
+          let text = "Hi, my name is " + name + ", I am " + age + " years old.";
+          let text2 = "Hallo, my name is " + name2 + ", I am " + age2 + " years old.";
+          document.getElementById("demo42").innerHTML = text + "<br>" + text2;
+     </script>
+     
+     <!-- This is Default Imports -->
+     <script type="module">
+          import message from "/js/message.js";
+          document.getElementById("demo43").innerHTML = message();
+     </script>
+
 </body>
 </html>

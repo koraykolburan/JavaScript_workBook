@@ -63,13 +63,49 @@ class Book {
 const date2 = new Date();
 let thisYearB = date2.getFullYear();
 
-const bestSeller1 = new Book("Can't Hurt Me!", 2018, "Autobiography", "David Goggins");
-const bestSeller2 = new Book("12 Rules for life", 2018, "Personal Development", "Jordan B. Peterson");
-const bestSeller3 = new Book("Deep Work", 2016, "Personal Development", "Cal Newport");
-const bestSeller4 = new Book("Indistractable: How to Control Your Attention and Choose Your Life", 2019, "Personel Development", "Nir Eyal & Julie Li");
+const bestSeller1 = new Book("'Can't Hurt Me!'", 2018, "Autobiography", "David Goggins");
+const bestSeller2 = new Book("'12 Rules for life'", 2018, "Personal Development", "Jordan B. Peterson");
+const bestSeller3 = new Book("'Deep Work'", 2016, "Personal Development", "Cal Newport");
+const bestSeller4 = new Book("'Indistractable: How to Control Your Attention and Choose Your Life'", 2019, "Personel Development", "Nir Eyal & Julie Li");
 
 document.getElementById("demo39").innerHTML = 
-"My first best seller book that I've read is " + bestSeller4.name + " And it was published " + bestSeller4.age(thisYearB) + " years ago. And its genre is " + bestSeller4.genre + ". Also it has more than authors: " + bestSeller4.author + "." + "<br>" +
-"My second best seller book that I've read after that is " + bestSeller3.name + " written by " + bestSeller3.author + ", it was published before " + bestSeller3.age(thisYearB) + " years ago. "  + "And its genre is " + bestSeller3.genre + " too. <br>" +
-"My third best seller book that I've read after " + bestSeller3.name + " is " + bestSeller2.name + " written by " + bestSeller2.author + ", it was published before " + bestSeller2.age(thisYearB) + " years ago. "  + "And its genre is " + bestSeller2.genre + " too. <br>" +
-"My latest and my favourite best seller book that I wanted to write with upper case on everywhere is " + bestSeller1.name + " written by " + bestSeller1.author + ". It was published before " + bestSeller1.age(thisYearB) + " years ago. " + "And its genre is " + bestSeller1.genre + ".";
+"My first best seller book that I've read is " + bestSeller4.name +
+" and it was published " +
+bestSeller4.age(thisYearB) +
+" years ago. And its genre is " +
+bestSeller4.genre + 
+". Also it has more than one author: " + 
+bestSeller4.author + 
+"." + 
+"<br>" +
+"My second best seller book that I've read after that is " + 
+bestSeller3.name + 
+" written by " + 
+bestSeller3.author + 
+", it was published before " + 
+bestSeller3.age(thisYearB) + 
+" years ago. "  + 
+"And its genre is " + 
+bestSeller3.genre + 
+" too. <br>" +
+"My third best seller book that I've read after " + 
+bestSeller3.name + 
+" is " + 
+bestSeller2.name + 
+" written by " + 
+bestSeller2.author + 
+", it was published before " + 
+bestSeller2.age(thisYearB) + 
+" years ago. "  + 
+"And its genre is " + 
+bestSeller2.genre + 
+" too. <br>" +
+"My latest and my favourite best seller book that I wanted to write with upper case on everywhere is " + bestSeller1.name + 
+" written by " + 
+bestSeller1.author + 
+". It was published before " + 
+bestSeller1.age(thisYearB) + 
+" years ago. " + 
+"And its genre is " + 
+bestSeller1.genre + 
+".";
