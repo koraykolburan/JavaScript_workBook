@@ -5,7 +5,7 @@ const txt = '{"file1":"Public Regulation on Economy", "file2":"Labour Market", "
 const obj = JSON.parse(txt);
 
 document.getElementById("demo44").innerHTML =
-"<h2>This is for JSON:</h2> Kindly reminder:(please go to the '/js/forjson.js') <br>" +
+"<h2 id='JSON'>This is for JSON:</h2> Kindly reminder:(please go to the '/js/forjson.js') <br>" +
 "<h3>Creating a Js Object from a JSON String:</h3>" +
 "We used <b>JSON.parse()</b> as like this: <b>const obj = JSON.parse(txt);</b> <br>" +
 obj.file1 + " and " + obj.file2 + " is connected with " + obj.file3 + " too, in the end of day.";
@@ -36,6 +36,7 @@ Parsing Functions - We should avoid using function in JSON. The Functions will l
 
 //When we sending data to a Web Server, the data has to be A STRING. Convert a Js Object into a JSON String 
 
+//Stringify a Js Object
 const bikesColl = {bike1:"Road", bike2:"Mountain Bike", bike3:"Trail Riding"};
 const myJSON = JSON.stringify(bikesColl);
 
@@ -59,7 +60,7 @@ document.getElementById("demo48").innerHTML =
 "to this JSON String: <br>" +
 myJSON2;
 
-//Store and Retrieve data from local storage
+//Store and Retrieve data from LOCAL STORAGE
 
 //Storing Data:
 const bikesColl2 = {bike1:"Road", bike2:"Mountain Bike", bike3:"Trail Riding"};
@@ -96,12 +97,62 @@ const myJSON6 = '{"name":"John", "age":30, "city":null}';
 const myObj = JSON.parse(myJSON6);
 console.log("This is how we can create a Js Object by PARSING a JSON String!: " + myObj.name + " " + myObj.age + " " + myObj.city);
 
-//Looping an Object
+//Looping an Object - with for/in loop
 const myJSON7 = '{"bike1":"Road", "bike2":"Mountain Bike", "bike3":"Trail Riding"}';
 const myObj2 = JSON.parse(myJSON7);
 
 let txt5 = "";
 for(const x in myObj2){
-     txt5 += x + ", ";
+     txt5 += x + ", "; //for property
 }
-document.getElementById("demo51").innerHTML = "This is looping through the object: " + txt5;
+
+let txt6 = "";
+for(const x in myObj2){
+     txt6 += myObj2[x] + ", "; //for property values
+}
+document.getElementById("demo51").innerHTML = "<b>This is looping through the Object:</b> <br>" +
+"After JSON.parse(object), we can use the for/in loop like this:<br>" +
+"My bikes are like that: " + txt5 + "<br>" +
+"If we want to <b>access property values</b>, <br>" +
+"we need to use <b>myObj2[x]</b> inside of the <b>for/in loops.</b> <br>" +
+"And the output is going to be like that: " + txt6;
+
+//Looping an Array - with for/in and for loops
+const myJSON8 = '{"bike1":"Road", "bike2":"Mountain Bike", "bike3":"Trail Riding", "countries": [ "Italy", "The U.K.", "Germany"  ]}';
+const myObj3 = JSON.parse(myJSON8);
+
+let txt7 = "";
+for(const x in myObj3.countries){
+     txt7 += myObj3.countries[x] + ", ";
+}
+document.getElementById("demo52").innerHTML =
+"<b>This is looping through the Array:</b> <br>" +
+"We need to access countries array that's why we need to use <b>myObj3.countries[x]</b> inside of the <b>for/in loops.</b> <br>" +
+"I rode my bikes in these three countries: " + txt7;
+// we can do this with using for loop
+let txt8 = "";
+for(let i = 0; i < myObj3.countries.length; i++){
+     txt8 += myObj3.countries[i] +  ", ";
+}
+console.log("This is for after parsing an JSON.parse(), looping through a Js Array: " + txt8);
+
+//Convert a Js object into a JSON string and send it to the SERVER!
+/*
+const myObj4 = {"bike1":"Road", "bike2":"Mountain Bike", "bike3":"Trail Riding"};
+const myJSON9 = JSON.stringify(myObj4);
+window.location = "demo_json.php?x=" + myJSON9;
+
+*/
+
+//Receiving Data from a SERVER - Fetch a JSON file with XMLHttpRequest
+const xmlhttp = new XMLHttpRequest();
+xmlhttp.onload = function() {
+     const myObj4 = JSON.parse(this.responseText);
+     let txt9 = "";
+     for(const x in myObj4.top10RoadBikes){
+          txt9 += myObj4.top10RoadBikes.brand[x] + ", ";
+     }
+     document.getElementById("demo53").innerHTML = txt9;
+}
+xmlhttp.open("GET", "json/bikes.json");
+xmlhttp.send();

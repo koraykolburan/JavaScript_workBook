@@ -199,10 +199,10 @@
          }
          document.getElementById("demo19").innerHTML = 
          " <h4>Iterating a new Set with <b>entries()</b> method:</h4>" +
-         "<ul><li> entries() method is supposed to return a [key,value] pair from object. </li>" +
-         "<li> However, a Set has no keys, that's why entries() returns [value, value]. </li> " +
-         "<li> This makes Sets compatible with Maps. </li></ul> " +
-         text8;
+         "entries() method is supposed to return a [key,value] pair from object. <br>" +
+         "However, a Set has no keys, that's why entries() returns [value, value]. <br> " +
+         "This makes Sets compatible with Maps. <br>" +
+         text8 ;
 
           //JS Maps --------------------------------------------------------------------
           const fruitsPrices = new Map([

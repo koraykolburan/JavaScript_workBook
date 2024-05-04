@@ -27,6 +27,33 @@
                border-radius: 12px;
                height: 20px;
           }
+          ul li {
+               float: left;
+               padding:5px;
+               margin: 10px;
+               list-style-type: none;
+               overflow: auto;
+               list-style-type: none;
+               color: #fff;
+               border: 1px solid black;
+               border-radius: 20px;
+               font-size: 20px;
+               background: rgb(61, 88, 97);
+          }
+          ul li a:hover {
+               color: #000;
+          }
+          a, a:visited, a:active {
+               color: inherit;
+          }
+          ul li a {
+               text-decoration: none;
+          }
+          .clearfix::after {
+               content: "";
+               clear: both;
+               display: table;
+          }
      </style>
 </head>
 <body>
@@ -34,278 +61,306 @@
           <h1>
                New Features on JS
           </h1>
-          <h2>
-               (ES6,ES2016, ES2017, ES2018, ES2019, ES2020, ES2021, ES2022, ES2023..)
-          </h2>
+          <div class="clearfix">
+               <ul>
+                    <li><a href="#ES6">ES6</a></li>
+                    <li><a href="#Classes">CLASSES</a></li>
+                    <li><a href="#ES2016">ES2016</a></li>
+                    <li><a href="#ES2017">ES2017</a></li>
+                    <li><a href="#ES2018">ES2018</a></li>
+                    <li><a href="#ES2019">ES2019</a></li>
+                    <li><a href="#ES2020">ES2020</a></li>
+                    <li><a href="#ES2021">ES2021</a></li>
+                    <li><a href="#ES2022">ES2022</a></li>
+                    <li><a href="#ES2023">ES2023</a></li>
+                    <li><a href="#NOTES">NOTES</a></li>
+                    <li><a href="#MODULES">MODULES</a></li>
+                    <li><a href="#JSON">JSON</a></li>
+               </ul>
+          </div>
      </header>
-     <section>
-          <h2>ES6</h2>
-          <ol>
-               <li>
-                    <b>let:</b> declares a block variable <br>
-                    it have block scope! <br>
-                    it must be declared before USE! <br>
-                    it cannot be redeclared in the same SCOPE! <br>
-                    it doesn't bind to 'this'!
-               </li>
-               <li>
-                    <b>const:</b> declares a block constant <br>
-                    Use with these: a new ARRAY, OBJECT, FUNCTION, Reg Exp. <br>
-                    it cannot be Redeclared! <br>
-                    it cannot be Reassigned! <br>
-                    it have block scope! <br>
-                    # NOTE # It doesn't DEFINE a constant Array! It deifnes a constant REFERENCE to an ARRAY! <br>
-                    Because of this, we can still change the elements of an Array: <br>
-                    1) the elements of Const Array(push, pop, remove..). <br>
-                    2) the properties of Const Object(color, owner..).
-               </li>
-               <li>
-                    Block Scope: means { here... }
-               </li>
-               <li>
-                    <b>repeat()</b> method returns a string with a number of copies of string like this: <br>
-                    text.repeat(3);
-               </li>
-               <li>
-                    <b>includes()</b> method returns TRUE if a string contains a specified value. <br>
-                    (it can be taken second param. as a start position) <br>
-                    let text = "Hi is this a new bike? Or is this a second-hand bike?"; <br>
-                    text.includes("bike", 49); <br>
-                    <b>false</b>
-               </li>
-               <li>
-                    <b>startsWith()</b> method: if a string BEGINS with a specified value, it returns TRUE. <br>
-                    (it is case-sensitive & Start position for the search can be specified with second param. like:2) <br>
-                    let text = "Running, swimming and cycling? Or just both running and swimming?" <br>
-                    text.startsWith("Running", 0); <br>
-                    <b>TRUE</b>
-               </li>
-               <li>
-                    <b>endsWith()</b> method: if a string ENDS with a specified value, it returns TRUE. <br>
-                    (it is case-sensitive & End position for the search can be specified with second param. like:2) <br>
-                    let text = "Running, swimming and cycling? Or just both running and swimming?" <br>
-                    text.endsWith("?"); <br>
-                    <b>TRUE</b>
-               </li>
-               <li>
-                    <b>includes()</b> as an ARRAY method, it allows us to check if an element is present in an array. <br>
-                    (including NaN) <br>
-                    Check if the cars array contains "cars2": <br> 
-                    const cars = [ "cars0", "cars1", "cars2", "cars3",]; <br>
-                    cars.includes("cars2"); it returns: <b>TRUE</b>
-               </li>
-               <li>
-                    <b>find()</b> method returns the value of the FIRST ARRAY Element that passes a TEST Function. <br>
-                    const nums = [2, 3, 4, 6, 7, 9, 12, 13, 15, 17]; <br>
-                    let first = nums.find(myFunction); <br>
-                    function myFunction(value, index, array) { return value > 10; }
-               </li>
-               <p id="demo3"></p>
-               <li>
-                    <b>findIndex()</b> method returns <b>the index</b> of the first array element that passes a test function. <br>
-                    It's exactly like <b>find()</b> method. But it returns index only.
-               </li>
-               <li>
-                    <b>from()</b> method returns an Array object from any object with a length property or any iterable object. <br>
-                    const arr1 = Array.from("UKULELE");
-               </li>
-               <p id="demo4"></p>
-               <li>
-                    <b>keys()</b> method returns an Array Iterator object with the KEYS of an Array.<br>
-                    <b>const</b> summer = ["U", "K", "U", "L", "E", "L", "E"]; <br>
-                    <b>const</b> keys = summer.keys(); <br>
-
-                    <b>let</b> text1 = ""; <br>
-                    <b>for</b> (let x of keys) { <br>
-                         text1 += x + "< br>"; <br>
-                    }
-               </li>
-               <p id="demo5"></p>
-               <li>
-                    <b>entries()</b> method returns an Array ITERATOR object wiht KEY / VALUE pairs. <br>
-                    - This method does not change the original array. <br>
-                    const instruments = ["Ukulele","Bas Guitar","Saxophone","Electric Guitar","Drum"]; <br>
-                    const i = instruments.entries();
-               </li>
-               <p id="demo6"></p>
-               <li>
-                    The <b>"Spread '...' "</b> Operator SPREADS elements of iterable objects: <br>
-                    const s1 = ["Ich", "Du"]; <br>
-                    const s2 = ["Er", "Sie", "Es"]; <br>
-                    const s3 = ["Wir", "Ihr", "Sie"]; <br>
-                    const pronomen = [...s1, ...s2, ...s3];
-               </li>
-               <p id="demo8"></p>
-               <li>
-                    <b>Math.trunc()</b> returns the integer part of number: <br>
-                    Math.trunc(2.9); the output is: 2
-               </li>
-               <li>
-                    <b>Math.sign()</b> returns only 3 values: Positive, Null and Negative <br>
-                    Math.sign(-1500); the output is: -1
-               </li>
-               <li>
-                    <b>the For Of Loop</b> it lets you loop over ITERABLE Data Structures such as <b>Arrays, Strings, Maps, NodeLists, and more...</b> <br>
-                    for (variable <b>of</b> iterable ) { //code block to be executed } <br>
-                    <b>variable</b> = For every ITERATION the value of the next property is assigned to the variable. It can be declared with: <b>const, let or var.</b> <br>
-                    <b>iterable</b> = An object that HAS iterable PROPERTIES. <br>
-                    Respectively: <b>On ARRAY</b> and <b>On Strings</b>:
-               </li>
-               <p id="demo12"></p>
-               <p id="demo13"></p>
-               <li>
-                    <b>JS Sets</b> is a collection of Unique Values. <br>
-                    Each value can only occur ONCE in a set. <br>
-                    If we use typeof for for JS Sets it returns <b>object.</b>
-               </li>
-               <p id="demo18"></p>
-               <p id="demo19"></p>
-               <li>
-                    <b>JS Maps</b> <br>
-                    Fruit Prices (with js maps): <br>
-                    The first one: with forEach(); <br>
-                    The second one: entries() method and for of to create key, value pairs easily.
-               </li>
-               <p id="demo14"></p>
-               <p id="demo15"></p>
-               <p id="demo20"></p>
-               <p id="demo21"></p>
-               <li>
-                    <b>Arrow Function</b> <br>
-               </li>
-               <p id="demo30"></p>
-               <p id="demo31"></p>
-               <p id="demo32"></p>
-               <p id="demo33"></p>
-               <p id="demo34"></p>
+     <main>
+          <article id="ES6" class="clearfix">
+               <h2>ES6</h2>
+               <ol>
+                    <li>
+                         <b>let:</b> declares a block variable <br>
+                         it have block scope! <br>
+                         it must be declared before USE! <br>
+                         it cannot be redeclared in the same SCOPE! <br>
+                         it doesn't bind to 'this'!
+                    </li>
+                    <li>
+                         <b>const:</b> declares a block constant <br>
+                         Use with these: a new ARRAY, OBJECT, FUNCTION, Reg Exp. <br>
+                         it cannot be Redeclared! <br>
+                         it cannot be Reassigned! <br>
+                         it have block scope! <br>
+                         # NOTE # It doesn't DEFINE a constant Array! It deifnes a constant REFERENCE to an ARRAY! <br>
+                         Because of this, we can still change the elements of an Array: <br>
+                         1) the elements of Const Array(push, pop, remove..). <br>
+                         2) the properties of Const Object(color, owner..).
+                    </li>
+                    <li>
+                         Block Scope: means { here... }
+                    </li>
+                    <li>
+                         <b>repeat()</b> method returns a string with a number of copies of string like this: <br>
+                         text.repeat(3);
+                    </li>
+                    <li>
+                         <b>includes()</b> method returns TRUE if a string contains a specified value. <br>
+                         (it can be taken second param. as a start position) <br>
+                         let text = "Hi is this a new bike? Or is this a second-hand bike?"; <br>
+                         text.includes("bike", 49); <br>
+                         <b>false</b>
+                    </li>
+                    <li>
+                         <b>startsWith()</b> method: if a string BEGINS with a specified value, it returns TRUE. <br>
+                         (it is case-sensitive & Start position for the search can be specified with second param. like:2) <br>
+                         let text = "Running, swimming and cycling? Or just both running and swimming?" <br>
+                         text.startsWith("Running", 0); <br>
+                         <b>TRUE</b>
+                    </li>
+                    <li>
+                         <b>endsWith()</b> method: if a string ENDS with a specified value, it returns TRUE. <br>
+                         (it is case-sensitive & End position for the search can be specified with second param. like:2) <br>
+                         let text = "Running, swimming and cycling? Or just both running and swimming?" <br>
+                         text.endsWith("?"); <br>
+                         <b>TRUE</b>
+                    </li>
+                    <li>
+                         <b>includes()</b> as an ARRAY method, it allows us to check if an element is present in an array. <br>
+                         (including NaN) <br>
+                         Check if the cars array contains "cars2": <br> 
+                         const cars = [ "cars0", "cars1", "cars2", "cars3",]; <br>
+                         cars.includes("cars2"); it returns: <b>TRUE</b>
+                    </li>
+                    <li>
+                         <b>find()</b> method returns the value of the FIRST ARRAY Element that passes a TEST Function. <br>
+                         const nums = [2, 3, 4, 6, 7, 9, 12, 13, 15, 17]; <br>
+                         let first = nums.find(myFunction); <br>
+                         function myFunction(value, index, array) { return value > 10; }
+                    </li>
+                    <p id="demo3"></p>
+                    <li>
+                         <b>findIndex()</b> method returns <b>the index</b> of the first array element that passes a test function. <br>
+                         It's exactly like <b>find()</b> method. But it returns index only.
+                    </li>
+                    <li>
+                         <b>from()</b> method returns an Array object from any object with a length property or any iterable object. <br>
+                         const arr1 = Array.from("UKULELE");
+                    </li>
+                    <p id="demo4"></p>
+                    <li>
+                         <b>keys()</b> method returns an Array Iterator object with the KEYS of an Array.<br>
+                         <b>const</b> summer = ["U", "K", "U", "L", "E", "L", "E"]; <br>
+                         <b>const</b> keys = summer.keys(); <br>
+     
+                         <b>let</b> text1 = ""; <br>
+                         <b>for</b> (let x of keys) { <br>
+                              text1 += x + "< br>"; <br>
+                         }
+                    </li>
+                    <p id="demo5"></p>
+                    <li>
+                         <b>entries()</b> method returns an Array ITERATOR object wiht KEY / VALUE pairs. <br>
+                         - This method does not change the original array. <br>
+                         const instruments = ["Ukulele","Bas Guitar","Saxophone","Electric Guitar","Drum"]; <br>
+                         const i = instruments.entries();
+                    </li>
+                    <p id="demo6"></p>
+                    <li>
+                         The <b>"Spread '...' "</b> Operator SPREADS elements of iterable objects: <br>
+                         const s1 = ["Ich", "Du"]; <br>
+                         const s2 = ["Er", "Sie", "Es"]; <br>
+                         const s3 = ["Wir", "Ihr", "Sie"]; <br>
+                         const pronomen = [...s1, ...s2, ...s3];
+                    </li>
+                    <p id="demo8"></p>
+                    <li>
+                         <b>Math.trunc()</b> returns the integer part of number: <br>
+                         Math.trunc(2.9); the output is: 2
+                    </li>
+                    <li>
+                         <b>Math.sign()</b> returns only 3 values: Positive, Null and Negative <br>
+                         Math.sign(-1500); the output is: -1
+                    </li>
+                    <li>
+                         <b>the For Of Loop</b> it lets you loop over ITERABLE Data Structures such as <b>Arrays, Strings, Maps, NodeLists, and more...</b> <br>
+                         for (variable <b>of</b> iterable ) { //code block to be executed } <br>
+                         <b>variable</b> = For every ITERATION the value of the next property is assigned to the variable. It can be declared with: <b>const, let or var.</b> <br>
+                         <b>iterable</b> = An object that HAS iterable PROPERTIES. <br>
+                         Respectively: <b>On ARRAY</b> and <b>On Strings</b>:
+                    </li>
+                    <p id="demo12"></p> 
+                    <p id="demo13"></p>
+                    <li>
+                         <b>JS Sets</b> is a collection of Unique Values. <br>
+                         Each value can only occur ONCE in a set. <br>
+                         If we use typeof for for JS Sets it returns <b>object.</b>
+                    </li>
+                    <p id="demo18"></p>
+                    <p id="demo19"></p>
+                    <li>
+                         <b>JS Maps</b> <br>
+                         Fruit Prices (with js maps): <br>
+                         The first one: with forEach(); <br>
+                         The second one: entries() method and for of to create key, value pairs easily.
+                    </li>
+                    <p id="demo14"></p>
+                    <p id="demo15"></p>
+                    <p id="demo20"></p>
+                    <p id="demo21"></p>
+                    <li>
+                         <b>Arrow Function</b> <br>
+                    </li>
+                    <p id="demo30"></p>
+                    <p id="demo31"></p>
+                    <p id="demo32"></p>
+                    <p id="demo33"></p>
+                    <p id="demo34"></p>
+                    <p>
+                         <b>'this' keyword with Arrow Function</b> <br>
+                         <button id="btn1">With Regular Function!</button> <br>
+                         <span id="demo35"></span> <br>
+                         <button id="btn2">With Arrow Function!</button> <br>
+                         <span id="demo36"></span> <br>
+                    </p>
+                    <hr>
+               </ol>
+               <h3>Template Strings(`backticks`)</h3>
+               <ol>
+                    <li>
+                         Templates are strings enclosed in backticks like this: (`Template string`). <br>
+                         Templates are not supported in IE.
+                    </li>
+                    <li>
+                         Templates allow multiline strings.
+                    </li>
+                    <li>
+                         Variable Substitutions like this: <br>
+                         let firstStep = "Swimming"; <br>
+                         let secondStep = "Running"; <br>
+                         let text = `Start with ${firstStep} and after that keep with ${secondStep}!`; <br>
+                         Start with Swimming and after that keep with Running!
+                    </li>
+                    <li>
+                         Template Strings allow expressions in strings.
+                    </li>
+               </ol>
+          </article>
+          <hr>
+          <article id="Classes" class="clearfix">
+               <h3>Classes ES6</h3>
+               <ul>
+                    <li>
+                         Class methods are created with the SAME Syntax as Object methods: <br>
+                         1) Use the <b>'class'</b> keyword! <br>
+                         2) Always <b>ADD</b> a <b>'constructor()'</b> method. <br>
+                         3) Then <b>ADD</b> any Numbers of method.
+                    </li>
+                    <li id="demo37"></li>
+                    <br>
+                    <li id="demo38"></li>
+                    <br>
+                    <li id="demo39"></li>
+               </ul>
+          </article>
+          <hr>
+          <article id="ES2017">
+               <h2>ES2017</h2>
+               <ol>
+                    <li>
+                         padStart() and padEnd() methods pads a string from the START and from the END.(string method)
+                    </li>
+               </ol>
+          </article>
+          <hr>
+          <article id="ES2019">
+               <h2>ES2019</h2>
+               <ol>
+                    <li>
+                         <b>trimStart()</b> method: it works like trim() but removes whitespace only from the START of a string. <br>
+                         trimEnd() method: it works like trim() but removes whitespace only from the END of a string.
+                    </li>
+                    <li>
+                         <b>flat()</b> method creates a new array with sub-array elements concatenated to a specified depth. <br>
+                         const cars = [ "cars0", "cars1", [ "e-cars0", "e-cars1", [ "h-cars0", "h-cars1"], "cars2", "cars3"]; <br>
+                         const newArr = cars.flat();
+                    </li>
+                    <p id="demo2"></p>
+                    <li>
+                         <b>flatMap()</b> method first maps all elements of an array and then creates a new array by flattening the array. <br>
+                         const myArr = [1, 2, 3, 4, 5, 6, 7, 8, 9]; <br>
+                         const newArr = myArr.flatMap((x) => x * 10); <br>
+                         innerHTML = newArr; <br>
+                         output is: 10,20,30,40,50,60,70,80,90
+                    </li>
+               </ol>
+          </article>
+          <hr>
+          <article id="ES2020">
+               <h2>ES2020</h2>
+               <h3>Logical Assignment Operators:</h3>
+               <ol>
+                    <li>
+                          &&= if the first value is TRUE, the second value is assigned!
+                    </li>
+                    <li>
+                          ||= if the first value is FALSE, the second value is assigned!
+                    </li>
+                    <li>
+                         <b>??= the Nullish Coalescing Assignment Operator</b> if the first value is UNDEFINED or NULL, the second value is assigned! <br>
+                         let x = 13; <br>
+                         let y = null; <br> 
+                         let z = 13; <br>
+                    </li>
+                    <p id="demo9"></p>
+                    <p id="demo10"></p>
+                    <p id="demo11"></p>
+                    <li>
+                         ?. operator returns <b>UNDEFINED</b> if an object is <b>UNDEFINED</b> or <b>NULL</b>(instead of throwing an error). <br>
+                    </li>
+               </ol>
+               <h3>BigInt: big numbers</h3>
+               <h3>matchAll()</h3>
+               <ol>
+                    <li>
+                         method returns an ITERATOR containing the results of matching a string against a string or a REG. EXP.
+                    </li>
+                    <li>
+                         For global search we can use: /run/g
+                    </li>
+                    <li>
+                         For global search and also case-sensitive we can use: /run/gi
+                    </li>
+                    <li>
+                         You can look for the real JS code in this html page.
+                    </li>
+               </ol>
                <p>
-                    <b>'this' keyword with Arrow Function</b> <br>
-                    <button id="btn1">With Regular Function!</button> <br>
-                    <span id="demo35"></span> <br>
-                    <button id="btn2">With Arrow Function!</button> <br>
-                    <span id="demo36"></span> <br>
+                    let text = "Did you go to the <b>run</b> today? No? Let's <b>run</b> then. I love <b>run</b>ning everyday! <b>RUN</b>NING and CYCLING!!!" <br>
+                    const iterator = text.matchAll(/run/gi); <br>
+                    document.getElementById("demo").innerText = Array.from(iterator); <br>
+                    The result is shown below:
                </p>
-               <hr>
-          </ol>
-          <h3>Template Strings(`backticks`)</h3>
-          <ol>
-               <li>
-                    Templates are strings enclosed in backticks like this: (`Template string`). <br>
-                    Templates are not supported in IE.
-               </li>
-               <li>
-                    Templates allow multiline strings.
-               </li>
-               <li>
-                    Variable Substitutions like this: <br>
-                    let firstStep = "Swimming"; <br>
-                    let secondStep = "Running"; <br>
-                    let text = `Start with ${firstStep} and after that keep with ${secondStep}!`; <br>
-                    Start with Swimming and after that keep with Running!
-               </li>
-               <li>
-                    Template Strings allow expressions in strings.
-               </li>
-          </ol>
+               <p id="demo"></p>
+          </article>
           <hr>
-          <h3>Classes ES6</h3>
-          <ul>
-               <li>
-                    Class methods are created with the SAME Syntax as Object methods: <br>
-                    1) Use the <b>'class'</b> keyword! <br>
-                    2) Always <b>ADD</b> a <b>'constructor()'</b> method. <br>
-                    3) Then <b>ADD</b> any Numbers of method.
-               </li>
-               <li id="demo37"></li>
-               <br>
-               <li id="demo38"></li>
-               <br>
-               <li id="demo39"></li>
-          </ul>
+          <article id="ES2021">
+               <h2>ES2021</h2>
+               <ol>
+                    <li>
+                         replaceAll() method allows to specify a regular expression instead of a string tobe replaced. <br>
+                         like this: text = text.replaceAll(/Plastics/g,"Glasses"); text = text.replaceAll(/plastics/g,"glasses");
+                    </li>
+               </ol>
+
+          </article>
           <hr>
-          <h2>ES2017</h2>
-          <ol>
-               <li>
-                    padStart() and padEnd() methods pads a string from the START and from the END.(string method)
-               </li>
-          </ol>
-          <hr>
-          <h2>ES2019</h2>
-          <ol>
-               <li>
-                    <b>trimStart()</b> method: it works like trim() but removes whitespace only from the START of a string. <br>
-                    trimEnd() method: it works like trim() but removes whitespace only from the END of a string.
-               </li>
-               <li>
-                    <b>flat()</b> method creates a new array with sub-array elements concatenated to a specified depth. <br>
-                    const cars = [ "cars0", "cars1", [ "e-cars0", "e-cars1", [ "h-cars0", "h-cars1"], "cars2", "cars3"]; <br>
-                    const newArr = cars.flat();
-               </li>
-               <p id="demo2"></p>
-               <li>
-                    <b>flatMap()</b> method first maps all elements of an array and then creates a new array by flattening the array. <br>
-                    const myArr = [1, 2, 3, 4, 5, 6, 7, 8, 9]; <br>
-                    const newArr = myArr.flatMap((x) => x * 10); <br>
-                    innerHTML = newArr; <br>
-                    output is: 10,20,30,40,50,60,70,80,90
-               </li>
-          </ol>
-          <hr>
-          <h2>ES2020</h2>
-          <h3>Logical Assignment Operators:</h3>
-          <ol>
-               <li>
-                     &&= if the first value is TRUE, the second value is assigned!
-               </li>
-               <li>
-                     ||= if the first value is FALSE, the second value is assigned!
-               </li>
-               <li>
-                    <b>??= the Nullish Coalescing Assignment Operator</b> if the first value is UNDEFINED or NULL, the second value is assigned! <br>
-                    let x = 13; <br>
-                    let y = null; <br> 
-                    let z = 13; <br>
-               </li>
-               <p id="demo9"></p>
-               <p id="demo10"></p>
-               <p id="demo11"></p>
-               <li>
-                    ?. operator returns <b>UNDEFINED</b> if an object is <b>UNDEFINED</b> or <b>NULL</b>(instead of throwing an error). <br>
-               </li>
-          </ol>
-          <h3>BigInt: big numbers</h3>
-          <h3>matchAll()</h3>
-          <ol>
-               <li>
-                    method returns an ITERATOR containing the results of matching a string against a string or a REG. EXP.
-               </li>
-               <li>
-                    For global search we can use: /run/g
-               </li>
-               <li>
-                    For global search and also case-sensitive we can use: /run/gi
-               </li>
-               <li>
-                    You can look for the real JS code in this html page.
-               </li>
-          </ol>
-          <p>
-               let text = "Did you go to the <b>run</b> today? No? Let's <b>run</b> then. I love <b>run</b>ning everyday! <b>RUN</b>NING and CYCLING!!!" <br>
-               const iterator = text.matchAll(/run/gi); <br>
-               document.getElementById("demo").innerText = Array.from(iterator); <br>
-               The result is shown below:
-          </p>
-          <p id="demo"></p>
-          <hr>
-          <h2>ES2021</h2>
-          <ol>
-               <li>
-                    replaceAll() method allows to specify a regular expression instead of a string tobe replaced. <br>
-                    like this: text = text.replaceAll(/Plastics/g,"Glasses"); text = text.replaceAll(/plastics/g,"glasses");
-               </li>
-          </ol>
-          <hr>
-          <h2>ES2022</h2>
+          <article id="ES2022">
+               <h2>ES2022</h2>
           <ol>
                <li>
                     at() method returns the character at a specified index(position) in a STRING. <br>
@@ -318,47 +373,52 @@
                     <b>cars2</b>
                </li>
           </ol>
+          </article>
           <hr>
-          <h2>ES2023</h2>
-          <ol>
-               <li>
-                    <b>toSpliced()</b> method splices an array without altering the original array. <br>
-                    It creates a new array and keeps the original array unchanged. <br>
-                    const nums = ["Zero", "One", "Two", "Three"]; <br>
-                    const spliced = nums.toSpliced(0, 1); <br>
-                    <b>One,Two,Three</b>
-               </li>
-               <li>
-                    <b>findLast()</b> method starts from the end of an array and returns the value of the first element that matching a condition. <br>
-                    const celcius = [27, 28, 30, 32, 39, 38, 36]; <br>
-                    let high = celcius.findLast(x => x > 35); <br>
-                    "In this week, the last temperature over 30 was " + high; <br>
-                    In this week, the last temperature over 30 was 36
-               </li>
-               <li>
-                    <b>findLastIndex()</b> method finds the index of the last element that satisfies a condition. <br>
-                    It returns <b>6.</b>
-               </li>
-               <li>
-                    <b>toSorted()</b> method as a safe way to SORT an array without altering the original array. <br>
-                    const winterSpring = ["Jan", "Feb", "Mar", "Apr"]; <br>
-                    const sorted = winterSpring.toSorted(); <br>
+          <article id="ES2023">
+               <h2>ES2023</h2>
+               <ol>
+                    <li>
+                         <b>toSpliced()</b> method splices an array without altering the original array. <br>
+                         It creates a new array and keeps the original array unchanged. <br>
+                         const nums = ["Zero", "One", "Two", "Three"]; <br>
+                         const spliced = nums.toSpliced(0, 1); <br>
+                         <b>One,Two,Three</b>
+                    </li>
+                    <li>
+                         <b>findLast()</b> method starts from the end of an array and returns the value of the first element that matching a condition. <br>
+                         const celcius = [27, 28, 30, 32, 39, 38, 36]; <br>
+                         let high = celcius.findLast(x => x > 35); <br>
+                         "In this week, the last temperature over 30 was " + high; <br>
+                         In this week, the last temperature over 30 was 36
+                    </li>
+                    <li>
+                         <b>findLastIndex()</b> method finds the index of the last element that satisfies a condition. <br>
+                         It returns <b>6.</b>
+                    </li>
+                    <li>
+                         <b>toSorted()</b> method as a safe way to SORT an array without altering the original array. <br>
+                         const winterSpring = ["Jan", "Feb", "Mar", "Apr"]; <br>
+                         const sorted = winterSpring.toSorted(); <br>
+     
+                         sorted + "< br>" + months;<br>
+                         Apr,Feb,Jan,Mar <br>
+                         Jan,Feb,Mar,Apr
+                    </li>
+                    <li>
+                         <b>toReversed()</b> method as a safe way to REVERSE an array without altering the original array. <br>
+                    </li>
+                    <li>
+                         <b>with()</b> method is a safe way to UPDATE elements in an array without altering the original array. <br>
+                         const instruments1 = ["Ukulele","Bas Guitar","Saxop","Electric Guitar","Drum"]; <br>
+                         const myInstruments = instruments.with(2, "Saxophone");
+                    </li>
+                    <p id="demo7"></p>
+               </ol>
 
-                    sorted + "< br>" + months;<br>
-                    Apr,Feb,Jan,Mar <br>
-                    Jan,Feb,Mar,Apr
-               </li>
-               <li>
-                    <b>toReversed()</b> method as a safe way to REVERSE an array without altering the original array. <br>
-               </li>
-               <li>
-                    <b>with()</b> method is a safe way to UPDATE elements in an array without altering the original array. <br>
-                    const instruments1 = ["Ukulele","Bas Guitar","Saxop","Electric Guitar","Drum"]; <br>
-                    const myInstruments = instruments.with(2, "Saxophone");
-               </li>
-               <p id="demo7"></p>
-          </ol>
-          <h2>NOTES</h2>
+          </article>
+          <article id="NOTES">
+               <h2>NOTES</h2>
           <h3>Some Data Types & Notes</h3>
           <ol>
                <li id="demo16"></li>
@@ -406,7 +466,7 @@
                     <span id="demo29"></span>
                </li>
                <br>
-               <li>
+               <li id="MODULES">
                     <b style="font-size: 28px;">Js Modules</b> <br>
                     Modules with variable or functions can be stored in any external file. <br>
                     <br>
@@ -427,6 +487,10 @@
                     2) Import from <b>Default Exports</b> <br>
                     <span id="demo43"></span>
                </li>
+          </ol>
+          </article>
+          <article id="JSON">
+               <ol>
                <li id="demo44"></li>
                <li id="demo45"></li>
                <li id="demo46"></li>
@@ -435,8 +499,11 @@
                <li id="demo49"></li>
                <li id="demo50"></li>
                <li id="demo51"></li>
-          </ol>
-     </section>
+               <li id="demo52"></li>
+               <li id="demo53"></li>
+               </ol>
+          </article>
+     </main>
 
      <script src="/js/new.js"></script>
      <script src="/js/classes.js"></script>
