@@ -144,15 +144,59 @@ window.location = "demo_json.php?x=" + myJSON9;
 
 */
 
-//Receiving Data from a SERVER - Fetch a JSON file with XMLHttpRequest
+//Receiving Data(OBJECT) from a SERVER - Fetch a JSON file with XMLHttpRequest
 const xmlhttp = new XMLHttpRequest();
 xmlhttp.onload = function() {
      const myObj4 = JSON.parse(this.responseText);
      let txt9 = "";
-     for(const x in myObj4.top10RoadBikes){
-          txt9 += myObj4.top10RoadBikes.brand[x] + ", ";
+     for(const x in myObj4){
+          txt9 += myObj4[x] + "." + "<br>";
      }
      document.getElementById("demo53").innerHTML = txt9;
 }
-xmlhttp.open("GET", "json/bikes.json");
+xmlhttp.open("GET", "json/news.json");
 xmlhttp.send();
+
+//Receiving Data(ARRAY) from a SERVER - Fetch a JSON file with XMLHttpRequest
+const xmlhttp2 = new XMLHttpRequest();
+xmlhttp2.onload = function() {
+     const myArr = JSON.parse(this.responseText);
+     let txt10 = "";
+     for(const x in myArr){
+          txt10 += myArr[x] + "<br>";
+     }
+     document.getElementById("demo54").innerHTML = "<b>These are top10 bikes in 2024!</b> <br>" + txt10;
+}
+xmlhttp2.open("GET", "json/bikes.json", true);
+xmlhttp2.send();
+
+// JSON PHP ----------------------------------------------------------------------------------
+/*
+We can use json_encode() to conver PHP OBJECTS into JSON by using the PHP Function json_encode() like that:
+
+<?php
+$myObj = new stdClass();
+$myObj->name = "John";
+$myObj->age = 30;
+$myObj->city = "New York";
+
+$myJSON = json_encode($myObj);
+
+echo $myJSON;
+?>
+
+the output is gonna be like that: {"name":"John","age":30,"city":"New York"}
+
+*/
+
+//We can using AJAX Call to REQUEST the PHP file from the example above:
+/*
+const xmlhttp3 = new XMLHttpRequest();
+xmlhttp3 = function(){
+     const myObj5 = JSON.parse(this.responseText);
+     document.getElementById("demo55").innerHTML = myObj5.name;
+     console.log(myObj5.name);
+}
+xmlhttp3.open("GET", "/php/demo.php");
+xmlhttp3.send();
+*/
