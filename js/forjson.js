@@ -190,13 +190,35 @@ the output is gonna be like that: {"name":"John","age":30,"city":"New York"}
 */
 
 //We can using AJAX Call to REQUEST the PHP file from the example above:
-/*
-const xmlhttp3 = new XMLHttpRequest();
-xmlhttp3 = function(){
-     const myObj5 = JSON.parse(this.responseText);
-     document.getElementById("demo55").innerHTML = myObj5.name;
-     console.log(myObj5.name);
+
+/*const xmlhttp3 = new XMLHttpRequest();
+
+xmlhttp3.onload = function() {
+  const myObj = JSON.parse(this.responseText);
+  document.getElementById("demo55").innerHTML = myObj.age;
 }
-xmlhttp3.open("GET", "/php/demo.php");
-xmlhttp3.send();
-*/
+xmlhttp3.open("GET", "/php/obj1.php");
+xmlhttp3.send(); */
+
+//Arrays in PHP will also be converted into JSON when using the PHP function json_encode():
+
+/*
+const xmlhttp4 = new XMLHttpRequest();
+xmlhttp4.onload = function() {
+     const myObj = JSON.parse(this.responseText);
+     document.getElementById("demo55").innerHTML = myObj[2];
+}
+xmlhttp4.open("GET", "/php/arr1.php");
+xmlhttp4.send(); */
+
+// PHP is a SERVER-SIDE programming language and it can be used to access a database
+// GET JSON Data from a PHP-SERVER
+const dbParam = JSON.stringify({"limit":3});//was defined an object containing a "limit" and converted json strng
+
+const xmlhttp5 = new XMLHttpRequest(); 
+xmlhttp5.onload = function() {
+     document.getElementById("demo55").innerHTML = this.responseText;
+}
+xmlhttp5.open("GET", "/php/arr1.php?x=" + dbParam); 
+xmlhttp5.send(); //Sent a request to the PHP file, with JSON string as a parameter(dbParam)
+
