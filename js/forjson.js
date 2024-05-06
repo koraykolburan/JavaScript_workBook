@@ -213,12 +213,150 @@ xmlhttp4.send(); */
 
 // PHP is a SERVER-SIDE programming language and it can be used to access a database
 // GET JSON Data from a PHP-SERVER
-const dbParam = JSON.stringify({"limit":3});//was defined an object containing a "limit" and converted json strng
+
+/*
+const dbParam = JSON.stringify({"limit":"person1"});//was defined an object containing a "limit" and converted json strng
 
 const xmlhttp5 = new XMLHttpRequest(); 
 xmlhttp5.onload = function() {
      document.getElementById("demo55").innerHTML = this.responseText;
 }
-xmlhttp5.open("GET", "/php/arr1.php?x=" + dbParam); 
-xmlhttp5.send(); //Sent a request to the PHP file, with JSON string as a parameter(dbParam)
+xmlhttp5.open("GET", "/php/json_db1.php?=x" + dbParam); 
+xmlhttp5.send(); //Sent a request to the PHP file, with JSON string as a parameter(dbParam) */
 
+// PHP Method = GET - JSON DATA FROM A PHP SERVER - WITH FOR/IN LOOP
+/*
+const obj5 = { "limit": 5 };
+const dbParam = JSON.stringify(obj5);
+const xmlhttp6 = new XMLHttpRequest();
+xmlhttp6.onload = function() {
+     myObj5 = JSON.parse(this.responseText);
+     let txt11 = "";
+     for(let x in myObj5) {
+          txt11 += myObj5[x].name + "<br>";
+     }
+     document.getElementById("demo55").innerHTML = txt11;
+}
+xmlhttp6.open("GET", "/php/json_db1.php?=x" + dbParam);
+xmlhttp6.send();
+
+*/
+
+// PHP Method = POST
+
+//When sending data to the server, it is often best to use the HTTP POST Method.
+//To send AJAX requests using the POST Method, SPECIFY the method and the CORRECT HEADER
+//The data sent to the server must now be an ARGUMENT to the send() method:
+
+/*
+const dbParam2 = JSON.stringify({"limit":10});
+const xmlhttp7 = new XMLHttpRequest();
+xmlhttp7.onload = function() {
+     myObj6 = JSON.parse(this.responseText);
+     let txt12 = "";
+     for(let x in myObj6){
+          txt12 += myObj6[x].name + "<br>";
+     }
+     document.getElementById("demo55").innerHTML = txt12;
+}
+xmlhttp7.open("POST", "/php/json_db2.php");
+xmlhttp7.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//WHILE we are using : setRequestHeader sets the value of an HTTP request header and WE MUST CALL it after calling open(), but before calling send(). 
+xmlhttp7.send("x=" + dbParam2);
+*/
+
+// JSON HTML PHP --------------------------------------------------------------------------
+/*
+const dbParam3 = JSON.stringify({table:"customers", limit:8});
+const xmlhttp8 = new XMLHttpRequest();
+xmlhttp8.onload = function() {
+     const myObj7 = JSON.parse(this.responseText);
+     let txt13 = "";
+     for(let x in myObj7){
+          txt13 += myObj7[x].name + "<br>";
+     }
+     document.getElementById("demo55").innerHTML = txt13;
+}
+xmlhttp8.open("POST", "-");
+xmlhttp8.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xmlhttp8.send("x=" + dbParam3);
+*/
+//Making a table based on the value of a dropdown menu 
+/*
+function change_myselect(sel) {
+     const dbParam4 = JSON.stringify({table:sel,limit:20});
+     const xmlhttp9 = new XMLHttpRequest();
+     xmlhttp9.onload = function(){
+          myObj5 = JSON.parse(this.responseText);
+          text = "<table border='1'>"
+          for(let x in myObj5) {
+               text += "<tr><td>" + myObj5[x].name   + "</td></tr>";
+          }
+          text += "</table>"
+          document.getElementById("demo55").innerHTML = text;
+     }
+     xmlhttp9.open("POST", "--");
+     xmlhttp9.setRequestHeader("Content-type", "applcation/x-www-form-urlencoded");
+     xmlhttp9.send("x=" + dbParam4);
+}
+*/
+// Make a dropdown list based on JSON data
+/*
+const dbParam5 = JSON.stringify({table:"customers", limit:20});
+const xmlhttp10 = new XMLHttpRequest();
+xmlhttp.onload = function(){
+     const myObj8 = JSON.parse(this.responseText);
+     let text = "<select>";
+     for(let x in myObj8){
+          text += "<option>" + myObj8[x].name +"</option>";
+     }
+     text += "</select>"
+     document.getElementById("demo55").innerHTML = text;
+}
+xmlhttp10.open("POST", "--");
+xmlhttp10.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xmlhttp10.send("x=" + dbParam5);
+*/
+
+// JSONP -- this method for sending JSON data without using XMLHttpRequest object. JSON with Padding.
+
+/*function jsonP(myObj){
+     document.getElementById("demo").innerHTML = myObj.name;
+} */
+//Creating a Dynamic Script tag - the script tag should only be created when needed!
+function clickButton(){
+     let s = document.createElement("script");
+     s.src = "/php/demo_jsonp.php";
+     document.body.appendChild(s);
+}
+
+function myFunc(myObj9){
+     document.getElementById("demo55").innerHTML = myObj9.name;
+}
+
+// Dynamic JSONP Result -- sending JSON to the php file, and let the php file return a JSON object.
+/*
+const obj4 = { table: "customers", limit:10 };
+let source = document.createElement("script");
+source.src= "php/jsonp_db3.php?x=" + JSON.stringify(obj4);
+document.body.appendChild(source);
+
+function myFunc2(myObj10){
+     let txt14 = "";
+     for(let x in myObj10){
+          txt14 += myObj10[x].name + "<br>";
+     }
+     document.getElementById("demo56").innerHTML = txt14;
+}
+*/
+
+//Request With a Callback Function ------------------------------------------------
+/*
+let source2 = document.createElement("script");
+source2.src = "php/demo_jsonp.php?callback=myDisplayFunction";
+document.body.appendChild(source2);
+
+function myDisplayFunction(myObj11){
+     document.getElementById("demo56").innerHTML = myObj11.name;
+}
+*/
