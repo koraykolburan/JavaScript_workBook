@@ -296,7 +296,7 @@ function change_myselect(sel) {
           document.getElementById("demo55").innerHTML = text;
      }
      xmlhttp9.open("POST", "--");
-     xmlhttp9.setRequestHeader("Content-type", "applcation/x-www-form-urlencoded");
+     xmlhttp9.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
      xmlhttp9.send("x=" + dbParam4);
 }
 */
