@@ -574,3 +574,6 @@
          document.getElementById("btn1").addEventListener("click", ex1);
          document.getElementById("btn2").addEventListener("click", ex2);
 
+         //We need to REDUCE DOM Access (as access one time like this)
+         const oneObject = document.getElementById("demo58");
+         oneObject.innerHTML = "<b>person = { fName:'Tom', lName:'Tommy', age: 39, }</b>";
