@@ -6,7 +6,7 @@
           const iterator = text.matchAll(/run/gi);
           document.getElementById("demo").innerText = Array.from(iterator);
 
-          //flat() method - Basic Mathods
+          //flat() method - Basic Methods
           const cars = [ "cars0", "cars1", [ "e-cars0", "e-cars1", [ "h-cars0", "h-cars1"], "cars2", "cars3"]];
           const newArr = cars.flat();
           document.getElementById("demo2").innerText = newArr;
@@ -20,6 +20,16 @@
           function myFunction(value, index, array){
                return value > 10;
           }
+
+          //findIndex() method
+          const nums4 = [2, 3, 4, 6, 7, 9, 12, 13, 15, 17, 22, 24, 29];
+          
+          document.getElementById("demo61").innerText = "First number over 18 has index " + nums4.findIndex(myFunction9) + ".";
+
+          function myFunction9(value, index, array) {
+               return value > 18;
+          }
+
 
           //reduce() method - Iteration Methods
           /*
@@ -577,3 +587,34 @@
          //We need to REDUCE DOM Access (as access one time like this)
          const oneObject = document.getElementById("demo58");
          oneObject.innerHTML = "<b>person = { fName:'Tom', lName:'Tommy', age: 39, }</b>";
+
+         //Promises - For Example only ---------------------------------------------------------------
+         const myPromise = new Promise(function(myResolve, myReject) {
+          setTimeout(function() { myResolve("Hallo, I love you!!"); }, 5000);
+         })
+
+         myPromise.then(function(value) {
+          document.getElementById("demo59").innerHTML = 
+          "This is an example how promises work! " +
+          "This text will appear after 5 second. " + 
+          "<h2>" + value + "</h2>";
+         })
+
+         // The Symbol Type  --------------------------------------------------------------------------
+         const person2 = {
+          firstName : "Name1",
+          lastName : "Name2",
+          age: 39,
+          occupation: "IT Specialist"
+         };
+
+         let id = Symbol('id');
+         person2[id] = 159258374;
+         document.getElementById("demo60").innerHTML =
+         "This is <h3> 'The Symbol Type'</h3> " +
+         person2[id] + " or " + person2.id;
+
+         //Math.cbrt() -- 
+         document.getElementById("demo62").innerHTML = 
+         "Math.cbrt(125) The cube root of 125 = " +
+         Math.cbrt(125);
