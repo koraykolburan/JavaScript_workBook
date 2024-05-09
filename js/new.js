@@ -619,3 +619,147 @@
          "Math.cbrt(125) The cube root of 125 = " +
          Math.cbrt(125);
          
+         //ECMAScript2017 --------------------------------------------------------------------
+         let passage = "5";
+         passage = passage.padStart(5, "-");
+         let passage2 = "9";
+         passage2 = passage2.padEnd(9, ",")
+
+         const demo63 = document.getElementById("demo63");
+         demo63.innerHTML = "This is padStart(5, '-'); result is: " + passage + ". <br> " +
+         "This is padEnd(9, ','); result is: " + passage2;
+
+         //Object.entries() - ECMAScript 2017 --
+         const veganProtein = {
+          breakfast: "Oatmeals & peanut butter & blueberries",
+          snackTime: "11.am",
+          lunch: "Tofu Scramble",
+          secondSnackTime: "15.am",
+          dinner: "Tempeh",
+          proteinShake: 1
+         }
+
+         const vegFoods = { Tofu:2.15, Tempeh:3.25, Proteinshake:0.75 };
+         let pssg = "";
+         for (let [vegFood, amount] of Object.entries(vegFoods)) {
+          pssg += vegFood + ": " + amount + "<br>";
+         }
+
+         const myMap = new Map(Object.entries(vegFoods));
+
+         const demo64 = document.getElementById("demo64");
+         demo64.innerHTML = "This is <b>Object.entries(veganProtein)</b> : " +
+         Object.entries(veganProtein) + "<br>" +
+         " It Makes it simple to use Objects in loops like this:  <br>" +
+         pssg +
+         " It also makes it simple to convert Objects to Maps:  <br>" +
+         myMap;
+
+         //JavaScript Async - Await Functions -- ECMAScript2017
+         const changeHMTL = document.getElementById("demo65");
+         async function myDisplay() {
+          let myPromise = new Promise(function(resolve) {
+               setTimeout(function(){ resolve("<b>Example of async / await functions </b> <br>" +
+               " 'There it is! After 3 Sec later!'");}, 3000);
+          });
+          changeHMTL.innerHTML = await myPromise;
+         }
+         myDisplay();
+         
+         //ECMAScript2018 --------------------------------------------------------------------
+         /*
+         1)JS Asynchronous Iteration - We can use for await() {}
+         2)JS Promise.finally() - myPromise.then() - myPromise.catch(); - myPromise.finally();
+         3)Js Object Rest Properties - Destruct an Object and Collet the leftovers onto a new object.
+         4)New RegExp Features
+            a)Unicode Property Escapes(\p{...})
+            b)Look behind Assertions(?<=) and (?<!)
+            c)Named Capture Groups
+            d) s (dotAll) Flag
+         5)JavaScript Threads - Workers API - workers thread are used to execute code in the background so that the main program can continue execution.
+         It works at the same time simultaneously with the main program.
+         Simultaneous execution of different parts of a program can be time-saving.
+         6)JavaScript Shared Memory - It is a feature that allows threads to access and update the same data in the same memory.
+         Instead of passing data between threads, we can pass a SharedArrayBuffer object that points to the memory where data is saved.
+         7)SharedArrayBuffer - object represents a fixed-length raw binary data buffer similar to the ArrayBuffer object.    
+         */
+
+         //ECMAScript2019 --------------------------------------------------------------------
+         const vegCakes = [
+          ["chocolate", 5],
+          ["vanilla", 2],
+          ["strawberry", 7]
+         ];
+         const objEntries = Object.fromEntries(vegCakes);
+         document.getElementById("demo66").innerHTML = 
+         "<li>This is <b>fromEntries()</b> </li> " +
+         typeof vegCakes + ", " + objEntries.strawberry; 
+
+         //Optional catch Binding 
+         //Before ECMAScript2019 it
+         try {
+          //code
+         } catch(err) {
+          //code
+         }
+         //After ECMAScript2019 -- we can omit the catch parameter(err) if we don't it.
+         try {
+          //code
+         } catch {
+          //code
+         }
+
+         //Stable Sort() after 2019 --
+         const myArr2 = [
+          {id:"A00",price:50},
+          {id:"A01",price:50},
+          {id:"A02",price:50},
+          {id:"A03",price:50},
+          {id:"A04",price:60},
+          {id:"A05",price:60},
+          {id:"A06",price:60},
+          {id:"A07",price:60},
+          {id:"A08",price:70},
+          {id:"A09",price:70},
+          {id:"A10",price:70},
+          {id:"A11",price:70},
+          {id:"A12",price:80},
+          {id:"A13",price:80},
+          {id:"A14",price:80},
+          {id:"A15",price:80},
+          {id:"A16",price:80},
+          {id:"A17",price:80},
+          {id:"A18",price:80},
+          {id:"A19",price:80}
+         ]
+
+         myArr2.sort( (p1, p2) => {
+          if (p1.price < p2.price) return -1;
+          if (p1.price > p2.price) return 1;
+          return 0;
+         });
+
+         let pssg3 = "";
+         myArr2.forEach(myFunction10);
+
+         function myFunction10(value) {
+          pssg3 += value.id + " : " + value.price + "<br>";
+         }
+         document.getElementById("demo67").innerHTML = pssg3;
+
+         //Revised JSON.stringify() -- after 2019
+         let pssg4 = JSON.stringify("\u26D4");
+         document.getElementById("demo68").innerHTML =
+         "This is revised JSON.stringify: " +
+         pssg4;
+
+         //Revised Function toString();
+         function myFunction11(p1,p2) {
+          return p1 * p2;
+         }
+         document.getElementById("demo69").innerHTML =
+         "<b>Revised Function .toString()</b>: " +
+         myFunction11.toString();
+         
+         //ECMAScript2020 --------------------------------------------------------------------
+         

@@ -65,14 +65,14 @@
                <ul>
                     <li><a href="#ES6">ES6</a></li>
                     <li><a href="#Classes">CLASSES</a></li>
-                    <li><a href="#ES2016">ES2016</a></li>
-                    <li><a href="#ES2017">ES2017</a></li>
-                    <li><a href="#ES2018">ES2018</a></li>
-                    <li><a href="#ES2019">ES2019</a></li>
-                    <li><a href="#ES2020">ES2020</a></li>
-                    <li><a href="#ES2021">ES2021</a></li>
-                    <li><a href="#ES2022">ES2022</a></li>
-                    <li><a href="#ES2023">ES2023</a></li>
+                    <li><a href="#ECMAScript2016">ECMAScript2016</a></li>
+                    <li><a href="#ECMAScript2017">ECMAScript2017</a></li>
+                    <li><a href="#ECMAScript2018">ECMAScript2018</a></li>
+                    <li><a href="#ECMAScript2019">ECMAScript2018</a></li>
+                    <li><a href="#ECMAScript2020">ECMAScript2020</a></li>
+                    <li><a href="#ECMAScript2021">ECMAScript2021</a></li>
+                    <li><a href="#ECMAScript2022">ECMAScript2022</a></li>
+                    <li><a href="#ECMAScript2023">ECMAScript2023</a></li>
                     <li><a href="#NOTES">NOTES</a></li>
                     <li><a href="#MODULES">MODULES</a></li>
                     <li><a href="#JSON">JSON</a></li>
@@ -277,17 +277,77 @@
                </ul>
           </article>
           <hr>
-          <article id="ES2017">
-               <h2>ES2017</h2>
+          <article id="ECMAScript2016">
+               <h2>ECMAScript2016</h2>
                <ol>
                     <li>
-                         padStart() and padEnd() methods pads a string from the START and from the END.(string method)
+                         Exponentiation Operator ( ** ) <br>
+                         It's exactly like Math.pow( x,y )
+                    </li>
+                    <li>
+                         Exponentiation Assignment ( **= ) <br>
+                    </li>
+                    <li>
+                         Array - Includes() <br>
+                         It checks if an element is PRESENT in Array.
                     </li>
                </ol>
           </article>
           <hr>
-          <article id="ES2019">
-               <h2>ES2019</h2>
+          <article id="ECMAScript2017">
+               <h2>ECMAScript2017</h2>
+               <ol>
+                    <li>
+                         padStart() and padEnd() methods pads a string from the START and from the END.(string method)
+                    </li>
+                    <p id="demo63"></p>
+                    <li id="demo64"></li>
+                    <li id="demo65"></li>
+               </ol>
+          </article>
+          <hr>
+          <article id="ECMAScript2018">
+               <h2>ECMAScript2018</h2>
+               <ol>
+                    <li>
+                         JS Asynchronous Iteration - async / await() {}
+                    </li>
+                    <li>
+                         JS Promise.finally() <br>
+                         let myPromise = new Promise(); <br>
+                         myPromise.then() <br>
+                         myPromise.catch() <br>
+                         myPromise.then()
+                    </li>
+                    <li>
+                         Js - Object Rest Properties - (Destruct and Collect an Object) <br>
+                         Destruct an Object and Collect the leftovers onto a new Object.
+                    </li>
+                    <li>
+                         New RegExp Features <br>
+                         a)Unicode Property Escapes (\p{...}) <br>
+                         b)Look begind Assertions (?<=) and (? < !) <br>
+                         c)Named Capture Groups <br>
+                         d)s (dotAll) flag
+                    </li>
+                    <li>
+                         Js Threads - Workers API <br>
+                         Are used to execute code in background so that the main program can continue execution. <br>
+                         It works at the same time, simultaneously with the main program. Itcan be time-saving.
+                    </li>
+                    <li>
+                         Js Shared Memory - <br>
+                         It's a feature that allows threads to access and Update the same data in the same memory.
+                    </li>
+                    <li>
+                         Shared Array Buffer - <br>
+                         Object represents a fixed-length raw binary data buffer similar tot he ArrayBuffer Object.
+                    </li>
+               </ol>
+          </article>
+          <hr>
+          <article id="ECMAScript2019">
+               <h2>ECMAScript2019</h2>
                <ol>
                     <li>
                          <b>trimStart()</b> method: it works like trim() but removes whitespace only from the START of a string. <br>
@@ -306,11 +366,26 @@
                          innerHTML = newArr; <br>
                          output is: 10,20,30,40,50,60,70,80,90
                     </li>
+                    <p id="demo66"></p>
+                    <li>
+                         After ECMAScript2019, we can omit the catch parameter(err), if we don't need it: <br>
+                         try {     <br>
+                              //code <br>
+                         }   catch { <br>
+                              //code <br>
+                         }
+                    </li>
+                    <li>
+                         Stable Sort() -- <br>
+                    </li>
+                    <p id="demo67"></p>
+                    <li id="demo68"></li>
+                    <li id="demo69"></li>
                </ol>
           </article>
           <hr>
-          <article id="ES2020">
-               <h2>ES2020</h2>
+          <article id="ECMAScript2020">
+               <h2>ECMAScript2020</h2>
                <h3>Logical Assignment Operators:</h3>
                <ol>
                     <li>
@@ -357,8 +432,8 @@
                <p id="demo"></p>
           </article>
           <hr>
-          <article id="ES2021">
-               <h2>ES2021</h2>
+          <article id="ECMAScript2021">
+               <h2>ECMAScript2021</h2>
                <ol>
                     <li>
                          replaceAll() method allows to specify a regular expression instead of a string tobe replaced. <br>
@@ -368,8 +443,8 @@
 
           </article>
           <hr>
-          <article id="ES2022">
-               <h2>ES2022</h2>
+          <article id="ECMAScript2022">
+               <h2>ECMAScript2022</h2>
           <ol>
                <li>
                     at() method returns the character at a specified index(position) in a STRING. <br>
@@ -384,8 +459,8 @@
           </ol>
           </article>
           <hr>
-          <article id="ES2023">
-               <h2>ES2023</h2>
+          <article id="ECMAScript2023">
+               <h2>ECMAScript2023</h2>
                <ol>
                     <li>
                          <b>toSpliced()</b> method splices an array without altering the original array. <br>
