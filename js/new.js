@@ -3,9 +3,15 @@
 
           //matchAll() method - Basic Methods
           let text = "Did you go to the run today? No? Let's run then. I love running everyday! RUNNING and CYCLING!!!"
-          const iterator = text.matchAll(/run/gi);
-          document.getElementById("demo").innerText = Array.from(iterator);
-
+          const iterator = text.matchAll(/run/gi); // this is not case-sensitive
+          const iterator2 = text.matchAll("RUN");
+          const iterator3 = text.matchAll(/run/g) // this is case-sensitive
+          let matchAllIterator = document.getElementById("demo");
+          matchAllIterator.innerHTML = 
+          Array.from(iterator) + " : text.matchAll(/run/gi) (this is not case-sensitive)" + "<br>" +
+          Array.from(iterator2) + "<br>" + 
+          Array.from(iterator3) + " : text.matchAll(/run/g) (this is case-sensitive)";
+          
           //flat() method - Basic Methods
           const cars = [ "cars0", "cars1", [ "e-cars0", "e-cars1", [ "h-cars0", "h-cars1"], "cars2", "cars3"]];
           const newArr = cars.flat();
@@ -762,4 +768,18 @@
          myFunction11.toString();
          
          //ECMAScript2020 --------------------------------------------------------------------
-         
+         //BigInt() --
+         let normalNumber = 999999999999999;
+         let bigNumber = 9999999999999999;
+         let bigIntNumber = 9999999999999999n;
+         let bigIntNumber2 = BigInt("123456789012345678901234567890");
+
+         let numbers = document.getElementById("demo70");
+
+         numbers.innerHTML = 
+         "Normally, JS numbers are only accurate up to about 15 digits. Like this: " + normalNumber + "<br>" +
+         "However, this is 16 digits number: " + bigNumber + "<br>" +
+         "We have two options to use these type of number first, we can call BigInt() or the second one is, we can just append 'n' to the end of an integer: " + 
+         "In this example we added 'n' to the end of this integer let bigIntNumber = 9999999999999999n; " + bigIntNumber + "<br>" +
+         "In this example we just call it BigInt('123456789012345678901234567890'), we should use number in quotes like this: " + bigIntNumber2 + "<br>" +
+         "And also we can check its typeof, here is result: " + typeof bigIntNumber2;
