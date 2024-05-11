@@ -120,20 +120,29 @@
           const pronomen = [...s1, ...s2, ...s3];
           document.getElementById("demo8").innerHTML = pronomen;
 
-          //Nullish Coalescing Operator and Nullish Coal. Assignment Op.
-          let x = 12;
-          let y = null;
-          let z = 13;
-          x ??= z;
-          y ??= z;
+          //The Nullish Coalescing Operator (??) and Nullish Coalescing Assignment Operator (??=)
+          let x = null;
+          let y = "This is the second argument.";
+          let result5 = x ?? y;
           document.getElementById("demo9").innerHTML = 
-          "x ??= z;  console.log(x); " + x + "<br>"  + "y ??= z;  console.log(y); " + y ;
+          "<b>Nullish Coalescing Operator ( ?? )</b> <br>" +
+          "let x = null; <br>" + 
+          "let y = 'This is the second argument.'; <br> " + 
+          "let result = x ?? y; <br>" + 
+          "It will return the first argument if it is not nullish (null or undefined). Or else it will return the second argument <br>" +
+          "<b>The output is: </b>" + result5;
 
+          //The Nullish Coalescing Assignment Operator (??=)
           let nameObj = { name: "Eric" };
-          nameObj.name ??= "Micheal";
+          nameObj.name ??= "Michael";
           nameObj.age ??= 19;
           document.getElementById("demo10").innerHTML = 
-          "* When we do this 'nameObj.name ??= 'Micheal';' the " + "<b>" + nameObj.name + "</b>"  + " won't change. Because the 'nameObj.name' is not NULLISH." + "<br>" + " However, when we write this: 'nameObj.age ??= 19;' the output is gonna be like this: " + "<b>" + nameObj.age + "</b>" + " . Because there is no any property named age in object 'nameObj'. So the value of 'nameObj.age' will be undefined(means nullish). That's why the value of age will be assigned. ";
+          "<b>The Nullish Coalescing Assignment Operator (??=)</b> <br>" +
+          "let nameObj = { name: 'Eric' }; <br>" +
+          "nameObj.name ??= 'Michael'; <br>" +
+          "nameObj.age ??= 19; <br>" +
+          "'nameObj.name ??= 'Michael';' the " + "<b>" + nameObj.name + "</b>"  + " won't change. Because the 'nameObj.name' is not NULLISH." + "<br>" + " However, 'nameObj.age ??= 19;' the output is gonna be like this: " + "<b>" + nameObj.age + "</b> <br>" +
+          " . Because there is no any property named age in object 'nameObj'. So the value of 'nameObj.age' will be undefined(means nullish). That's why the value of age will be assigned. ";
 
           const array2 = [ 4,5, "ukulele", "guitar", null, undefined, [] ];
                // replace each nullish values with "this value was nullish"
@@ -783,3 +792,94 @@
          "In this example we added 'n' to the end of this integer let bigIntNumber = 9999999999999999n; " + bigIntNumber + "<br>" +
          "In this example we just call it BigInt('123456789012345678901234567890'), we should use number in quotes like this: " + bigIntNumber2 + "<br>" +
          "And also we can check its typeof, here is result: " + typeof bigIntNumber2;
+
+         //The Optimal Chaining Operator ( ?. )
+         const bike5 = { brand:"Cannondale", model:"2022", color:"Titan Grey" };
+         let x5 = bike5?.tires;
+         let docInner = document.getElementById("demo71");
+         docInner.innerHTML = "<b>The Optimal Chaining Operator ( ?. )</b> <br>" + 
+         "It returns 'undefined' if an object nullish.(instead of throwing an error) <br>" +
+         "const bike5 = { brand:'Cannondale', model:'2022', color:'Titan Grey' }; <br>" +
+         "let x5 = bike5?.tires; <br>" +
+         "x5 is: " + x5;
+
+         //The  &&=  and  ||= operators
+         let x6 = undefined;
+         let y1 = 100;
+         x6 &&= 12;
+         y1 ||= 12;
+         document.getElementById("demo72").innerHTML =
+         "<b>The  &&=  and  ||= operators</b> <br>" +
+         "let x6 = 100; <br>" +
+         "let y1 = undefined; <br>" +
+         "x6 &&= 12; 'If the first value is true, the second value is assigned: '<br>" +
+         "y1 ||= 12; 'If the first value is false, the second value is assigned: '<br>" +
+         "x6: " + x6 + "<br>" +
+         "y1: " + y1;
+
+         //JavaScript Promise Object Method
+         // a) Create a Promise
+         const myPromise1 = new Promise((resolve, reject) => {
+          setTimeout(resolve, 200, "Prince");
+         });
+
+         // b) Create another Promise
+         const myPromise2 = new Promise((resolve, reject) => {
+          setTimeout(resolve, 100, "Princess");
+         });
+
+         // c) Settle All
+         Promise.allSettled([myPromise1, myPromise2]).then((results) => 
+          results.forEach((x) => myDisplay(x.status)),
+         );
+
+         // d) Function to run when a Promise is settled:
+         function myDisplay(some) {
+          document.getElementById("demo73").innerHTML =
+          "<h3>JavaScript Promise Object - allSettled() method</h3>" +
+          "Please look at JS 820 line of news.js file <br>" +
+          some;
+          console.log("JavaScript Promise Object - allSettled() method: " + some);
+         };
+         //ECMAScript2020 --------------------------------------------------------------------
+         //JS Promise.any()
+
+         // a) Create a Promise
+         const myPromise3 = new Promise((resolve, reject) => {
+          setTimeout(resolve, 400, "Prince");
+         });
+
+         // b) Create another Promise
+         const myPromise4 = new Promise((resolve, reject) => {
+          setTimeout(resolve, 300, "Princess");
+         });
+
+         // Run when any promise fulfill
+         Promise.any([myPromise3, myPromise4]).then((x) => {
+          myDisplay(x);
+         });
+
+         function myDisplay(some2) {
+          document.getElementById("demo74").innerHTML =
+          "<b>JS Promise.any()</b> <br>" +
+          some2;
+         }
+
+         //replaceAll();
+         let text16 = "I love running. Especially, I run early in the morning. Let's run together tomorrow, before the sunrise!";
+         text16 = text16.replaceAll("running","swimming");
+         text16 = text16.replaceAll("run", "swim");
+         document.getElementById("demo75").innerHTML =
+         "<b>replaceAll()</b> <br>" +
+         "let text16 = 'I love running. Especially, I run early in the morning. Let's run together tomorrow, before the sunrise!'; <br>" +
+         "text16 = text16.replaceAll('running','swimming'); <br>" +
+         "text16 = text16.replaceAll('run', 'swim'); <br>" +
+         "text16 = " + "<b>" + text16 + "</b>";
+
+         // JavaScript Numeric Separator ( _ )
+         const num = 10_000_000_000;
+         document.getElementById("demo76").innerHTML = 
+         "<b>JavaScript Numeric Separator ( _ ) </b> <br>" +
+         "Numeric Separator ( _ ) makes number more readable <br>" +
+         "const num = 10_000_000_000; <br>" +
+         num;
