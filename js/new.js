@@ -841,7 +841,7 @@
           some;
           console.log("JavaScript Promise Object - allSettled() method: " + some);
          };
-         //ECMAScript2020 --------------------------------------------------------------------
+         //ECMAScript2021 --------------------------------------------------------------------
          //JS Promise.any()
 
          // a) Create a Promise
@@ -854,11 +854,12 @@
           setTimeout(resolve, 300, "Princess");
          });
 
-         // Run when any promise fulfill
+         // c) Run when any promise fulfill
          Promise.any([myPromise3, myPromise4]).then((x) => {
           myDisplay(x);
          });
 
+         // d) Function to run 
          function myDisplay(some2) {
           document.getElementById("demo74").innerHTML =
           "<b>JS Promise.any()</b> <br>" +
@@ -883,3 +884,102 @@
          "Numeric Separator ( _ ) makes number more readable <br>" +
          "const num = 10_000_000_000; <br>" +
          num;
+
+         //ECMAScript2022 --------------------------------------------------------------------
+         //at() method on Array and on Strings
+         const triathlon2 = ["Running", "Swimming", "Cycling"];
+         let exerciseToday = triathlon2.at(1);
+
+         let whatIs = "Memory";
+         let chooseWhatIs = whatIs.at(3);
+
+         document.getElementById("demo77").innerHTML =
+         "<b>at() method on Arrays and on Strings</b> <br>" +
+         "let exerciseToday = triathlon2.at(1); OR triathlon.at[2]; " + exerciseToday + "<br>" +
+         "let chooseWhatIs = whatIs.at(3); OR whatIs.at[2]; " +
+         "the output is: " + chooseWhatIs;
+         
+         //RegExp d Modifier
+         let text17 = "bbbccc";
+         let result6 = text17.match(/(bb)(cc)/d);
+         document.getElementById("demo78").innerHTML = 
+         "<b>RegExp d modifier</b> <br>" +
+         "Match all that starts or ends with bb or cc: <br>" +
+         result6;
+         console.log(result6);
+
+         //Object.hasOwn() property
+         const proto = {
+          initProp: 500,
+         };
+
+         const obj1 = {
+          __proto__: proto,
+         };
+
+         let text18 = "";
+         text18 += ("initProp" in obj1) + " ";
+         text18 += ("initProp" in proto) + " ";
+         text18 += Object.hasOwn("initProp") + " ";
+         document.getElementById("demo79").innerHTML =
+         "<b>The Object.hasOwn()</b> <br>" +
+         " it's like <b>Object.prototype.hasOwnProperty</b> but supports all OBJECT TYPES <br>" +
+         text18;
+
+         //Error Cause -- let you specify the reason behind an error with error.cause
+         /*
+         try {
+          connectData();
+         }
+         catch(err) {
+          throw new Error("Connecting failed.", { cause: err });
+         }
+         */
+        document.getElementById("demo80").innerHTML = 
+        "<b>Error Cause -- let you specify the reason behind an error with error.cause: </b> <br>" +
+        "try { connectData(); } catch(err) { throw new Error('Connecting failed.', { cause: err }); }";
+
+         //JS await import -- modules can now wait for resources that require import before running:
+         /*
+         import {myData} from './myData.js';
+         const data = await myData();
+         */
+         document.getElementById("demo81").innerHTML = 
+        "<b>JS await import -- modules can now wait for resources that require import before running: </b> <br>" +
+        "import {myData} from './myData.js'; <br>" + 
+        "const data = await myData();";
+
+         //JS Class Field Declarations -- 
+         class Hello {
+          counter = 7; // Class field
+         }
+         const myClass = new Hello();
+         let x7 = myClass.counter;
+         document.getElementById("demo82").innerHTML = 
+         "class Hello { <br>" +
+         "counter = 7; // Class field <br>" +
+         " } <br>" +
+         "const myClass = new Hello(); <br>" +
+         " let x7 = myClass.counter; <br>"  +
+         "x7 = " + x7;
+
+         //JavaScript Private Methods and Fields
+         /*
+         class Hello2 {
+          #counter = 7; // Private field
+          #myMethod() {} // Private method
+         }
+         const myClass1 = new Hello2();
+         let x8 = myClass1.#counter; // Error
+         myClass1.#myMethod();     // Error
+         */
+
+         document.getElementById("demo82").innerHTML = 
+         "<b>JavaScript Private Methods and Fields</b> <br>" +
+         "class Hello2 { <br> " +
+         "#counter = 7; // Private field <br> " +
+         "#myMethod() {} // Private method <br> " +
+         "}; <br>" +
+         "const myClass1 = new Hello2(); <br>" +
+         "let x8 = myClass1.#counter; // Error <br>" +
+         "myClass1.#myMethod();     // Error <br>";
