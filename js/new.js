@@ -108,12 +108,17 @@
                document.getElementById("demo6").innerHTML += x + "<br>";
           }
 
-          //with() - method -Iteration Methods
-          const instruments1 = ["Ukulele","Bass Guitar","Saxop","Electric Guitar","Drum"];
-          const myInsturments = instruments1.with(2, "Saxophone");
-          document.getElementById("demo7").innerHTML = myInsturments;
+          // The with() method -Iteration Methods - 2023
+          const instruments1 = [ "Ukulele", "Bass Guitar", "Saxop", "Electric Guitar", "Drum" ];
+          const myInstruments = instruments1.with( 2, "Saxophone" );
 
-          // spread() - method -Iteration Methods
+          document.getElementById("demo7").innerHTML = 
+          "<b>The with() method </b> <br>" +
+          "const instruments1 = [ 'Ukulele', 'Bass Guitar', 'Saxop', 'Electric Guitar', 'Drum' ]; <br>" +
+          "const myInstruments = instruments.with(2, 'Saxophone'); <br>" +
+          myInstruments;
+
+          // The spread() method -Iteration Methods
           const s1 = ["Ich", "Du"];
           const s2 = ["Er", "Sie", "Es"];
           const s3 = ["Wir", "Ihr", "Sie"];
@@ -926,7 +931,7 @@
          " it's like <b>Object.prototype.hasOwnProperty</b> but supports all OBJECT TYPES <br>" +
          text18;
 
-         //Error Cause -- let you specify the reason behind an error with error.cause
+         //Error Cause -- let we specify the reason behind an error with error.cause
          /*
          try {
           connectData();
@@ -936,7 +941,7 @@
          }
          */
         document.getElementById("demo80").innerHTML = 
-        "<b>Error Cause -- let you specify the reason behind an error with error.cause: </b> <br>" +
+        "<b>Error Cause -- let we specify the reason behind an error with error.cause: </b> <br>" +
         "try { connectData(); } catch(err) { throw new Error('Connecting failed.', { cause: err }); }";
 
          //JS await import -- modules can now wait for resources that require import before running:
@@ -983,3 +988,65 @@
          "const myClass1 = new Hello2(); <br>" +
          "let x8 = myClass1.#counter; // Error <br>" +
          "myClass1.#myMethod();     // Error <br>";
+
+         //ECMAScript2023 --------------------------------------------------------------------
+         //The findLast() method
+         const celcius = [27, 28, 30, 32, 39, 38, 36];
+         let high = celcius.findLast( x => x > 35 );
+
+         document.getElementById("demo83").innerHTML =
+         "<b>The findLast() Method</b> <br>" +
+         "const celcius = [27, 28, 30, 32, 39, 38, 36]; <br>" +
+         "let high = celcius.findLast( x => x > 35 ); <br>" +
+         "In this week, the last temperature over 30 was " + "<b>" + high + "</b>";
+
+         //The findLastIndex() method
+         const temp = [21, 22, 24, 25, 29, 34, 32];
+         let pos = temp.findLastIndex( x => x > 30 );
+
+         document.getElementById("demo84").innerHTML =
+         "<b>The findLastIndex() Method</b> <br>" +
+         "const temp = [21, 22, 24, 25, 29, 34, 32]; <br>" +
+         "let pos = temp.findLastIndex( x => x > 30 ); <br>" +
+         "In this week, the last position of temperature over 30 is " + "<b>" + pos + "</b>";
+
+         //The toReversed() method
+         const lowerToHigher = [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ];
+         let higherToLower = lowerToHigher.toReversed();
+
+         document.getElementById("demo85").innerHTML =
+         "<b>The toReversed() Method</b> <br>" +
+         "const lowerToHigher = [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]; <br>" +
+         "let higherToLower = lowerToHigher.toReversed(); <br>" +
+         "<b>" + higherToLower + "</b>";
+
+         //The Sorted Method
+         const winterSpring = ["Dec", "Jan", "Feb", "Mar", "Apr", "May"];
+         const sorted = winterSpring.toSorted();
+
+         document.getElementById("demo86").innerHTML =
+         "<b>The toSorted() Method</b> <br>" +
+         "const winterSpring = ['Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May']; <br>" +
+         "const sorted = winterSpring.toSorted(); <br>" +
+         "<b>" + sorted + "</b>";
+
+         //The toSpliced() Method
+         const winterSpring2 = ['Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May'];
+         const toSpliced = winterSpring2.toSpliced( 0, 1 );
+
+         document.getElementById("demo87").innerHTML =
+         "<b>The toSpliced() Method</b> <br>" +
+         "const winterSpring2 = ['Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May']; <br>" +
+         "const toSpliced = winterSpring2.toSpliced( 0, 1 ); <br>" +
+         "<b>" + toSpliced + "</b>";
+
+         // #! JavaScript Shebang
+         document.getElementById("demo88").innerHTML =
+         "<b>#! JavaScript Shebang</b> <br>" +
+         "It is a number sign and an exclamation mark (#!) at the beginning of a script. <br>" +
+         "For ex: #!/usr/bin/env node <br>" +
+         "It tells the operating system to use the <b>node program</b> to run the script."
+         /*   
+         It is a number sign and an exclamation mark (#!) at the beginning of a script.
+         For ex: #!/usr/bin/env node  
+         */
