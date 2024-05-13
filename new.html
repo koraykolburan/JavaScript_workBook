@@ -556,8 +556,7 @@
      <!-- For JSON-PHP Files -->
      <!-- <script src="/php/demo_jsonp.php"></script> -->
 
-     <!-- Modules -->
-     <!-- Named Imports -->
+     <!-- Modules -- Named Imports -->
      <script type="module">
           import { name, age } from "/js/person.js";
           import { name2, age2 } from "/js/person.js";
@@ -566,12 +565,10 @@
           document.getElementById("demo42").innerHTML = text + "<br>" + text2;
      </script>
      
-     <!-- This is Default Imports -->
+     <!-- Modules -- Default Imports -->
      <script type="module">
           import message from "/js/message.js";
           document.getElementById("demo43").innerHTML = message();
      </script>
-
-
 </body>
 </html>
