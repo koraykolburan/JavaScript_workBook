@@ -143,3 +143,17 @@ personId2.lang = "greek";
 
 document.getElementById("demo4").innerHTML = "<b>This is getter: </b>" + personId.lang + "<br>" +
 "<b>This is setter: </b>" + personId2.language;
+
+let demo5 = document.getElementById("demo5");
+demo5.innerHTML = 
+"<h2>Object Constructors</h2>" +
+"In general, The name constructor functions are upper-case first letter. <br>" +
+"<span>function <b>Bike</b>(brand, type, model, color) { <br>"+
+" this.bikeBrands = brand;<br>"+ 
+"this.bikeModels = model;<br>"+ 
+"this.bikeColors = color; <br>" + 
+"}</span> <br>" +
+"const myBikes = new Bike( 'Cannondale', 'Road Bike', 2024, 'Carbon Grey' ); <br>" +
+"The output is: Cannondale, Road Bike, 2024, Carbon Grey. <b>This example created one single object.</b><br>" +
+"<p>In a constructor function <b>this</b> keyword is a <b>substitute</b> for the new object. <br>" + 
+" The value of <b>this</b> will become the new object when a new object is created.</p>";
