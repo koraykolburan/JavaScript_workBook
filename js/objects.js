@@ -273,3 +273,132 @@ document.getElementById("demo10").innerHTML =
 "However, <b>The Object.keys()</b> method returns all enumerable properties. <br>" + 
 "Example of defining a Getter and a Setter using Object.defineProperty() <br>" +
 personId3.fullName;
+
+//Counter with getters and setters
+const obj = { counter : 0 };
+
+Object.defineProperty( obj, "reset", {            //Define reset getter
+     get : function () { this.counter = 0; }
+});
+Object.defineProperty( obj, "increment", {        //Define increment getter
+     get : function () { this.counter++; }
+} );
+Object.defineProperty( obj, "decrement", {
+     get : function () { this.counter--; }        //Define decrement getter
+} );
+Object.defineProperty( obj, "add", {
+     set : function (value) { this.counter += value; } //Define add setter
+} );
+Object.defineProperty( obj, "subtract", {
+     set: function (value) { this.counter -= value; }  //Define subtract setter
+} );
+
+//We can change the values of counter below:
+obj.reset;
+obj.add = 15;
+obj.subtract = 1;
+obj.increment;
+obj.decrement;
+document.getElementById("demo10").innerHTML =
+"We made a counter with increment and decrement, we can change on the line of 277 in object.js folder. <br> " +
+"Here is the result: " + obj.counter;
+
+
+//JS Object Protection
+
+//Examples
+//Object.preventExtensions  -- "use strict";
+const person2 = {firstName:"nameOne", lastName:"nameTwo"};
+Object.preventExtensions(person2);
+person2.language = 'EN';
+let text = "";
+try {
+     person2.language = 'EN';
+} 
+catch (err) {
+     text = err;
+}
+
+const veggies = [ "Broccoli", "Avocado", "Lettuce" ];
+Object.preventExtensions(veggies);
+let text2 = "";
+try {
+     veggies.push("Apple");
+}
+catch (err) {
+     text2 = err;
+}
+
+const phone1 = { brand: "Xaomi", model: 2022 };
+Object.preventExtensions(phone1);
+let check1 = Object.isExtensible(phone1);
+let check2 = Object.isExtensible(veggies);
+
+//Object.seal()
+const phone2 = [ "apple", "xaomi", "samsung" ];
+Object.seal(phone2);
+let text3 = "";
+try {
+     phone2.push("huawei");
+}
+catch (err) {  
+     text3 = err;
+}
+
+let check3 = Object.isSealed(phone2);
+
+//Object.freeze()
+Object.freeze(phone2);
+let text4 = "";
+try {
+     phone2.push("googlePhone");
+}
+catch(err) {
+     text4 = err;
+}
+
+let check4 = Object.isFrozen(phone2);
+
+let demo11 = document.getElementById("demo11");
+demo11.innerHTML = 
+"<h2>Javascript Object Protection</h2>" +
+"<ol>" +
+"<li>Using Const</li>" +
+"With <b>const</b> we cannot re-assign the object, however we can still <b>change</b> the value of a property, <b>delete</b> or create a new property.<br>" +
+"<li>JavaScript Object.preventExtensions()</li>" +
+"<b>Object.preventExtensions()</b> method prevents adding properties to an object. <br>" +
+"const person = {firstName: 'Tom', lastName: 'Tommy'}; Object.preventExtensions(<b>person</b>); person.language = 'EN';  -- This will throw an error! <br>" + person2.language + ". However, we need to use <b>'use strict'</b>!" +
+"<li>Arrays can be prevented from Extensions too:</li>" +
+"const veggies = [ 'Avocado', 'Broccoli', 'Lettuce' ]; <br>" +
+"Object.preventExtensions(veggies) <br>" +
+"veggies.push('Apple'); <br>" +
+"<b>" + text2 + "</b>" +
+"<li>Object.isExtensible() to check if an object is extensible. It returns <b>true</b> if an object is extensible.</li>" +
+"const phone1 = { brand: 'Xaomi', model: 2022 }; <br>" +
+"Object.preventExtensions(phone1); <br>" +
+"let check1 = Object.isExtensible(phone1); <br>" +
+"<b>" + check1 + "</b>" + " & check the veggies Array too " + "<b>" + check2 + "</b>" +
+"<li>Object.seal() method prevents additions and deletions of New Properties. Also, makes existing properties non-configurable.</li>" +
+"<b> #NOTE# We need to use 'use strict' Mode!</b> <br>" +
+"const person = {firstName: 'Tom', lastName: 'Tommy', age: 30}; <br>" +
+"Object.seal(person) <br>" +
+"<b>delete</b> person.age <br>" +
+"<b>TypeError: Cannot delete property 'age' of #</b> <br>" +
+"We can use this also on Arrays. <br>" +
+"<b>" + text2 + ".</b>" +
+"<li>Object.isSealed() can be used to check if an object is sealed. It returns <b>true</b> if an object is sealed.</li>" +
+"let check3 = Object.isSealed(phone2); " + "<b>" + check3 + ".</b>" +
+"<li>Object.freeze() prevents <b>any changes</b> to an object. Frozen objects <b>read-only.</b></li>" +
+"We must use this in <b>'use strict'</b> mode!!! <br>" +
+"Object.freeze(person) <br>" +
+"person.age = 65; <br>" +
+"<b>TypeError: Cannot assign to read only property 'age' of object '#'</b> <br>" +
+"We can use on Arrays too. <br>" +
+"Object.freeze(phone2)<br>" +
+"We can use on Arrays too. <br>" +
+"<b>" + text4 + "</b>" +
+"<li>Object.isFrozen() can be used to check if an object is frozen. It returns <b>true</b> if an object is frozen.</li>" +
+"let check4 = Object.isFrozen(phone2);" + "<b>" + check4 + "</b> <br>" +
+"Lastly, we can use Object.isFrozen() on Arrays too." +
+"</ol>";
+
