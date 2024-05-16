@@ -167,7 +167,8 @@ demo15.innerHTML =
 "const myObj2 = new myFunction2('First Name', 'Last Name') <br>" +
 "<b>myObj2.firstName + ', ' + myObj2.lastName</b> and the output is gonna be: <b>First Name, Last Name</b> <br>" +
 "A constructor invocation creates a new object. The new object <b>inherits</b> the properties and methods from its constructor." +
-"The <b>this</b> keyword in the <b>constructor</b> function does not have a <b>value.</b> <br>";
+"The <b>this</b> keyword in the <b>constructor</b> function does not have a <b>value.</b> <br>" +
+"<hr>";
 
 function myFunction2 (arg1, arg2) {
      this.firstName = arg1;
@@ -179,3 +180,26 @@ console.log("This is for Invoking a Function as an Object Method: " + myObj2.fir
 
 let demo16 = document.getElementById("demo16");
 demo16.innerHTML = 
+"<h2>JS Function call()</h2>" +
+"<h3>All Functions are Methods</h3>" +
+"<b>If a function is not a method of a JS object, it is a function of the global object!</b> <br>" +
+"<b>call()</b> is pre-defined method. It can be used to invoke a method with an owner object as an argument(parameter) <br>" +
+"With <b>call()</b>, an object can use a method belonging to another object. like this: <br>" +
+"const person= { <b>fullName: function() { return this.firstName + ', ' + this.lastName; }</b> } <br>" +
+"const person1 = { firstName:'Tom', lastName:'Tommy' } <br>" +
+"const person2 = { firstName:'John', lastName:'Johnny' } <br>" +
+"<b>person.fullName.call(person1);</b> this invoking calls the <b>fullName</b> method, using it on <b>person1.</b> <br>" +
+"<b>person.fullName.call(person2);</b> this invoking calls the <b>fullName</b> method, using it on <b>person2. <br>" +
+"The call() method accepts arguments as like this: <br>" +
+"const person = { fullName: function (city, country){ return this.firstName + ' ' + this.lastName + ', ' + city + ', ' + country ; } } <br>" +
+"const person1 = { firstName:'John', lastName:'Johnny' } <br>"+
+"<b>person.fullName.call(person1, 'Copenhagen', 'Denmark')</b>" +
+"<h2>JS Function apply()</h2>" +
+"With the <b>apply()</b> method, we can write a method that can be used on different objects. <br>" +
+"The <b>apply()</b> method is similar to the <b>call()</b> method. <br>" +
+"The difference is: <br>" +
+"The <b>call()</b> method takes arguments <b>separately.</b> <br>" +
+"The <b>apply()</b> method takes arguments as an <b>array.</b> <br>" +
+"<b>person.fullName.apply(person1, ['Copenhagen', 'Denmark']);</b> <br>" +
+"<h4>A good example of apply() Method</h4>" +
+"";
