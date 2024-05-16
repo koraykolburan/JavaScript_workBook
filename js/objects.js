@@ -1,5 +1,7 @@
 let demo1 = document.getElementById("demo1");
-demo1.innerHTML = 
+demo1.innerHTML =
+"<hr>" +
+"<h2>JavaScript Objects</h2>" + 
 "<ul>" + 
 "<li>Booleans can be objects (if defined with the new keyword)</li>" + 
 "<li>Numbers can be objects (if defined with the new keyword)</li>" + 
@@ -36,8 +38,10 @@ demo1.innerHTML =
 "A function inside of the Object is called <b>Method.</b> <br>" +
 "<h3>Ways of Creating Object</h3>" +
 "<ul>" +
-"<li><b>Object Literal:</b> Define and Create an object in one statement. And object definition can span multiple lines.</li>" +
-"<li><b>Using the New Keyword:</b> Exactly like literal. There is no need to use new Object(). We need to use Object Literal for readability, simplicity and execution speed.</li>" +
+"<li><b>Object Literal:</b> Define and Create an object in one statement." + 
+" And object definition can span multiple lines.</li>" +
+"<li><b>Using the New Keyword:</b> Exactly like literal. There is no need to use new Object()." + 
+" We need to use Object Literal for readability, simplicity and execution speed.</li>" +
 "<li>JavaScript Objects are <b>Mutable</b>, it can be changed.</li>" +
 "<li>Define an <b>Object Constructor</b> and then create Objects of the constructed type.</li>" +
 "<li>Creating an Object using <b>Object.create().</b></li>" +
@@ -90,7 +94,8 @@ demo3.innerHTML =
 "<br>" + "<hr>" +
 "<b>Methods</b> are functions stored as object properties. <br>" +
 "<b>Accessing:</b> name = person.fullName() <br>" +
-"<b>Adding</b> an Method to an Object: person.name = function() { return this.firstName + ' ' + this.lastName } <br>" +
+"<b>Adding</b> an Method to an Object:" + 
+" person.name = function() { return this.firstName + ' ' + this.lastName } <br>" +
 "<b>Using Built-In</b> Method: .toUpperCase() & .toLowerCase() <br>" +
 "<hr>" +
 "<h2>Displaying JS Objects</h2>" +
@@ -101,7 +106,8 @@ demo3.innerHTML =
  "<span>person.name + ' ' + person.age</span> <br>" +
  "<li>Displaying the Object in a Loop</li>" +
  "<span>for (let x in person) { txt += person[x] + ' ''; };</span>" +
- "<span> If we use <b>person.x</b> it does not work. Because <b>x is a variable.</b> We need to use <b>person[x]</b> in the <b>loop.</b></span>" +
+ "<span> If we use <b>person.x</b> it does not work. Because <b>x is a variable.</b>" +
+ " We need to use <b>person[x]</b> in the <b>loop.</b></span>" +
  "<li>Object.values();</li>" +
  "<span>Any JS Object can be converted to an array using with Object.values()</span> <br>" +
  "<span>const person = { name:'name1', ...};  const myArray = Object.values(person)</span> <br>" +
@@ -194,13 +200,17 @@ demo6.innerHTML =
 "And type of this is " + myFirstBike.bikeType + ". " + " It's model is " + myFirstBike.bikeModel +
 ", it made in " + myFirstBike.madeIn + ". " + "At that time, I really liked the " + myFirstBike.bikeColor + " one. <br>" + 
 "Also I have a second one to ride on mountains that is " + mySecondBike.bikeBrand + ". " +
-"It has these properties, " + mySecondBike.bikeType + ", " + mySecondBike.bikeModel + ", it made in " + mySecondBike.madeIn + ". And it's color is " + mySecondBike.bikeColor + ". <br>" +
+"It has these properties, " + mySecondBike.bikeType + ", " + mySecondBike.bikeModel + ", it made in " + mySecondBike.madeIn +
+ ". And its color is " + mySecondBike.bikeColor + ". <br>" +
 "This is for adding a new method: " + myFirstBike.brandAndType() + "<br>" +
 "We added a new Method to Object Constructor with a <b>changeModel</b> name and output is here: " + myFirstBike.bikeModel + "<hr>";
 
 let demo7 = document.getElementById("demo7");
 demo7.innerHTML = 
-" <b># NOTE # </b> If we use all of these with a <b>new</b> keyword, their types are gonna be <b>Object</b>, except function. <br>"+ "new String(); new Number(); new Boolean(); new Object(); new Array(); new RegExp(); new Function(); new Date();" + "That's why, there is no need to use new String(), new Number(), new Boolean(), new Array(), and new RegExp(). <br>" +
+" <b># NOTE # </b> If we use all of these with a <b>new</b> keyword, their types are gonna be " + 
+" <b>Object</b>, except function. <br>"+ "new String(); new Number(); new Boolean(); new Object();" +
+" new Array(); new RegExp(); new Function(); new Date();" + "That's why, there is no need to use new String()," +
+" new Number(), new Boolean(), new Array(), and new RegExp(). <br>" +
 "Instead of these with <b>new</b>, we can use <b>literals</b> like: myArray = []... <br>" +
 "Math() is a <b>global object</b> it cannot be used with <b>new</b> keyword. <br>" +
 "<b>Primitive Values</b> are <u>much faster</u> like: let x1 = 0; or let x2 = 'abc' or let x3 = false... <br> " +
@@ -361,13 +371,16 @@ let check4 = Object.isFrozen(phone2);
 
 let demo11 = document.getElementById("demo11");
 demo11.innerHTML = 
+"<hr>" +
 "<h2>Javascript Object Protection</h2>" +
 "<ol>" +
 "<li>Using Const</li>" +
-"With <b>const</b> we cannot re-assign the object, however we can still <b>change</b> the value of a property, <b>delete</b> or create a new property.<br>" +
+"With <b>const</b> we cannot re-assign the object, however we can still <b>change</b> the value of a property," + 
+" <b>delete</b> or create a new property.<br>" +
 "<li>JavaScript Object.preventExtensions()</li>" +
 "<b>Object.preventExtensions()</b> method prevents adding properties to an object. <br>" +
-"const person = {firstName: 'Tom', lastName: 'Tommy'}; Object.preventExtensions(<b>person</b>); person.language = 'EN';  -- This will throw an error! <br>" + person2.language + ". However, we need to use <b>'use strict'</b>!" +
+"const person = {firstName: 'Tom', lastName: 'Tommy'}; Object.preventExtensions(<b>person</b>); person.language = 'EN';  -- This will throw an error! <br>"
+ + person2.language + ". However, we need to use <b>'use strict'</b>!" +
 "<li>Arrays can be prevented from Extensions too:</li>" +
 "const veggies = [ 'Avocado', 'Broccoli', 'Lettuce' ]; <br>" +
 "Object.preventExtensions(veggies) <br>" +
