@@ -353,10 +353,10 @@ demo19.innerHTML =
 "<h4>Explaining of JS - Closure Function</h4>" +
 "<h5>A closure is a function having access to the parent scope, even after the parent function has closed.</h5>" +
 "<ol>" +
-"<ul>The variable <b>add</b> that is <b>const add</b> is assigned to the return value of a self-invoking function.</ul>" +
-"<ul>The self-invoking function only runs once. It sets the counter2 to zero(0), and returns a function expression</ul>" +
-"<ul>This way <b>add becomes a function.</b> It can <b>access</b> the counter in the <b>parent scope.</b></ul>" +
-"<ul>This is called a JS <b>Closure.</b> It makes it possible for a function to have <b>private</b> variables.</ul>" +
-"<ul>The counter is <b>protected by the scope of the anonymous function </b>, and can only be changed using the <b>add</b> function.</ul>" +
+"<li>The variable <b>add</b> that is <b>const add</b> is assigned to the return value of a self-invoking function.</li>" +
+"<li>The self-invoking function only runs once. It sets the counter2 to zero(0), and returns a function expression</li>" +
+"<li>This way <b>add becomes a function.</b> It can <b>access</b> the counter in the <b>parent scope.</b></li>" +
+"<li>This is called a JS <b>Closure.</b> It makes it possible for a function to have <b>private</b> variables.</li>" +
+"<li>The counter is <b>protected by the scope of the anonymous function </b>, and can only be changed using the <b>add</b> function.</li>" +
 "</ol>" +
 "<hr>";
