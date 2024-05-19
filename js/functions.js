@@ -14,7 +14,7 @@ demo12.innerHTML =
 " this: <br>" +
 "<b>const</b> x = <b>function</b> (a, b) { return a * b };<br>"+
 "let z = x(7, 4);" +
-"<b>z</b> and the result is going to be: <b>16.</b> <br>" +
+"<b>z</b> and the result is going to be: <b>28.</b> <br>" +
 "This function is function without a name that is an <b>anonymous function.</b> The function stored in " + 
 "variables do not need function <b>names.</b> <br>" +
 "<hr>" +
