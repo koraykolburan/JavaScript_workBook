@@ -87,7 +87,7 @@ const myNums = [5, 8, -10, -91, 3, 2, 1, -1];
 
 const posNums = removeNeg(myNums, (x) => x >= 0); //Call removeNeg with a Callback
 
-console.log(posNums);
+console.log("This is for Removing Negative in an Array with Callback: " + posNums);
 
 function removeNeg (numbers, callback) {
      const myArray = [];
@@ -98,3 +98,78 @@ function removeNeg (numbers, callback) {
      }
      return myArray;
 }
+
+// Example 5 - Callback with an Asynchronous Functions
+
+setTimeout(myFunction, 2000);
+
+function myFunction() {
+     document.getElementById("demo29").innerHTML = "Hey! It's me! setTimeout(); after 2000 milisecond:)";
+}
+
+let demo28 = document.getElementById("demo28");
+demo28.innerHTML =
+"<h2>Asynchronous JavaScript</h2>" +
+"Functions running in <b>parallel</b> with other functions are called <b>asynchronous.</b> <br>" +
+"In general, <b>callbacks</b> are most often used with <b>asynchronous functions.</b> <br>" +
+"<b>myFunction</b> is used as a callback and is <b>passed to setTimeout()</b> as an <b>argument.</b>" +
+"After 2 seconds, <b>myFunction()</b> will be called. <br>" +
+"We can always pass a <b>whole function as an argument</b> like this: <br>"+
+"setTimeout(function() { myFunction('this is an asynchronous function '); }, 2000); <br>" +
+"function myFunction(value) { doc.getEl.... = value; }" +
+"The complete function is passed to setTimeout() as an argument.";
+
+let demo30 = document.getElementById("demo30");
+demo30.innerHTML = 
+"<h3>Using setInterval() with a Clock</h3>" +
+"We use the <b>setInterval()</b> to display the time every second. <br>" +
+"If we change the value of setInterval as like this: setInterval(myFunction, 3000) <br>" +
+"The function of the <b>'display of the clock'</b> will be executed every 3 second. <br>" +
+"Therefore, we specified as 1000 milliseconds. <br>" +
+"The Clock:";
+
+setInterval(myFunction, 1000);
+
+function myFunction() {
+     let d = new Date();
+     document.getElementById("demo31").innerHTML =
+     "<h1>" + 
+     d.getHours() + ":" +
+     d.getMinutes() + ":" +
+     d.getSeconds() +
+     "</h1>";
+}
+
+let demo32 = document.getElementById("demo32");
+demo32.innerHTML = 
+"In this clock example, we used to <b>myFunction</b> as a callback. <br>" +
+"<b>myFunction</b> is passed to <b>setInterval()</b> as an argument. <br>" +
+"<h2>Callback Alternatives</h2>" +
+"The asynchronous programmes are difficult to write and difficult to debug. <br>" +
+"Thus, most modern asynchronous JS methods <b>don't use callbacks.</b> <br>" +
+"Instead of this, we can use <b>Promises</b> in JS." +
+"<h2>JS Promise Object</h2>" +
+"A promise contains both <b>the producing code </b> and calls the <b>consuming code:</b>" +
+"<b>let myPromise</b> = new Promise(function(myResolve, myReject) { <br>" + 
+"<b>'//Producing Code'</b> <br>" +
+"myResolve(); // when successful <br>" +
+"myReject(); // when error <br>" +
+"}); <br>" +
+"<b>//Consuming Code</b> (Must wait for a fulfilled Promise) <br>" +
+"myPromise.then( <br>" +
+" function(value) { // code if successful }, <br>" +
+" function(error) { // code if some error } );" +
+"<h3>Promise Object Properties</h3>" +
+"A JS Promise object can be: <br>" +
+"<ul>" + 
+"<li>Pending</li>" +
+"<li>Fulfilled</li>" +
+"<li>Rejected</li>" +
+"</ul>" +
+"The Promise object supports two properties: <b>state</b> and <b>result.</b> <br>" +
+"While a Promise object is <b>'pending'</b>(working), the result is <b>undefined.</b> <br>" +
+"While a Promise object is <b>'fulfilled'</b>, the result is a <b>value.</b> <br>" +
+"While a Promise object is <b>'rejected'</b>(working), the result is an <b>error object.</b> <br>" +
+"";
+
+
