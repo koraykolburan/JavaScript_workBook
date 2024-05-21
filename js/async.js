@@ -373,4 +373,5 @@ demo38.innerHTML =
 " let myPromise = new Promise(function(resolve) { <b>resolve</b>('Notes in here..') }); <br>" +
 "document.getElement....innerHTML = <b>await</b> myPromise;" +
 " } <br>" +
-"For <b>async/await Waiting for a Timeout</b> and <b>async/await Waiting for a File</b> examples please look at JS line 323.";
+"For <b>async/await Waiting for a Timeout</b> and <b>async/await Waiting for a File</b>" + 
+" examples please look at JS line 323. "; 
