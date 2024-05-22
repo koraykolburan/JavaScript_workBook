@@ -1,4 +1,4 @@
-blet demo41 = document.getElementById("demo41");
+let demo41 = document.getElementById("demo41");
 demo41.innerHTML = 
 "<hr>" +
 "<h2>BOM - JS Window - The Browser Object Model</h2>" +
@@ -35,7 +35,7 @@ demo41.innerHTML =
 "<button onclick='myVar = setTimeout(myFunction, 3000)'>Click!</button> <br> " +
 "<button onclick='clearTimeout(myVar)'>Stop it!</button> <br>" +
 "If we want to stop Execution of Interval, we need to use clearInterval(myVar); <br>" +
-""
+"Look at browserBom.js file for more examples.";
 
 // Examples:
 function goBack() {
@@ -70,3 +70,118 @@ function promptBox() {
      }
      document.getElementById("demo42").innerHTML = text;
 }
+
+//JS Clock with '0'
+function startTime() {
+     const today = new Date();
+     let h = today.getHours();
+     let m = today.getMinutes();
+     let s = today.getSeconds();
+     m = checkTime(m);
+     s = checkTime(s);
+     document.getElementById("demo43").innerHTML = h + ":" + m + ":" + s;
+     setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+     if(i < 10) {
+          i = "0" + i; //add zero in front of numbers < 10
+     }
+     return i;
+}
+startTime();
+
+//JS setTimeout()
+setTimeout(myTimeout1, 2000)
+setTimeout(myTimeout2, 4000)
+setTimeout(myTimeout3, 6000)
+setTimeout(myTimeout4, 8000)
+setTimeout(myTimeout5, 10000)
+
+function myTimeout1() {
+     document.getElementById("demo44").innerHTML = "2 seconds passed.";
+}
+
+function myTimeout2() {
+     document.getElementById("demo44").innerHTML = "4 seconds passed.";
+}
+
+function myTimeout3() {
+     document.getElementById("demo44").innerHTML = "6 seconds passed.";
+}
+
+function myTimeout4() {
+     document.getElementById("demo44").innerHTML = "8 seconds passed.";
+}
+
+function myTimeout5() {
+     document.getElementById("demo44").innerHTML = "Time is passing dude! Work hard!";
+}
+
+let demo45 = document.getElementById("demo45");
+demo45.innerHTML = 
+"<hr>" +
+"<h2>JS Cookies</h2>" +
+"<h3>Cookies let us STORE USER INFORMATION in web pages.</h3>" +
+"Cookies are small text data files, on our computer. <br>" +
+"Cookies were invented for this: <b>'how to remember information about the user'</b>. <br>" +
+"1) When users visit a web page, their names <b>can be stored in a cookie.</b><br>" +
+"2) When users visit the same page after a while, <b>the cookie remembers their names.</b><br>" +
+"<ul>" + 
+"<li>Cookies are saved in name-value pairs like: <b>username = firstName lastName</b></li><br>" +
+"<li>A browser requests a web page from a server, <b>cookies</b> are added to the request too.</li><br>" +
+"<li>'document.cookie = 'username= Tommy H.'</li><br>" +
+"<li>'document.cookie = 'username= Tommy H.; expires=Tue, 31 Dec 2024 12:00:00 UTC'; path=/..'</li><br>" +
+"<li>'let x = document.cookie;' will return all cookies in one string much like: cookie1:value; cookie2:value;'</li><br>" +
+"<li>" + "When we want to <b>delete</b> our cookies, we need to add <b>expires parameter to a past date:</b> " +
+"'document.cookie = 'username= Tommy H.; expires=Thu, 01 Jan 1970 00:00:00 UTC'; path=/..'" + "</li> <br>" +
+"</ul>" +
+"<h3>JS Cookie Example</h3>" +
+"<ol>" + 
+"<li>A function to <b>set</b> a cookie value</li>" +
+"<li>A function to <b>get</b> a cookie value</li>" +
+"<li>A function to <b>check</b> a cookie value</li>" +
+"</ol>" +
+"For more example, please Look at the /browserBom.js file.";
+
+//JS Cookie Example
+
+//A function to SET a Cookie
+function setCookie(cname, cvalue, exdays) {
+     const d = new Date();
+     d.setTime(d.getTime() + (exdays*24*60*60*1000));
+     let expires = "expires" + d.toUTCString();
+     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+//A function to GET a Cookie
+function getCookie(cname) {
+     let name = cname + "="; //Created a variable with the text to search for
+     let decodedCookie = decodeURIComponent(document.cookie); //for this encoded URI
+     let ca = decodedCookie.split(';');
+     for(let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') {
+               c = c.substring(1);
+          }
+          if (c.indexOf (name) == 0) {
+               return c.substring(name.length, c.length);
+          }
+     }
+     return "";
+}
+
+//A function to GET a Cookie
+function checkCookie() {
+     let username = getCookie("username");
+     if (username != "") {
+          alert("Welcome again " + username);
+     } else {
+          username = prompt("Please enter your name:", "");
+          if (username != "" && username != null) {
+               setCookie("username", username, 365);
+          }
+     }
+}
+
+//checkCookie();
