@@ -82,4 +82,44 @@ demo54.innerHTML =
 "<b>responseXMl:</b> get the response data as XML data(XMl DOM Object) <br>" +
 "document.geteleme....innerHTML = this.responseText <br><br>" +
 "This Artists returns from /xml/artists_catalog.xml with XMLHttpRequest. <br>" + " It has as <b>in-built parser.</b> <br>" +
-"<br>"
+"<br>";
+
+function loadDoc2() {
+     const xhttp3 = new XMLHttpRequest();
+     xhttp3.onload = function() {
+          myFunctionXML(this);
+     }
+     xhttp3.open('GET', "/xml/artists_catalog.xml");
+     xhttp3.send()
+}
+function myFunctionXML(xml) {
+     const xmlDoc = xml.responseXML;
+     const x = xmlDoc.getElementsByTagName("CD");
+     let table = "<tr><th>Artist</th><th>Title</th><th>Country</th><th>Company</th><th>Price</th><th>Year</th></tr>";
+     for (let i = 0; i <x.length; i++) {
+          table += "<tr><td>" + 
+          x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+          "</td><td>" +
+          x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+          "</td><td>" +
+          x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue +
+          "</td><td>" +
+          x[i].getElementsByTagName("COMPANY")[0].childNodes[0].nodeValue +
+          "</td><td>" +
+          x[i].getElementsByTagName("PRICE")[0].childNodes[0].nodeValue +
+          "</td><td>" +
+          x[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue +
+          "</td></tr>";
+     }
+     document.getElementById("demo57").innerHTML = table;
+}
+
+
+
+let demo56 = document.getElementById("demo56");
+demo56.innerHTML =
+"<b>getResponseHeader():</b> returns specific header information from the server resource. <br>" +
+"<b>getAllResponseHeaders():</b> returns all the headers information from the server resource. <br>" +
+"AJAX XML file can be used for interactive communication.<br>" +
+" <br>" +
+""
