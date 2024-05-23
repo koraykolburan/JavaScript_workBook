@@ -11,6 +11,14 @@
                font-family: Arial, Helvetica, sans-serif;
                line-height: 1.8rem;
           }
+          .border {
+               border-radius: 12px;
+               border: white solid 1px;
+               padding: 10px;
+               width: 30%;
+               background-color: blanchedalmond;
+               text-align: center;
+          }
      </style>
 </head>
 <body>
@@ -80,16 +88,26 @@
           </div>
           <div class="webapis">
                <article id="demo46"></article>
-               <button onclick="getLocation()">Get Location</button>
+               <div class="location border">
+                    <p>Get Your Location with API!</p>
+                    <button onclick="getLocation()">Get Location</button>
+               </div>
                <article id="demo47"></article>
-               <p>Please enter your age:</p>
-               <input type="number" id="id1" min="18" max="65" required>
-               <button onclick="validFunc()">OK</button>
-               <article id="demo48"></article>
+               <div class="jsValid border">
+                    <p>Please enter your age:</p>
+                    <input type="number" id="id1" min="18" max="65" required>
+                    <button onclick="validFunc()">OK</button>
+                    <article id="demo48"></article>
+               </div>
+               <div class="webWorkerAPI border">
+                    <p>Web Worker API: Count numbers: <output id="result"></output></p>
+                    <button onclick="startWorker()">Start Worker</button>
+                    <button onclick="stopWorker()">Stop Worker</button>
+               </div>
                <article id="demo49"></article>
-               <p>Count numbers: <output id="result"></output></p>
-               <button onclick="startWorker()">Start Worker</button>
-               <button onclick="stopWorker()">Stop Worker</button>
+               <article id="demo50"></article>
+               <article id="demo51"></article>
+               <button onclick="getLocation()">Location on Mobile</button>
           </div>
      </main>
 
