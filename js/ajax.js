@@ -92,11 +92,12 @@ function loadDoc2() {
      xhttp3.open('GET', "/xml/artists_catalog.xml");
      xhttp3.send()
 }
+
 function myFunctionXML(xml) {
      const xmlDoc = xml.responseXML;
      const x = xmlDoc.getElementsByTagName("CD");
      let table = "<tr><th>Artist</th><th>Title</th><th>Country</th><th>Company</th><th>Price</th><th>Year</th></tr>";
-     for (let i = 0; i <x.length; i++) {
+     for (let i = 0; i < x.length; i++) {
           table += "<tr><td>" + 
           x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
           "</td><td>" +
@@ -114,12 +115,124 @@ function myFunctionXML(xml) {
      document.getElementById("demo57").innerHTML = table;
 }
 
-
-
 let demo56 = document.getElementById("demo56");
 demo56.innerHTML =
 "<b>getResponseHeader():</b> returns specific header information from the server resource. <br>" +
 "<b>getAllResponseHeaders():</b> returns all the headers information from the server resource. <br>" +
 "AJAX XML file can be used for interactive communication.<br>" +
-" <br>" +
-""
+" <br>";
+
+let demo58 = document.getElementById("demo58");
+demo58.innerHTML =
+"<hr>" +
+"<h3>AJAX PHP Example</h3>" +
+"How a web page can communicate with a web server while a user <b>types characters</b> in an input field. <br>" +
+"This example uses <b>onkeyup</b> event for suggestions. <br>" +
+"We can do this with <b>ASP</b> too. It is basically a web-based framework that helps programmers to build dynamic web pages. <br>" +
+"<b>ASP</b>: Active Server Page. It is XML based. <br>";
+
+function showHint(str) {
+     if (str.length == 0) {
+          document.getElementById("txtHint").innerHTML = "";
+          return;
+     }
+     const xhttp4 = new XMLHttpRequest();
+     xhttp4.onload = function() {
+          document.getElementById("txtHint").innerHTML = this.responseText;
+     }
+     xhttp4.open("GET", "/php/get_hint.php?q="+str);
+     xhttp4.send();
+}
+
+//Example of Communicative Server AJAX and PHP
+function showCustomer(str) {
+     if (str == "") {
+          document.getElementById("txtHint2").innerHTML = "";
+          return;
+     }
+     const xhttp5 = new XMLHttpRequest();
+     xhttp5.onload = function () {
+          document.getElementById("txtHint2").innerHTML = this.responseText;
+     }
+     xhttp5.open("GET", "/php/getcustomer.php?q="+str);
+     xhttp5.send();
+}
+
+let demo59 = document.getElementById("demo59");
+demo59.innerHTML =
+"<h3>AJAX Database Example</h3>" +
+"AJAX can be used for interactive communication with a database. <br>" +
+"<h3>XML Applications</h3>";
+
+
+//XML APP. with Next() and Previous() buttons
+let i = 0;
+let len;
+let cd;
+
+const xhttp7 = new XMLHttpRequest();
+xhttp7.onload = function() {
+     const xmlDoc = xhttp7.responseXML;
+     cd = xmlDoc.getElementsByTagName("CD");
+     len = cd.length;
+     displayCD(i);
+}
+xhttp7.open("GET", "/xml/artists_catalog.xml");
+xhttp7.send();
+
+function displayCD(i) {
+     document.getElementById("showCD").innerHTML =
+     "Artist: " +
+     cd[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+     "<br>Title: " +
+     cd[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+     "<br>Year: " + 
+     cd[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue;
+   }
+
+function next() {
+     if (i < len-1) {
+          i++;
+          displayCD(i);
+     }
+}
+
+function previous() {
+     if (i > 0) {
+          i--;
+          displayCD(i);
+     }
+}
+
+//Show Album infos when Clicking on a Artist or Title
+
+const xhttp8 = new XMLHttpRequest();
+xhttp8.onload  = function () {
+     const xmlDoc = xhttp8.responseXML;
+     cd = xmlDoc.getElementsByTagName("CD");
+     loadCD2();
+}
+xhttp8.open("GET", "/xml/artists_catalog.xml");
+xhttp8.send();
+
+function loadCD2() {
+     let table = "<tr><th>Artist</th><th>Title</th></tr>";
+     for (let s = 0; s < cd.length; s++) {
+          table += "<tr onclick='displayCD2(" + s + ")'><td>";
+          table += cd[s].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue;
+          table += "</td><td>";
+          table += cd[s].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue;
+          table += "</td></tr>";
+     }
+     document.getElementById("demo60").innerHTML = table;
+}
+
+function displayCD2(s) {
+     document.getElementById("showCD2").innerHTML = 
+     "<b>Artist: </b>" +
+     cd[s].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+     "<br><b>Title: </b>" +
+     cd[s].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+     "<br><b>Year: </b>" +
+     cd[s].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue;
+}

@@ -26,6 +26,28 @@
           th,td {
                padding: 10px;
           }
+          button {
+               width: 200px;
+               height: 50px;
+               font-size: 20px;
+          }
+          button:hover {
+               cursor: pointer;
+          }
+          input {
+               width: 200px;
+               height: 50px;
+               font-size: 20px;
+          }
+          input:hover {
+               cursor: pointer;
+          }
+          table:hover {
+               cursor: pointer;
+          }
+          th,td:hover {
+               background-color: blanchedalmond;
+          }
      </style>
 </head>
 <body>
@@ -127,6 +149,17 @@
                <article id="demo56"></article>
                <button type="button" onclick="loadDoc2()">Get My Collection!</button>
                <table id="demo57"></table>
+               <p>Type your name: <input type="text" id="txt1" onkeyup="showHint(this.value)"></p>
+               <p>Suggestions: <span id="txtHint"></span></p>
+               <article id="demo58"></article>
+               <article id="demo59"></article>
+               <div id="showCD"></div>
+               <input type="button" onclick="previous()" value="<<">
+               <input type="button" onclick="next()" value=">>">
+               <hr>
+               <br><br>
+               <p id="showCD2"></p>
+               <table id="demo60"></table>
           </div>
      </main>
 
