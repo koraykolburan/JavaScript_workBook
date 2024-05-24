@@ -236,3 +236,52 @@ function displayCD2(s) {
      "<br><b>Year: </b>" +
      cd[s].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue;
 }
+
+let demo61 = document.getElementById("demo61");
+demo61.innerHTML =
+"<br>" + "<hr>" +
+"<h2>Why JSON is Better Than XML?</h2>" +
+"<h3>XML is much more difficult to parse than JSON.</h3>" +
+"<h3>JSON is parsed into a ready-to-use JS object.</h3>" +
+"<h3>For AJAX Application, JSON is faster and eaiser than XML.</h3>" +
+"<h3>Using XML:</h3>" +
+"1) Fetch an XML document, 2) Use the XML DOM to loop through the document, 3) Extract values and store in variables. <br>" +
+"<h3>Using JSON:</h3>" +
+"1) Fetch a JSON string, 2) JSON.Parse the JSON string. <br>" + "<br>" +
+"Please look at console for examples of these: <br>" +
+"<ul>" + 
+"<li>JSON Parse()</li>" +
+"<li>JSON Stringify(): the result will be a string following the JSON notation</li>" +
+"<li></li>" +
+"</ul>";
+
+
+//JSON Examples
+const obj2 = JSON.parse('{"name":"Tommy", "lastName":"Hilf.", "age":65, "city":"New York"}');
+console.log("This is JSON.parse(..) on object! " + obj2.name + " " + obj2.lastName + " " + obj2.age + " " + obj2.city);
+
+const arr2 = JSON.parse('[ "name", "John", "age", 30, "city", "New York" ]');
+console.log("This is JSON.parse(..) on array! " + arr2[0] + arr2[1] + arr2[3] + arr2[4] + arr2[5]);
+
+const obj3 = {"name":"Tommy", "lastName":"Hilf.", "age":65, "city":"New York"};
+const myJSONobj = JSON.stringify(obj3);
+console.log("myJSONobj is ready to be sent to a server: " + myJSONobj);
+
+const myJSONobj2 = '{"name":"Tommy", "lastName":"Hilf.", "age":65, "city":"New York"}';
+const myObj3 = JSON.parse(myJSONobj2);
+let txt2 = "";
+for (const x in myObj3) {
+     txt2 += myObj3[x] + ", ";
+}
+console.log("This is for/in loop for: " + txt2)
+
+//JSON XMLHttpRequest to get data from the server
+const xmlhttp99 = new XMLHttpRequest();
+xmlhttp99.onload = function () {
+     const myObjforjson = JSON.parse(this.responseText);
+     console.log(
+          myObjforjson.name + " " + myObjforjson.age + " " + myObjforjson.pets[0].animal1 + " name is " + myObjforjson.pets[0].name + " and other pet is " + myObjforjson.pets[1].animal2 + " its name is " + myObjforjson.pets[1].name + " and the last pet is " + myObjforjson.pets[2].animal3 + " its name is " + myObjforjson.pets[2].name + "."
+     );
+};
+xmlhttp99.open("GET", "/txt/json_info.txt"); 
+xmlhttp99.send();

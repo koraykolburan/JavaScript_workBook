@@ -1,0 +1,9 @@
+{
+    "name":"Tommy",
+    "age":39,
+    "pets":[
+        { "animal1":"dog", "name":"Buddy" },
+        { "animal2":"cat", "name":"Foggy" },
+        { "animal3":"dog2", "name":"Storm" }
+    ]
+}
