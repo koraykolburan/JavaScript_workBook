@@ -252,7 +252,6 @@ demo61.innerHTML =
 "<ul>" + 
 "<li>JSON Parse()</li>" +
 "<li>JSON Stringify(): the result will be a string following the JSON notation</li>" +
-"<li></li>" +
 "</ul>";
 
 
